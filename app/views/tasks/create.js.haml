@@ -1,0 +1,5 @@
+:erb
+  $('#content_output').empty();
+  $('ul.tabs a').removeClass('active');
+  $('#content_output').html("<div class='content_title task'></div><h3><%= I18n.t :task_all %></h3><%= escape_javascript(render('tasks/all_tasks', :tasks => @tasks, :layout => 'normal')) %></div>");
+  $('a#tasks_tab').addClass('active');

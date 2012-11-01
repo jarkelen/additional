@@ -1,0 +1,109 @@
+/ Show the actionbar
+= render 'actionbar', :view => 'show'
+
+.vcard.twelve.columns
+  .vcard_left
+    %ul
+      / Show contact details
+      %li.title
+        - if @contact.salutation
+          = @contact.salutation
+        - if @contact.title
+          = @contact.title
+        = @contact.full_name
+      %li.header
+        = @contact.function
+        = I18n.t :contacts_with
+        = link_to @relation.name, @relation
+      %li.background= @contact.background
+  .vcard_right
+    %ul
+      / Telephone business
+      - if @contact.telephone_business?
+        %li
+          = @contact.telephone_business
+          (#{I18n.t :contacts_business})
+      - else
+        %li= I18n.t :contacts_no_business
+      / Telephone private
+      - if @contact.telephone_private?
+        %li
+          = @contact.telephone_private
+          (#{I18n.t :contacts_private})
+      - else
+        %li= I18n.t :contacts_no_private
+      / Telephone mobile
+      - if @contact.telephone_mobile?
+        %li
+          = @contact.telephone_mobile
+          (#{I18n.t :contacts_mobile})
+      - else
+        %li= I18n.t :contacts_no_mobile
+      / Email
+      - if @contact.email?
+        %li= mail_to @contact.email, @contact.email
+      - else
+        %li= I18n.t :contacts_no_email
+      / Birth date
+      - if @contact.birth_date?
+        %li
+          = I18n.t(:contacts_birthdate)
+          \: #{@contact.birth_date.strftime("%d-%m-%Y")}
+      - else
+        %li
+          = I18n.t(:contacts_birthdate)
+          \:
+      / Fax
+      - if @contact.fax?
+        %li
+          = I18n.t :contacts_fax
+          \: #{@contact.fax}
+      / Linkedin
+      - if @contact.linkedin?
+        %li= link_to 'LinkedIn', @contact.linkedin, :target => :blank
+      / Facebook
+      - if @contact.facebook?
+        %li= link_to 'Facebook', @contact.facebook, :target => :blank
+      / Twitter
+      - if @contact.twitter?
+        %li= link_to 'Twitter', @contact.twitter, :target => :blank
+      / Show free fields
+      - if @contact.custom_field_1?
+        %li
+          = @contact.custom_label_1
+          \: #{@contact.custom_field_1}
+      - if @contact.custom_field_2?
+        %li
+          = @contact.custom_label_2
+          \: #{@contact.custom_field_2}
+      - if @contact.custom_field_3?
+        %li
+          = @contact.custom_label_3
+          \: #{@contact.custom_field_3}
+  .clear
+
+/ Show organigram
+#action_bar.twelve.columns
+  .action_button.contact
+    = link_to I18n.t(:contacts_organigram), "/contacts/" + @contact.id.to_s + "?organigram=true", :remote => true, :id => "organigram_link"
+#organigram
+
+/ Show tabpanel
+- if current_user.mod_platform
+  .twelve.columns
+    %ul.tabs
+      %li= link_to I18n.t(:task_index_title), "/contacts/" + @contact.id.to_s + "?tab=tasks", :remote => true, :id => "tasks_tab", :class => "active"
+      %li= link_to I18n.t(:notes_index_title), "/contacts/" + @contact.id.to_s + "?tab=notes", :remote => true, :id => "notes_tab"
+      %li= link_to I18n.t(:agreement_index_title), "/contacts/" + @contact.id.to_s + "?tab=agreements", :remote => true, :id => "agreements_tab"
+    / Show all tasks for this contact
+    #contentblock.twelve.columns
+      #content_output
+        .content_title.task
+        %h3= I18n.t :task_all
+        = render("tasks/all_tasks", :tasks => @contact_tasks, :layout => "normal")
+    / New task form
+    #contentblock.twelve.columns
+      #content_input
+        .content_title.task
+        %h3= I18n.t :task_new_title
+        = render('tasks/new_task')

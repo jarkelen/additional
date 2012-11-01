@@ -1,0 +1,6 @@
+/
+  Example use:
+  render('layouts/form_truefalse_select', :f => f, :label => 'bla', :field => :extension, :selected => @offer.extension)
+.field
+  = f.label label
+  = f.select(field, options_for_select([['Ja', true], ['Nee', false]], :selected => selected, :include_blank => true))

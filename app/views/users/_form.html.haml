@@ -1,0 +1,74 @@
+.form
+  = form_for(@user) do |f|
+    / Show errors
+    = render('layouts/form_errors', :object => @user)
+
+    / Only user self or admins are allowed to make changes
+    - if @user == current_user || current_user.allowed?('company_admin')
+      .datablock_general
+        %h4= I18n.t :users_data_general
+
+        / Only admin can change the company
+        - if current_user.allowed?('admin')
+          .field
+            = f.label I18n.t :company_single
+            = f.collection_select(:company_id, @companies, :id, :name, :include_blank => true)
+        - else
+          = f.hidden_field :company_id, :value => current_user.company_id
+
+        / Only admins and company admins can change the user role
+        - if current_user.allowed?('company_admin')
+          .field
+            = f.label I18n.t :form_role
+
+            / Only admin can set admin role
+            - if is_allowed_to_view('admin')
+              = f.select(:role, options_for_select([['Admin', 'admin'], ['Company admin', 'company_admin'], ['Gebruiker', 'user'], ['Klant', 'customer']], :selected => @user.role))
+            - else
+              = f.select(:role, options_for_select([['Company admin', 'company_admin'], ['Gebruiker', 'user'], ['Klant', 'customer']], :selected => @user.role))
+        .field
+          = f.label I18n.t :users_locale
+          = f.select(:locale, options_for_select([['Nederlands', 'nl'], ['English', 'en-GB']], :selected => @user.locale))
+        = render('layouts/form_field', :f => f, :label => I18n.t(:users_firstname), :field => :first_name, :size => "25")
+        = render('layouts/form_field', :f => f, :label => I18n.t(:users_middlename), :field => :middle_name, :size => "25")
+        = render('layouts/form_field', :f => f, :label => I18n.t(:users_lastname), :field => :last_name, :size => "25")
+        = render('layouts/form_field', :f => f, :label => I18n.t(:form_email), :field => :email, :size => "50")
+
+        / Only admins and company admins can change the user position
+        - if current_user.allowed?('company_admin')
+          = render('layouts/form_field', :f => f, :label => I18n.t(:users_position), :field => :position, :size => "25")
+        - else
+          = f.hidden_field :position, :value => @user.position
+
+        / Only admins can enable modules
+        - if current_user.allowed?('admin')
+          .datablock_general
+            %h4= I18n.t :subscription_mods
+            .field
+              = f.label I18n.t :subscription_mod_platform
+              = f.check_box :mod_platform, :default => false
+            .field
+              = f.label I18n.t :subscription_mod_insurance
+              = f.check_box :mod_insurance, :default => false
+          .datablock_general
+            %h4= I18n.t :subscription_email
+            .field
+              = f.label I18n.t :subscription_send_email_to_user
+              = check_box_tag :send_email_to_user
+            .field
+              = f.label I18n.t :subscription_send_email_to_admin
+              = check_box_tag :send_email_to_admin
+
+        / Only show password field when a user is updating it's own profile or for admin
+        - if @user == current_user || current_user.allowed?('admin')
+          .datablock_general
+            %h4= I18n.t :subscription_reset
+            .field
+              = f.label I18n.t :form_password
+              = f.password_field :password, :size => "10"
+              \&nbsp;
+              %span
+                (#{I18n.t :always_password})
+        .field
+          = f.submit I18n.t(:register_button), :class => 'button white'
+        .clear

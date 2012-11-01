@@ -1,0 +1,27 @@
+- if @action == "organigram"
+  :plain
+    $('#organigram').html("#{escape_javascript(render('organigram', :contact => @contact, :boss => @boss, :employees => @employees))}");
+    $('#organigram_link').click(function() {
+    $('#organigram').toggle();
+    });
+- else
+  :plain
+    $('#content_output').empty();
+    $('#content_input').empty();
+    $('ul.tabs a').removeClass('active');
+
+  - if (@active == "tasks")
+    :plain
+      $('#content_output').html("<div class='content_title task'></div><h3>#{I18n.t :task_all}</h3>#{escape_javascript(render('tasks/all_tasks', :tasks => @contact_tasks, :layout => 'normal'))}</div>");
+      $('#content_input').html("<div class='content_title task'></div><h3>#{I18n.t :task_new_title}</h3>#{escape_javascript(render('tasks/new_task'))}</div>");
+      $('a#tasks_tab').addClass('active'); 
+  - elsif (@active == "notes")
+    :erb
+      $('#content_output').html("<div class='content_title note'></div><h3><%= I18n.t :notes_all %></h3><%= escape_javascript(render('notes/all_notes', :notes => @contact_notes, :layout => 'normal')) %></div>");
+      $('#content_input').html("<div class='content_title note'></div><h3><%= I18n.t :notes_new_title %></h3><%= escape_javascript(render('notes/new_note')) %></div>");
+      $('a#notes_tab').addClass('active');
+  - elsif (@active == "agreements")
+    :erb
+      $('#content_output').html("<div class='content_title agreement'></div><h3><%= I18n.t :agreement_all %></h3><%= escape_javascript(render('agreements/all_agreements', :agreements => @contact_agreements, :layout => 'normal')) %></div>");
+      $('#content_input').html("<div class='content_title agreement'></div><h3><%= I18n.t :agreement_new_title %></h3><%= escape_javascript(render('agreements/new_agreement')) %></div>");
+      $('a#agreements_tab').addClass('active');

@@ -1,0 +1,23 @@
+#action_bar.twelve.columns
+  .action_button.contact
+    = link_to I18n.t(:contacts_all), contacts_path
+
+  / Show buttons for index
+  - if view == 'index'
+    .action_button.contact
+      = link_to I18n.t(:contacts_new_title), new_contact_path
+    .action_button.contact
+      = link_to I18n.t(:contacts_new_vcard), '/contacts/import'
+
+  / Show buttons for show
+  - if view == 'show'
+    .action_button.contact
+      = link_to I18n.t(:form_edit_button), edit_contact_path(@contact)
+
+    / Only company_admins and admins are allowed to view
+    - if current_user.allowed?("company_admin")
+      .action_button.contact
+        = link_to I18n.t(:form_delete_button), @contact, :method => :delete, :data => { :confirm => I18n.t(:sure) }
+
+    .downloads
+      = link_to 'vCard', 'vcard_export/' + @contact.id.to_s, :target => 'blank'

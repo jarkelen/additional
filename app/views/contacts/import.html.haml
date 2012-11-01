@@ -1,0 +1,12 @@
+#contentblock.twelve.columns
+  .content_title.contact
+  %h3= I18n.t :contacts_new_vcard
+  .form
+    = form_for @vcard do |f|
+      .datablock_contact
+        %p= I18n.t :contacts_vcard_explanation
+        .field
+          = f.file_field :vcard_file
+        .field
+          = f.submit I18n.t(:form_ok), :class => 'button white'
+  .clear

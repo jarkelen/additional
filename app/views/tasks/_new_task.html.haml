@@ -1,0 +1,24 @@
+.form_small
+  = form_for(@task, :remote => :true) do |f|
+    / Show errors
+    = render('layouts/form_errors', :object => @task)
+
+    = f.hidden_field :contact_id, :value => @contact.id
+
+    .tablayout
+      .formcolumn.left
+        %div
+          = f.label I18n.t :task_due_at
+          .form_field= f.date_select :due_at, :start_year => 2011
+        %div
+          = f.label I18n.t :task_type
+          = f.select :task_type, @tasktypes, :selected => @task.task_type
+        = render('dossiers/listbox', :f => f)
+        %div
+          = f.label I18n.t(:task_todo)
+          = f.select :user_id, @users
+      .formcolumn.right
+        %div
+          = f.text_area(:task, :size => "50x6", :placeholder => I18n.t(:task_text))
+        %div= f.submit I18n.t(:form_save_button), :class => 'button white'
+    .clear

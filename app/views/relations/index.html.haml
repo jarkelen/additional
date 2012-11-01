@@ -1,0 +1,58 @@
+/ Show the actionbar
+= render 'actionbar', :view => 'index'
+
+/ Show relations
+#contentblock.twelve.columns
+  .content_title.relation
+  - if @extra_info
+    - page_title = I18n.t(:relations_index_title) + ' (' + @extra_info + ')'
+  - else
+    - page_title = I18n.t(:relations_index_title)
+  = render('layouts/pagetitle', :title => page_title, :path => relations_path)
+
+  .content
+    / Show filter fields
+    .relations_filter
+      = form_tag 'relations', :method => :get do
+        = hidden_field_tag 'filter', true
+        = select_tag('relation_nr', options_from_collection_for_select(@filter_relations, :relation_nr, :relation_nr), :include_blank => true)
+        = select_tag('name', options_from_collection_for_select(@filter_relations, :name, :name), :include_blank => true)
+        = select_tag('city', options_from_collection_for_select(@filter_relations, :visit_city, :visit_city), :include_blank => true)
+        = select_tag('type', options_from_collection_for_select(@filter_relations, :relation_type, :relation_type), :include_blank => true)
+        = select_tag('status', options_from_collection_for_select(@filter_relations, :status, :status), :include_blank => true)
+        = submit_tag I18n.t(:form_filter_button)
+
+    .indextable
+      %table#users.tablesorter
+        %thead
+          %tr
+            %th= link_to I18n.t :relations_index_nr
+            %th= link_to I18n.t :relations_index_group
+            %th= link_to I18n.t :relations_index_name
+            %th= link_to I18n.t :relations_index_city
+            %th= link_to I18n.t :relations_index_type
+            %th= link_to I18n.t :relations_index_status
+            %th
+            - if is_allowed_to_view('company_admin')
+              %th
+        %tbody
+          - @relations.each do |relation|
+            %tr
+              %td= relation.relation_nr
+              %td
+                - if relation.relationgroup?
+                  = relation.relationgroup
+                - else
+                  \-
+              %td= link_to relation.name, relation_path(relation)
+              %td= relation.visit_city
+              %td= relation.relation_type
+              %td= relation.status
+              %td= link_to I18n.t(:edit), edit_relation_path(relation)
+              - if is_allowed_to_view('company_admin')
+                %td= link_to I18n.t(:delete), relation, :method => :delete, :data => { :confirm => I18n.t(:sure) }
+
+/ Show realtions on a map
+#contentblock.twelve.columns
+  .content_title.relation
+  .content= gmaps4rails(@relation_markers)

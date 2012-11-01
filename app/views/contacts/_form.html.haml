@@ -1,0 +1,62 @@
+.form
+  = form_for(@contact) do |f|
+    / Show errors
+    = render('layouts/form_errors', :object => @contact)
+ 
+    .datablock_contact
+      %h4= I18n.t :contacts_data_general
+      .field
+        = f.label I18n.t :contacts_relation
+        = f.collection_select(:relation_id, @relations, :id, :name, :include_blank => true)
+      .field
+        = f.label I18n.t :contacts_has_boss
+        = f.grouped_collection_select(:has_boss, @relations, :contacts, :name, :id, :full_name, include_blank: true)
+      .field
+        = f.label I18n.t :contacts_salutation
+        = f.select(:salutation, options_for_select([['de heer', 'de heer'], ['mevrouw', 'mevrouw'], ['mejuffrouw', 'mejuffrouw'], ['Mr.', 'Mr.'], ['Mrs.', 'Mrs.'], ['Miss', 'Miss']], :selected => @contact.salutation))
+      .field
+        = f.label I18n.t :contacts_title
+        = f.select(:title, options_for_select([['mr.', 'mr.'], ['dr.', 'dr.'], ['drs.', 'drs.'], ['ir.', 'ir.'], ['ing.', 'ing.']], :selected => @contact.title), :include_blank => true)
+      = render('layouts/form_field', :f => f, :label => I18n.t(:users_index_firstname), :field => :first_name, :size => "50")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:users_index_middlename), :field => :middle_name, :size => "25")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:users_index_lastname), :field => :last_name, :size => "50")
+      .field
+        = f.label I18n.t :contacts_gender
+        = f.select(:gender, options_for_select([['man', 'man'], ['vrouw', 'vrouw']], :selected => @contact.gender))
+      .field
+        = f.label I18n.t :contacts_birthdate
+        = f.date_select :birth_date, :start_year => Time.now.year - 80, :end_year => Time.now.year - 18, :include_blank => true
+      = render('layouts/form_field', :f => f, :label => I18n.t(:contacts_function), :field => :function, :size => "50")
+      .field.textarea
+        = f.label I18n.t :contacts_background
+        = f.text_area(:background, :size => "50x8")
+    .datablock_contact
+      %h4= I18n.t :contacts_data_social
+      = render('layouts/form_field', :f => f, :label => I18n.t(:contacts_telephone_business), :field => :telephone_business, :size => "25")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:contacts_telephone_private), :field => :telephone_private, :size => "25")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:contacts_telephone_mobile), :field => :telephone_mobile, :size => "25")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_fax), :field => :fax, :size => "25")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_email), :field => :email, :size => "50")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_linkedin), :field => :linkedin, :size => "50")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_twitter), :field => :twitter, :size => "50")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_facebook), :field => :facebook, :size => "50")
+    .datablock_contact
+      %h4= I18n.t :relations_data_custom
+      .field
+        = f.label I18n.t :relations_custom_label
+        = f.label I18n.t :relations_custom_value
+      .field
+        = f.text_field :custom_label_1, :size => 25
+        = f.text_field :custom_field_1, :size => 25
+      .field
+        = f.text_field :custom_label_2, :size => 25
+        = f.text_field :custom_field_2, :size => 25
+      .field
+        = f.text_field :custom_label_3, :size => 25
+        = f.text_field :custom_field_3, :size => 25
+    .datablock_contact
+      %h4= I18n.t :dossier_add_title
+      = select_tag("dossier_ids[]", options_for_select(current_user.company.dossiers.find(:all).collect { |dossier| [dossier.title, dossier.id] }, @contact.dossiers.collect { |dossier| dossier.id}), :include_blank => true, :multiple=>true, :size=> 10 )
+    .field
+      = f.submit I18n.t(:form_save_button), :class => 'button white'
+    .clear

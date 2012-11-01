@@ -1,0 +1,17 @@
+:erb
+  // Clear notes canvas and reload all remaining notes, based on where you are
+  var url = $(location).attr('href');
+  if (url.indexOf("contacts") > 0){
+    // When on contact show page
+    $('#content_output').empty();
+    $('ul.tabs a').removeClass('active');
+    $('#content_output').html("<div class='content_title note'></div><h3><%= I18n.t :notes_all %></h3><%= escape_javascript(render('notes/all_notes', :notes => @notes, :layout => 'normal')) %></div>");
+    $('a#notes_tab').addClass('active');}
+  else {
+    // When on notess index page
+    $('.notes_canvas').empty();
+    $('.notes_canvas').html("<%= escape_javascript(render('notes/all_notes', :notes => @notes, :layout => 'normal')) %>");
+  }
+
+
+

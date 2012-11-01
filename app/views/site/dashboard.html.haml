@@ -1,0 +1,62 @@
+/ Show title
+= render('layouts/pagetitle', :title => "Site dashboard", :path => 'nosearch')
+
+/ Show numbers of things added by all users and companies
+#contentblock.twelve.columns
+  .content_title.general
+  .content
+    .dashboard_info
+      %h2= @nr_companies
+      %p= I18n.t :nav_companies
+    .dashboard_info
+      %h2= @nr_users
+      %p= I18n.t :nav_users
+    .dashboard_info
+      %h2= @nr_dossiers
+      %p= I18n.t :nav_dossiers
+    .dashboard_info
+      %h2= @nr_relations
+      %p= I18n.t :nav_relations
+    .dashboard_info
+      %h2= @nr_dossiers
+      %p= I18n.t :nav_dossiers
+    .dashboard_info
+      %h2= @nr_contacts
+      %p= I18n.t :nav_contacts
+    .dashboard_info
+      %h2= @nr_tasks
+      %p= I18n.t :nav_tasks
+    .dashboard_info
+      %h2= @nr_notes
+      %p= I18n.t :nav_notes
+    .dashboard_info
+      %h2= @nr_agreements
+      %p= I18n.t :nav_agreements
+  .clear
+
+/ Add new company  
+#action_bar
+  .action_button.general
+    = link_to I18n.t(:company_new_title), new_company_url
+
+/ Show all companies
+#contentblock.twelve.columns
+  .content_title.general
+  %h3= I18n.t :company_all
+  .content
+    %table#companies
+      %thead
+        %tr
+          %th= I18n.t :company_single
+          %th= I18n.t :company_code_short
+          %th= I18n.t :company_users
+          %th
+          %th
+      %tbody
+        - @companies.each do |company|
+          %tr
+            %td= link_to company.name, company_url(company)
+            %td= company.code
+            %td= link_to company.users.count.to_s, company_users_url(company.id)
+            %td= link_to I18n.t(:edit), edit_company_url(company)
+            %td= link_to I18n.t(:delete), company, :method => :delete, :data => { :confirm => I18n.t(:sure) }

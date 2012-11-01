@@ -1,0 +1,8 @@
+#action_bar.twelve.columns
+  .action_button.agreement
+    = link_to I18n.t(:agreement_all), agreements_path
+#contentblock.twelve.columns
+  .content_title.agreement
+  %h3= I18n.t :agreement_edit_title
+  = render 'agreements/form'
+  .clear

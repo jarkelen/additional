@@ -1,0 +1,363 @@
+/* General modules */
+
+#mod_index {
+	th {
+		background: $mod_tablelight;
+		color: #001C26;
+		font-weight: bold;
+		padding: 10px 5px;
+		text-align: left;
+		border-top: 3px solid $mod_light;
+		border-bottom: 3px solid $mod_light;
+	}
+	td {
+		padding: 1px 1px 1px 5px;
+	}
+	.status {
+		text-align: center;
+		margin: 2px;
+		padding: 2px;
+		border: 0;
+	}
+  .centered {
+		text-align: center;
+	}
+	.button {
+		display: inline-block;
+		margin: 0px;
+		padding: 2px 5px;
+		outline: none;
+		cursor: pointer;
+		text-align: center;
+		text-decoration: none;
+		font: 10px $basefont;
+		color: #000000;
+		background: #F1F1F1;
+		border: 1px solid grey;
+		min-width: 50px;		
+	}
+	
+}
+
+
+
+/* A4 canvas */
+.A4_canvas {
+	margin: 10px 10px 10px 30px;
+	
+	.A4 {
+		float: left;
+		width: 90%;
+		height: auto;
+		background-color: #FFFFFF;
+		border: 1px solid #000000;
+		padding: 20px;
+		margin: 10px 10px 40px 10px;
+		@include box-shadow;
+
+		#header {
+			width: 50%;
+			float: right;
+			margin: 0 0 30px 0;
+			padding: 0;
+			
+			.A4_logo {
+				width: 100%;
+				text-align: center;
+			}
+			.A4_title {
+				float: left;
+				width: 100%;
+				font: 24px $basefont;
+				font-weight: bold;
+				text-align: center;
+				color: grey;
+			}
+		}
+		#status_header {
+			width: 50%;
+			float: left;
+			margin: 0 0 30px 0;
+			padding: 0;
+
+			.status_stamp {
+				float: left;
+				margin: 30px 0 0 50px;
+		  	padding: 5px 5px 5px 5px;
+				min-width: 150px;
+			  @include rounded-corners;
+			  font-family: 'Courier new', arial;
+			  font-weight: bold;
+				font-size: 140%;
+				text-align: center;
+				color: grey;
+		  	border: 3px solid grey;
+			}
+			.open {
+				background-color: #FFFFFF;
+			}
+		}
+		#footer {
+			.A4_company_info {
+				color: #67675b;
+				padding: 10px;
+				margin-right: 25px;
+				margin-top: 20px;
+				text-align: center;	
+				font: 12px $basefont;
+			}
+		}
+		.hidden_text{
+			color: #FFFFFF;
+		}
+		.A4_section {
+			min-width: 180px;
+			width: auto;
+			float: left;
+			padding: 0;
+		}
+		.A4_left {
+			margin-top: 10px;
+			width: 55%;
+			float: left;
+		}
+		.A4_right {
+			width: 45%;
+			margin-top: 10px;
+			float: right;
+		}
+		.A4_onethird {
+			width: 45%;
+			min-width: 45%;
+			float: left;
+		}
+		.A4_twothird {
+			width: 54%;
+			float: left;
+		}
+		.A4_header_center {
+			width: 70%;
+			margin: 0 0 10px 20%;
+			float: left;
+		}
+		.A4_whole {
+			width: 95%;
+			float: left;
+			margin: 20px 20px;
+		}
+		input, textarea {
+			border: 1px solid grey;
+			background: #FEFF80;
+		}
+		input.passive, select.passive, textarea.passive {
+			background: #F1F1F1;
+		}
+		select {
+			border: 1px solid grey;
+			background-color: #FEFF80;
+		}
+		.A4_button {
+			display: inline-block;
+			margin: 0px;
+			margin-top: 10px;
+			padding: 10px 15px;
+			outline: none;
+			cursor: pointer;
+			text-align: center;
+			text-decoration: none;
+			font: 14px $basefont;
+			color: #000000;
+			background: #F1F1F1;
+			border: 1px solid grey;
+		}
+		p {
+			@include vcard_text;
+			line-height: 150%;
+			margin: 0;
+		}
+		ul {
+			margin: 10px 0px 30px 0px;
+			li {
+				@include vcard_text;
+				line-height: 150%;
+			
+				.A4_row {
+					float: left;
+					width: 50%;
+					text-align: left;
+				}
+			}	
+		}
+		.A4_text {
+			@include vcard_text;	
+		}
+		table {
+			margin: 0;
+			width: 95%;
+		
+			thead {
+				th {
+					border-top: 1px solid grey;
+					border-bottom: 1px solid grey;
+					background: #F1F1F1;
+					color: #67675b;
+				}
+			}
+			td {
+				color: #67675b;
+				padding: 0;
+				padding-left: 5px;
+			}
+			.total {
+				font-weight: bold;
+			}
+			.header_amount {
+				text-align: center;
+			}
+			.amount {
+				text-align: right;
+			}
+			.border {
+				border-bottom: 1px solid grey;
+			}
+		  .centered {
+				text-align: center;
+			}
+			.daynr {
+				border: 1px solid grey;
+				margin: 0 auto;
+				margin-top: 1px;
+				margin-bottom: 1px;
+				width: 17px;
+				min-width: 17px;
+				min-height: 17px;
+				background: #FFFFFF;
+				color: #000000;
+				font-weight: bold;
+				font: 12px $basefont;
+
+				input {
+					border: 0px;
+					background: #FFFFFF;
+					padding: 0;
+					margin: 0;
+					width: 100%;
+					text-align: center;
+				}
+				.daynr_top {
+					width: 100%;
+					height: 4px;
+					margin: 0;
+				}
+				.active {
+					background: #de1e1e;
+				}
+				.passive {
+					background: grey;
+				}
+			}
+			a, a:hover, a:visited {
+				font-weight: bold;
+				color: grey;	
+			}
+			.emphasize {
+				font-weight: bold;
+			}
+			.total {
+				padding: 2px;
+				text-weight: bold;
+			}
+		}
+	}
+}
+
+.index_canvas {
+	.nieuw {
+		background-color: #F1F1F1;
+	}
+	.open {
+		background-color: #FFFF00;
+	}
+	.verstuurd {
+		background-color: #FF6600;
+	}
+	.correctie {
+		background-color: #DE1E1E;
+	}
+	.akkoord {
+		background-color: #37A831;
+	}
+	.emphasize {
+		font-weight: bold;
+	}
+	.searchfilter_link {
+		margin: 10px 20px;
+	}
+}
+
+.insurances_canvas {
+	.filter {
+		width: 95%;
+		height: auto;
+		display: block;
+		margin: 0 auto;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+}
+
+.open {
+	background-color: $mod-light;
+	border: 1px solid $mod-dark;
+}
+.paid {
+	background-color: $contact-light;
+	border: 1px solid $contact-dark;
+}
+.reminder {
+	background-color: $mod-light;
+	border: 1px solid $mod-dark;
+}
+.expired {
+	background-color: $mod-light;
+	border: 1px solid $mod-dark;
+}
+.history {
+	background-color: $dossier-light;
+	border: 1px solid $dossier-dark;
+}
+.aktief {
+	background-color: #FFE500;
+}
+.gesloten {
+	background-color: #FF6600;
+}
+.geselekteerd {
+	background-color: #37A831;
+}
+.historie {
+	background-color: #999999;
+}
+.history_status {
+	float: left;
+	margin: 10px;
+
+	table {
+		margin: 0;
+		
+		thead {
+			border-top: 1px solid grey;
+			border-bottom: 1px solid grey;
+		
+			th {
+				background: #F1F1F1;
+				color: #67675b;
+				text-align: center;
+			}
+		}
+		td {
+			text-align: center;
+			border: 0;
+		}
+	}
+}

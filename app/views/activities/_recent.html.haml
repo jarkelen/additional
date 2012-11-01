@@ -1,0 +1,10 @@
+#contentblock.four.columns
+  .content_title.general
+  %ul#updates
+    - @activities.each do |activity|
+      %li
+        %span.date= activity.created_at.in_time_zone.strftime("%d-%m-%Y @ %H:%M")
+        %br/
+        %span.update= activity.activity
+  .more_link
+    = link_to I18n.t(:activities_all_link), activities_path

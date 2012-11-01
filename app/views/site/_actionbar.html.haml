@@ -1,0 +1,7 @@
+/ Show buttons for index
+- if view == 'dashboard'
+  #action_bar
+    .action_button.general
+      = link_to I18n.t(:dashboard_title), dashboard_path
+    .action_button.general
+      = link_to I18n.t(:users_index_newuser), new_user_path(:company_id => @company.id)

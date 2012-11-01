@@ -1,0 +1,11 @@
+#action_bar
+  .action_button.general
+    = link_to I18n.t(:users_all), users_path
+#contentblock.twelve.columns
+  .content_title.general
+  - if current_user == @user
+    %h3= I18n.t :users_edit_title
+  - else
+    %h3= I18n.t :users_show_title
+  = render 'form'
+  .clear

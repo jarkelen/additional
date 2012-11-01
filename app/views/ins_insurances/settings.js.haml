@@ -1,0 +1,7 @@
+$('#support_canvas').empty();
+- if @active == "branch"
+  $('#support_canvas').html("#{escape_javascript(render("all_branches"))}");
+- elsif @active == "type"
+  $('#support_canvas').html("#{escape_javascript(render("all_types"))}");
+- elsif @active == "market"
+  $('#support_canvas').html("#{escape_javascript(render("all_markets"))}");

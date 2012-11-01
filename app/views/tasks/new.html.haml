@@ -1,0 +1,8 @@
+#action_bar.twelve.columns
+  .action_button.task
+    = link_to I18n.t(:task_all), tasks_path
+#contentblock.twelve.columns
+  .content_title.task
+  %h3= I18n.t :task_new_title
+  = render 'new_task'
+  .clear

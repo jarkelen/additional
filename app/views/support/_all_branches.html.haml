@@ -1,0 +1,27 @@
+.content
+  .support.form
+    %p= I18n.t :settings_add_branch
+    = form_for(@branch, :remote => true) do |f|
+      / Show errors
+      = render('layouts/form_errors', :object => @branch)
+      = f.hidden_field :company_id, :value => current_user.company.id
+      .field
+        = f.label I18n.t :settings_sector
+        = f.collection_select(:sector_id, current_user.company.sectors.order(:sector), :id, :sector, :include_blank => true)
+      = render('layouts/form_field', :f => f, :label => I18n.t(:settings_branch), :field => :branch, :size => "25")
+      .field
+        = f.submit I18n.t(:form_save_button), :class => 'button white'
+      .clear
+  %table
+    %thead
+      %tr
+        %th= I18n.t :settings_branch
+        %th= I18n.t :settings_sector
+        - if is_allowed_to_view('company_admin')
+          %th
+    %tbody
+      - @branches.each do |branch|
+        %tr
+          %td= branch.branch
+          %td= branch.sector.sector
+          %td= link_to I18n.t(:delete), branch, :method => :delete, :remote => true, :confirm => I18n.t(:sure)

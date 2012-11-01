@@ -1,0 +1,136 @@
+/ Show the actionbar
+= render 'actionbar', :view => 'show'
+
+/ Show relation details
+.vcard.twelve.columns
+  .vcard_header
+    .title= @relation.name
+  .vcard_onethird
+    %ul
+      %li.header= I18n.t :relations_data_visit
+      %li= @relation.name
+      %li= @relation.visit_address
+      %li
+        = @relation.visit_zipcode
+        = @relation.visit_city
+      %li= @relation.visit_country
+  .vcard_onethird
+    %ul
+      %li.header= I18n.t :relations_data_post
+      %li= @relation.name
+      %li= @relation.post_address
+      %li
+        = @relation.post_zipcode
+        = @relation.post_city
+      %li= @relation.post_country
+  .vcard_onethird
+    %ul
+      %li.header= I18n.t :relations_data_address
+      %li= @relation.name
+      %li= @relation.billing_address
+      %li
+        = @relation.billing_zipcode
+        = @relation.billing_city
+      %li= @relation.billing_country
+  .vcard_twothird
+    .vcard_whole
+      %ul
+        %li.header= I18n.t :relations_data_social
+        %li
+          = I18n.t :form_telephone
+          \: #{@relation.telephone}
+        %li
+          = I18n.t :form_fax
+          \: #{@relation.fax}
+        %li
+          = I18n.t :form_email
+          \: #{mail_to @relation.email, @relation.email}
+        - if @relation.website?
+          %li
+            Website: #{link_to @relation.website, @relation.website, :target => '_blank'}
+        - else
+          %li Website:
+        - if @relation.facebook?
+          %li
+            Facebook: #{link_to I18n.t(:form_showprofile), @relation.facebook, :target => '_blank'}
+        - else
+          %li Facebook:
+        - if @relation.twitter?
+          %li
+            Twitter: #{link_to link_to I18n.t(:form_showprofile), @relation.twitter, :target => '_blank'}
+        - else
+          %li Twitter:
+        - if @relation.linkedin?
+          %li
+            LinkedIn: #{link_to link_to I18n.t(:form_showprofile), @relation.linkedin, :target => '_blank'}
+        - else
+          %li LinkedIn:
+    .vcard_whole
+      %ul
+        %li.header= I18n.t :relations_data_general
+        %li
+          = I18n.t :relations_index_nr_large
+          \: #{@relation.relation_nr}
+        %li
+          = I18n.t :relations_index_group_large
+          \: #{@relation.relationgroup}
+        %li
+          = I18n.t :relations_contact_internal
+          \: #{@company_contact.full_name}
+        %li
+          = I18n.t :relations_type
+          \: #{@relation.relation_type}
+        %li
+          = I18n.t :relations_status
+          \: #{@relation.status}
+        %li
+          = I18n.t :relations_bankaccount
+          \: #{@relation.bankaccount}
+        %li
+          = I18n.t :relations_kvk_nr
+          \: #{@relation.kvk_nr}
+        %li
+          = I18n.t :relations_industry
+          \: #{@relation.industry}
+        %li
+          = I18n.t :relations_branch
+          \: #{@relation.branch}
+        %li
+          = I18n.t :relations_legal
+          \: #{@relation.legal}
+        %li
+          = I18n.t :relations_nr_employees
+          \: #{@relation.nr_employees}
+        / Show free fields
+        - if @relation.custom_field_1?
+          %li
+            = @relation.custom_label_1
+            \: #{@relation.custom_field_1}
+        - if @relation.custom_field_2?
+          %li
+            = @relation.custom_label_2
+            \: #{@relation.custom_field_2}
+        - if @relation.custom_field_3?
+          %li
+            = @relation.custom_label_3
+            \: #{@relation.custom_field_3}
+  .vcard_onethird
+    .logo
+      - if @relation.logo?
+        = image_tag @relation.logo
+    .map
+      = image_tag "http://maps.google.com/maps/api/staticmap?size=200x220&sensor=false&zoom=11&markers=#{@relation.latitude}%2C#{@relation.longitude}"
+  .vcard_whole
+    %ul
+      %li.header= I18n.t :relations_data_remarks
+      %li= @relation.remarks
+  .clear
+
+/ Show all contacts for this relation
+#contentblock.twelve.columns
+  .content_title.contact
+  .contacts_canvas
+    = render('layouts/pagetitle', :title => I18n.t(:contacts_index_title), :path => contacts_path)
+    / Show alphabet letters
+    = render('contacts/alphabet')
+    = render("contacts/all_contacts", :contacts => @contacts, :layout => "normal")

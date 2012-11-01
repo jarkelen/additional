@@ -1,0 +1,8 @@
+/ Show the actionbar
+= render 'actionbar', :view => 'edit'
+
+#contentblock.form.twelve.columns
+  .content_title.general
+  %h3= I18n.t :company_edit_title
+  = render 'form'
+  .clear

@@ -1,0 +1,17 @@
+Beste #{@user.first_name},
+
+Je bent toegevoegd als gebruiker aan customer:First, de online relatie management applicatie van #{@user.company.name}.
+Als je naar
+%a{:href => "www.customerfirstcrm.nl/login"} www.customerfirstcrm.nl/login
+gaat, dan kun je inloggen met de volgende gegevens:
+
+Email adres: #{@user.email}
+Wachtwoord: #{@user.password}
+
+Na te hebben ingelogd kun je het wachtwoord wijzigen in jouw persoonlijke profiel.
+Veel plezier met het gebruik van customer:First!
+
+Met vriendelijke groeten,
+
+customer:First support
+%a{:href => "mailto:support@customerfirstcrm.nl"} support@customerfirstcrm.nl

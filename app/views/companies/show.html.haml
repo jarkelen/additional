@@ -1,0 +1,132 @@
+/ Show the actionbar
+= render 'actionbar', :view => 'show'
+
+#contentblock.twelve.columns
+  .content_title.general
+  %h3= I18n.t :company_show_title
+  .form
+    .datablock_general
+      %h4= I18n.t :relations_data_general
+      %ul#profile
+        %li
+          = I18n.t :form_name
+          \:
+        %li= @company.name
+        %li
+          = I18n.t :company_code
+          \:
+        %li= @company.code
+        %li
+          = I18n.t :relations_kvk_nr
+          \:
+        %li= @company.kvk_nr
+        %li
+          = I18n.t :relations_bankaccount
+          \:
+        %li= @company.bankaccount
+        %li
+          = I18n.t :relations_tax_nr
+          \:
+        %li= @company.tax_nr
+      .clear
+    .datablock_general
+      %h4= I18n.t :relations_data_social
+      %ul#profile
+        %li
+          = I18n.t :form_telephone
+          \:
+        %li= @company.telephone
+        %li
+          = I18n.t :form_email
+          \:
+        %li= @company.email
+        %li
+          = I18n.t :form_website
+          \:
+        %li= link_to @company.website, @company.website, :target => '_blank'
+        %li
+          = I18n.t :form_facebook
+          \:
+        %li= link_to @company.facebook, @company.facebook, :target => '_blank' unless @company.facebook.blank?
+        %li
+          = I18n.t :form_twitter
+          \:
+        %li= link_to @company.twitter, @company.twitter, :target => '_blank' unless @company.twitter.blank?
+        %li
+          = I18n.t :form_linkedin
+          \:
+        %li= link_to @company.linkedin, @company.linkedin, :target => '_blank' unless @company.linkedin.blank?
+      .clear
+    .datablock_general
+      %h4= I18n.t :relations_data_visit
+      %ul#profile
+        %li
+          = I18n.t :form_address
+          \:
+        %li= @company.address1
+        %li
+          = I18n.t :form_address2
+          \:
+        %li= @company.address2
+        %li
+          = I18n.t :form_zipcode
+          \:
+        %li= @company.zipcode
+        %li
+          = I18n.t :form_city
+          \:
+        %li= @company.city
+        %li
+          = I18n.t :form_country
+          \:
+        %li= @company.country
+      .clear
+    .datablock_general
+      %h4= I18n.t :relations_data_post
+      %ul#profile
+        %li
+          = I18n.t :form_address
+          \:
+        %li= @company.post_address
+        %li
+          = I18n.t :form_zipcode
+          \:
+        %li= @company.post_zipcode
+        %li
+          = I18n.t :form_city
+          \:
+        %li= @company.post_city
+        %li
+          = I18n.t :form_country
+          \:
+        %li= @company.post_country
+      .clear
+    .datablock_general
+      %h4= I18n.t :relations_data_address
+      %ul#profile
+        %li
+          = I18n.t :form_address
+          \:
+        %li= @company.billing_address
+        %li
+          = I18n.t :form_zipcode
+          \:
+        %li= @company.billing_zipcode
+        %li
+          = I18n.t :form_city
+          \:
+        %li= @company.billing_city
+        %li
+          = I18n.t :form_country
+          \:
+        %li= @company.billing_country
+      .clear
+    - unless @company.logo.blank?
+      .datablock_general
+        %h4= I18n.t :company_logo
+        %ul#profile
+          %li
+            = I18n.t :company_logo
+            \:
+          %li= link_to(I18n.t(:open_link), @company.logo.url, :target => '_blank')
+        .clear

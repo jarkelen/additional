@@ -1,0 +1,22 @@
+.content
+  .support.form
+    %p= I18n.t :settings_add_dossier_status
+    = form_for(@dossier_status, :remote => true) do |f|
+      / Show errors
+      = render('layouts/form_errors', :object => @dossier_status)
+      = f.hidden_field :company_id, :value => current_user.company.id
+      = render('layouts/form_field', :f => f, :label => I18n.t(:settings_dossier_status), :field => :status, :size => "25")
+      .field
+        = f.submit I18n.t(:form_save_button), :class => 'button white'
+      .clear
+  %table
+    %thead
+      %tr
+        %th= I18n.t :settings_dossier_status
+        - if is_allowed_to_view('company_admin')
+          %th
+    %tbody
+      - @dossier_statuses.each do |dossier_status|
+        %tr
+          %td= dossier_status.status
+          %td= link_to I18n.t(:delete), dossier_status, :method => :delete, :remote => true, :confirm => I18n.t(:sure)

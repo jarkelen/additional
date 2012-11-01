@@ -1,0 +1,66 @@
+#action_bar.twelve.columns
+  - if is_allowed_to_view('company_admin')
+    / Show users index button for admins
+    .action_button.general
+      = link_to I18n.t(:users_all), users_path
+
+  / Company admin can't edit or remove admin
+  - if current_user.role == 'company_admin' and @user.role == 'admin'
+  - else
+    / Only admins can edit other user profile, others can only edit their own profile
+    - if is_allowed_to_view('company_admin') || current_user == @user
+      .action_button.general
+        = link_to I18n.t(:users_index_edit), edit_user_path(@user)
+    / Only admins can remove user profile
+    - if is_allowed_to_view('company_admin')
+      .action_button.general
+        = link_to I18n.t(:users_index_delete), @user, :method => :delete, :confirm => I18n.t(:sure)
+#contentblock.form.twelve.columns
+  .content_title.general
+  / Set title based on visitor
+  - if current_user == @user
+    %h3= I18n.t :users_edit_title
+  - else
+    %h3= I18n.t :users_show_title
+
+  .datablock_general
+    %h4= I18n.t :users_data_general
+    %ul#profile
+      %li= I18n.t :company_single
+      %li= @user.company.name
+      %li= I18n.t :users_index_name
+      %li= @user.full_name
+      %li= I18n.t :form_email
+      %li= link_to @user.email, @user.email
+      %li
+        = I18n.t :users_position
+        \:
+      %li= @user.position
+
+      / Show module info only for (company) admins
+      - if current_user.allowed?('company_admin')
+        %li= I18n.t :form_role
+        %li= @user.role
+        %li= I18n.t :users_locale
+        %li= @user.locale
+        %li= I18n.t :users_index_lastsignin
+        %li
+          - if @user.last_sign_in_at
+            = @user.last_sign_in_at.strftime("%d-%m-%Y @ %H:%M")
+        %li= I18n.t :users_index_logincount
+        %li= @user.sign_in_count
+        %li= I18n.t :users_index_createdat
+        %li= @user.created_at.strftime("%d-%m-%Y @ %H:%M")
+        %li= I18n.t :users_index_lastedited
+        %li= @user.updated_at.strftime("%d-%m-%Y @ %H:%M")
+    .clear
+
+  / Show module info only for admins
+  - if is_allowed_to_view('company_admin')
+    .datablock_general
+      %h4= I18n.t :subscription_mods
+      %ul#profile
+        %li= I18n.t :subscription_mod_platform
+        %li= @user.get_module_subscription(@user.mod_platform)
+        %li= I18n.t :subscription_mod_insurance
+      .clear

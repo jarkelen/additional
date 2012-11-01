@@ -1,0 +1,25 @@
+.form_small
+  = form_for(@note, :remote => :true) do |f|
+    / Show errors
+    = render('layouts/form_errors', :object => @note)
+    = f.hidden_field :user_id, :value => current_user.id
+    = f.hidden_field :contact_id, :value => @contact.id
+    .tablayout
+      .formcolumn.left
+        %div
+          = f.label I18n.t :notes_subject
+          .form_field= f.text_field :subject, :size => "35", :placeholder => I18n.t(:notes_subject_form)
+        %div
+          = f.label I18n.t :notes_index_type
+          .form_field= f.select(:note_type, options_for_select([['E-mail', 'E-mail'], ['Telefoon', 'Telefoon'], ['Meeting', 'Meeting'], ['Facebook', 'Facebook'], ['Twitter', 'Twitter'], ['LinkedIn', 'LinkedIn'], ['Overig', 'Overig']]))
+        .field
+          = f.label I18n.t :notes_attachment
+          .form_field
+            = f.file_field :attachment
+            .form_field= f.text_field :url, :size => "35", :placeholder => I18n.t(:notes_url)
+        = render('dossiers/listbox', :f => f)
+      .formcolumn.right
+        %div
+          = f.text_area(:note, :size => "50x10", :placeholder => I18n.t(:notes_text))
+        %div= f.submit I18n.t(:form_save_button), :class => 'button white'
+    .clear

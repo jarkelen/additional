@@ -1,0 +1,115 @@
+.public-content.sixteen.columns
+  .public-header.sixteen.columns
+    %h2
+      Online relatie management voor MKB ondernemingen.
+      %br/
+      Simpel & slim. Altijd & overal.
+  .clear
+  .eight.columns.public-left
+    / Banner text
+    .public-text
+      %p
+        Als ondernemer heeft U veel contact met uw relaties en bent U constant druk met het opvolgen van aktiepunten, het schrijven van gespreksverslagen
+        en het bepalen van uw strategie om meer zaken te kunnen doen. Daarbij gebruikt en werkt U met zaken als email, kalenders, post-it's en visitekaartjes.
+        Hoewel dit prima functioneert, hebt U toch het gevoel dat het overzicht minder wordt, helemaal als binnen uw onderneming meerdere personen contact hebben
+        met de relaties. Wat ontbreekt is relatie management dat helpt om structuur aan te brengen, maar niet nadrukkelijk aanwezig is.
+      %p
+        customer:First is relatie management gericht op MKB ondernemingen. Ondernemingen met een kleine back office en die dat ook graag zo willen houden.
+        customer:First gaat niet opnieuw het wiel uitvinden, maar brengt structuur aan in uw relaties door verbanden te leggen en al uw medewerkers te laten
+        samenwerken. customer:First is een online web applicatie, zodat U niks zelf hoeft te installeren of onderhoud hoeft te plegen en is altijd en overal beschikbaar.
+    .clear
+  .eight.columns.public-right
+    / Banner video
+    .public-video.banner-polaroid
+      = image_tag 'landingpage/banner-image.png'
+  .clear
+  .sixteen.columns.bannerdetails-container
+    / Item 1: Relations
+    #contentblock.five.columns.public-item
+      .content_title.relation
+      .content
+        .public-itemicon
+          = image_tag 'landingpage/clean.png'
+        .public-itemtitle
+          %h3 Relaties
+        .public-itemtext
+          %p
+            Elke onderneming heeft regelmatig contact met relaties, zoals klanten, leveranciers, concurrenten en de overheid.
+            Met customer:First worden de gegevens van deze relaties vastgelegd en beheerd, zodat U hierover snel kunt beschikken.
+    / Item 2: Contacts
+    #contentblock.five.columns.public-item
+      .content_title.contact
+      .content
+        .public-itemicon
+          = image_tag 'landingpage/clean.png'
+        .public-itemtitle
+          %h3 Contactpersonen
+        .public-itemtext
+          %p
+            Contactpersonen zijn uw aanspreekpunten bij uw relaties. In plaats van visitekaartjes die U nooit kunt vinden als U ze nodig hebt,
+            zorgt customer:First er voor dat het beheren van uw contactpersonen overzichtelijk en duidelijk wordt uitgevoerd.
+    / Item 3: Taken
+    #contentblock.five.columns.public-item
+      .content_title.task
+      .content
+        .public-itemicon
+          = image_tag 'landingpage/clean.png'
+        .public-itemtitle
+          %h3 Taken
+        .public-itemtext
+          %p
+            In plaats van losse post-it briefjes her en der verspreid, zorgt customer:First voor een overzichtelijk beheer van uw taken.
+            In uw persoonlijk dashboard heeft U in een oogopslag inzicht in de taken die nog moeten worden uitgevoerd.
+    .clear
+    / Item 5: Agreements
+    #contentblock.five.columns.public-item
+      .content_title.agreement
+      .content
+        .public-itemicon
+          = image_tag 'landingpage/clean.png'
+        .public-itemtitle
+          %h3 Afspraken
+        .public-itemtext
+          %p
+            Formele afspraken met uw relaties worden in customer:First netjes vastgelegd. Op deze manier weet U meteen dat een relatie altijd
+            10% korting krijgt, of dat U heeft afgesproken om een contactpersoon elk kwartaal te bezoeken om weer eens bij te praten.
+    / Item 4: Notes
+    #contentblock.five.columns.public-item
+      .content_title.note
+      .content
+        .public-itemicon
+          = image_tag 'landingpage/clean.png'
+        .public-itemtitle
+          %h3 Notities
+        .public-itemtext
+          %p
+            Alles wat U heeft besproken met de contactpersonen van een relatie kunt U makkelijk vastleggen met een notitie.
+            En heeft U een uitgebreid gespreksverslag geschreven, dan kunt U dit ook eenvoudig koppelen aan een notitie.
+    / Item 6: Dossier
+    #contentblock.five.columns.public-item
+      .content_title.dossier
+      .content
+        .public-itemicon
+          = image_tag 'landingpage/clean.png'
+        .public-itemtitle
+          %h3 Dossiers
+        .public-itemtext
+          %p
+            Met dossiers kunt U makkelijk en snel contactpersonen, taken en notities bundelen voor specifieke doeleinden. Wilt U snel inzicht
+            in de contactpersonen voor uw marketing campagne? Dossiers maken dit op een eenvoudige wijze mogelijk.
+    .clear
+  / Banner email form
+  .three.columns &nbsp;
+  .eleven.columns.public-email
+    .eleven.columns.public-email
+      %h3 Meer weten? Neem contact op!
+      %p
+        In customer:First draait alles om persoonlijke contacten, zowel binnen uw eigen bedrijf als in de communicatie
+        met uw relaties. Wij geloven daarom ook niet in een onpersoonlijke klantenwerving.
+      %p
+        Bent U geinteresseerd, heeft U vragen over customer:First,
+        of wilt U meer weten over de mogelijkheden, neem dan contact met ons op door hier uw email adres in te vullen. Wij nemen dan zo snel mogelijk contact op.
+    .eleven.columns.public-emailform
+      = form_for @visitor do |f|
+        = f.text_field :email, :size => 30, :class => 'email-field'
+        = f.submit I18n.t(:form_ok), :class => 'signup-button'

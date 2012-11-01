@@ -1,0 +1,16 @@
+/ Show all contacts
+.contacts_canvas
+  - unless contacts.empty?
+    - contacts.each do |contact|
+      - if layout == "small"
+        .contactdetails_small
+      - else
+        .contactdetails
+          %ul
+            %li.name= link_to contact.full_name, contact_path(contact)
+            %li.title= contact.function
+            %li.company
+              = link_to contact.relation.name, relation_path(contact.relation)
+  - else
+    / No data found
+    = render("layouts/nodata")

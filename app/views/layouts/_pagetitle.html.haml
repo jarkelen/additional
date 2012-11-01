@@ -1,0 +1,15 @@
+/
+  \======================================================================================
+  \=
+  \=		pagetitle.html.erb
+  \=
+  \=		Renders the page title and search form on a page
+  \=		render('layouts/pagetitle', :title => I18n.t(:notes_index_title), :path => notes_path)
+  \=
+  \======================================================================================
+.titleblock
+  .pagetitle= title
+  - if path != 'nosearch'
+    %div
+      = form_tag path, :method => :get do
+        = text_field_tag :search, params[:search], :class => "search", :placeholder => I18n.t(:search), :size => "35"

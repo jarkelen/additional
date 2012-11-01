@@ -1,0 +1,15 @@
+#action_bar.twelve.columns
+  .action_button.dossier
+    = link_to I18n.t(:dossier_all), dossiers_path
+
+  / Show buttons for index
+  - if view == 'index'
+    .action_button.dossier
+      = link_to I18n.t(:dossier_new_title), new_dossier_path
+
+  / Show buttons for show
+  - if view == 'show'
+    .action_button.dossier
+      = link_to I18n.t(:form_edit_button), edit_dossier_path(@dossier)
+    .action_button.dossier
+      = link_to I18n.t(:form_delete_button), @dossier, :method => :delete, :data => { :confirm => I18n.t(:sure) }

@@ -1,0 +1,13 @@
+$('span#attn').html("#{I18n.t(:form_to)}");
+- if !@contact.title.empty?
+  $('span#contact_title').html("#{@contact.title}");
+- else
+  $('span#contact_title').empty();
+- if !@contact.salutation.empty?
+  $('span#contact_salutation').html("#{@contact.salutation}");
+- else
+  $('span#contact_salutation').empty();
+- if @contact.middle_name.empty?
+  $('span#contact_name').html("#{@contact.first_name} #{@contact.last_name}");
+- else
+  $('span#contact_name').html("#{@contact.first_name} #{@contact.middle_name} #{@contact.last_name}");

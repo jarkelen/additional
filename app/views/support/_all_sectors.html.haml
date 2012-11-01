@@ -1,0 +1,24 @@
+.content
+  .support.form
+    %p= I18n.t :settings_add_sector
+    = form_for(@sector, :remote => true) do |f|
+      / Show errors
+      = render('layouts/form_errors', :object => @sector)
+      = f.hidden_field :company_id, :value => current_user.company.id
+      = render('layouts/form_field', :f => f, :label => I18n.t(:settings_sector), :field => :sector, :size => "25")
+      .field
+        = f.submit I18n.t(:form_save_button), :class => 'button white', :id => "country"
+      .clear
+  %table
+    %thead
+      %tr
+        %th= I18n.t :settings_sector
+        - if is_allowed_to_view('company_admin')
+          %th
+    %tbody
+      - @sectors.each do |sector|
+        %tr
+          %td= sector.sector
+          %td= link_to I18n.t(:delete), sector, :method => :delete, :remote => true, :data => { :confirm => I18n.t(:sure) }
+
+

@@ -1,0 +1,10 @@
+#contentblock.twelve.columns
+  .content_title.agreement
+  - if @extra_info
+    - page_title = I18n.t(:agreement_index_title) + ' ' + I18n.t(:agreement_extra_title) + ' "' + @extra_info + '"'
+  - else
+    - page_title = I18n.t(:agreement_index_title)
+  / Show title and searchbox
+  = render('layouts/pagetitle', :title => page_title, :path => agreements_path)
+  / Show all agreements
+  = render("agreements/all_agreements", :agreements => @agreements)

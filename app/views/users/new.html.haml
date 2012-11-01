@@ -1,0 +1,8 @@
+#action_bar.twelve.columns
+  .action_button.general
+    = link_to I18n.t(:users_all), users_path
+#contentblock.twelve.columns
+  .content_title.general
+  %h3= I18n.t :users_new_admin_title
+  = render 'form'
+  .clear

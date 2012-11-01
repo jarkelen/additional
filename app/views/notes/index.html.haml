@@ -1,0 +1,6 @@
+#contentblock.twelve.columns
+  .content_title.note
+  / Show title and searchbox
+  = render('layouts/pagetitle', :title => I18n.t(:notes_index_title), :path => notes_path)
+  / Show all notes
+  = render("notes/all_notes", :layout => "normal")

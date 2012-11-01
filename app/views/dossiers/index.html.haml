@@ -1,0 +1,20 @@
+/ Show the actionbar
+= render 'actionbar', :view => 'index'
+
+/ All dossiers
+#contentblock.twelve.columns
+  .content_title.dossier
+  - if @extra_info
+    - page_title = I18n.t(:dossier_index_title) + ' ' + I18n.t(:dossier_extra_title) + ' "' + @extra_info + '"'
+  - else
+    - page_title = I18n.t(:dossier_index_title)
+
+  / Show title and searchbox
+  = render('layouts/pagetitle', :title => page_title, :path => dossiers_path)
+
+  / Show dossier explanation
+  .twelve.columns
+    %p= I18n.t :dossier_explantion
+
+  / Show all dossiers
+  = render("dossiers/all_dossiers", :dossiers => @dossiers)

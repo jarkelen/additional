@@ -1,0 +1,49 @@
+/* ============================== */
+/* ! Font management					    */
+/* ============================== */
+
+$basefont: 'Ubuntu', Arial, sans-serif;
+$subfont: 'Gloria Hallelujah', Arial, sans-serif;
+
+/* ============================== */
+/* ! Color management					    */
+/* ============================== */
+
+$title: #FFFFFF;
+$text: #444;
+$background: #F9F5E5;
+
+$general_light: #27b3ec;
+$general_dark: darken($general_light, 28%);
+
+$relation_dark: #de1e1e;
+$relation_light: #FF6600;
+$relation_tablelight: #FEF2BF;
+
+$contact_dark: #11440B;
+$contact_light: #37A831;
+
+$note_dark: #FF6600;
+$note_light: #FF9933;
+
+$task_dark: #6B006B;
+$task_light: #990099;
+
+$agreement_dark: #662b01;
+$agreement_light: #B25900;
+
+$dossier_dark: #434343;
+$dossier_light: #999999;
+
+$mod_light: #de1e1e;
+$mod_dark: darken($mod_light, 25%);
+$mod_tablelight: #FECCBF;
+
+$warning_dark: #E3BE05;
+$warning_light: #FEFFBF;
+
+$notice_dark: #37A831;
+$notice_light: #CCFEBF;
+
+$alert_dark: #de1e1e;
+$alert_light: #FEBFBF;

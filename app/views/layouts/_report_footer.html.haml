@@ -1,0 +1,9 @@
+#footer
+  .A4_company_info
+    = current_user.company.name
+    \-
+    \#{current_user.company.billing_address}
+    \#{current_user.company.zipcode}
+    \#{current_user.company.city} -
+    \#{current_user.company.email}
+.clear

@@ -1,0 +1,31 @@
+.agreements_canvas
+  - if !agreements.empty?
+    %table.agreementdetails
+      %thead
+        %tr
+          - if @show_contact == true
+            %th= I18n.t :task_index_relation
+            %th= I18n.t :task_details_contact
+          %th= I18n.t :agreement_date
+          %th= I18n.t :agreement_single
+          %th
+          %th
+      %tbody
+        - agreements.each do |agreement|
+          %tr
+            - if @show_contact == true
+              %td= link_to agreement.contact.relation.name, '/relations/' + agreement.contact.relation.id.to_s
+              - contact_name = agreement.contact.first_name.to_s + ' ' + agreement.contact.middle_name.to_s + ' ' + agreement.contact.last_name.to_s
+              %td= link_to contact_name, '/contacts/' + agreement.contact.id.to_s
+            %td= agreement.created_at.in_time_zone.strftime("%d-%m-%Y")
+            %td= agreement.agreement
+            %td= link_to I18n.t(:edit), edit_agreement_path(agreement)
+            / Send extra info with delete link, to know what the context is
+            - if request.path.index('contacts') != nil
+              - @context = 'contacts'
+            - elsif request.path.index('agreements') != nil
+              - @context = 'agreements'
+            %td= link_to I18n.t(:delete), agreement_path(agreement, :context => @context), :remote => :true, :method => :delete, :confirm => I18n.t(:sure)
+  - else
+    / No data found
+    = render("layouts/nodata")

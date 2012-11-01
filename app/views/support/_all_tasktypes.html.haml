@@ -1,0 +1,22 @@
+.content
+  .support.form
+    %p= I18n.t :settings_add_tasktype
+    = form_for(@tasktype, :remote => true) do |f|
+      / Show errors
+      = render('layouts/form_errors', :object => @tasktype)
+      = f.hidden_field :company_id, :value => current_user.company.id
+      = render('layouts/form_field', :f => f, :label => I18n.t(:settings_tasktype), :field => :tasktype, :size => "25")
+      .field
+        = f.submit I18n.t(:form_save_button), :class => 'button white'
+      .clear
+  %table
+    %thead
+      %tr
+        %th= I18n.t :settings_tasktype
+        - if is_allowed_to_view('company_admin')
+          %th
+    %tbody
+      - @tasktypes.each do |tasktype|
+        %tr
+          %td= tasktype.tasktype
+          %td= link_to I18n.t(:delete), tasktype, :method => :delete, :remote => true, :confirm => I18n.t(:sure)

@@ -1,0 +1,24 @@
+/ Show alerts for specific types of flashes
+- if flash[:alert] || flash[:notice] || flash[:warning] || flash[:system_alert]
+  / Cycle the flash types
+  - flash.each do |key,msg|
+    .flash
+      - if key == :system_alert
+        / Cycle the alerts
+        - @show_alerts.each do |alert|
+          / Create a div for each alert
+          .system_alert{:id => alert.id}
+            / Show the alert text
+            .alert_text
+              = alert.alert_text
+            / Show the dismiss link
+            .alert_link
+              = link_to I18n.t(:alert_dismiss), dismiss_alert_path(alert), :remote => true
+            / Show the optional details link
+            - if alert.detail_link
+              .alert_link
+                = link_to I18n.t(:alert_details), alert.detail_link
+            .clear
+      - else
+        %p{:class => key}
+          = msg

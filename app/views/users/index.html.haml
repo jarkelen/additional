@@ -1,0 +1,20 @@
+/ Show actionbar with add user button
+#action_bar.twelve.columns
+  .action_button.general
+    = link_to I18n.t(:users_index_newuser), new_user_path
+/ Show users for company
+= render('users/users_overview', :title => I18n.t(:users_index_title), :users => @users)
+
+#contentblock.twelve.columns
+  .content_title.general
+  %h3= I18n.t :settings_title
+  .settings_menu.three.columns
+    %ul.settings_tabs
+      %li= link_to I18n.t(:settings_countries), users_path(:id => "country"), :remote => true, :class => "active"
+      %li= link_to I18n.t(:settings_sectors), users_path(:id => "sector"), :remote => true
+      %li= link_to I18n.t(:settings_branches), users_path(:id => "branch"), :remote => true
+      %li= link_to I18n.t(:settings_dossier_statuses), users_path(:id => "dossier_status"), :remote => true
+      %li= link_to I18n.t(:settings_tasktypes), users_path(:id => "tasktype"), :remote => true
+      %li= link_to I18n.t(:settings_rel_types), users_path(:id => "rel_type"), :remote => true
+  #support_canvas.nine.columns
+    = render("support/all_countries")

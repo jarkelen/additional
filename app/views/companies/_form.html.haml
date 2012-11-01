@@ -1,0 +1,110 @@
+= form_for(@company) do |f|
+  / Show errors
+  = render('layouts/form_errors', :object => @company)
+
+  .datablock_general
+    %h4= I18n.t :contacts_data_general
+    = render('layouts/form_field', :f => f, :label => I18n.t(:form_name), :field => :name, :size => "50")
+    = render('layouts/form_field', :f => f, :label => I18n.t(:company_code), :field => :code, :size => "3")
+    = render('layouts/form_field', :f => f, :label => I18n.t(:relations_kvk_nr), :field => :kvk_nr, :size => "15")
+    = render('layouts/form_field', :f => f, :label => I18n.t(:relations_bankaccount), :field => :bankaccount, :size => "15")
+    = render('layouts/form_field', :f => f, :label => I18n.t(:relations_tax_nr), :field => :tax_nr, :size => "15")
+
+  .datablock_general
+    %h4= I18n.t :contacts_data_social
+    = render('layouts/form_field', :f => f, :label => I18n.t(:form_email), :field => :email, :size => "50")
+    = render('layouts/form_field', :f => f, :label => I18n.t(:form_website), :field => :website, :size => "50")
+    = render('layouts/form_field', :f => f, :label => I18n.t(:form_telephone), :field => :telephone, :size => "25")
+    = render('layouts/form_field', :f => f, :label => I18n.t(:form_linkedin), :field => :linkedin, :size => "50")
+    = render('layouts/form_field', :f => f, :label => I18n.t(:form_twitter), :field => :twitter, :size => "50")
+    = render('layouts/form_field', :f => f, :label => I18n.t(:form_facebook), :field => :facebook, :size => "50")
+
+  .datablock_general
+    %h4= I18n.t :relations_data_visit
+    = render('layouts/form_field', :f => f, :label => I18n.t(:form_address), :field => :address1, :size => "50")
+    = render('layouts/form_field', :f => f, :label => I18n.t(:form_address2), :field => :address2, :size => "50")
+    = render('layouts/form_field', :f => f, :label => I18n.t(:form_zipcode), :field => :zipcode, :size => "10")
+    = render('layouts/form_field', :f => f, :label => I18n.t(:form_city), :field => :city, :size => "25")
+    .field
+      = f.label I18n.t :form_country
+      = f.select :country, @countries, :selected => @company.country
+
+  .datablock_general
+    %h4= I18n.t :relations_data_post
+    .field
+      = f.label I18n.t :relations_data_sameasvisit
+      - unless @company.address1
+        = f.check_box :same, :id => 'company_same', :checked => false
+      - else
+        - if @company.address1
+          - visit_address = @company.address1 + @company.zipcode + @company.city + @company.country
+        - else
+          - visit_address = nil
+        - if @company.post_address
+          - post_address = @company.post_address + @company.post_zipcode + @company.post_city + @company.post_country
+        - else
+          - post_address = nil
+        - if visit_address == post_address
+          = f.check_box :same, :id => 'company_same', :checked => true
+        - else
+          = f.check_box :same, :id => 'company_same', :checked => false
+    = render('layouts/form_field', :f => f, :label => I18n.t(:form_postbox), :field => :post_address, :size => "50")
+    = render('layouts/form_field', :f => f, :label => I18n.t(:form_zipcode), :field => :post_zipcode, :size => "10")
+    = render('layouts/form_field', :f => f, :label => I18n.t(:form_city), :field => :post_city, :size => "25")
+    .field
+      = f.label I18n.t :form_country
+      = f.select :post_country, @countries, :selected => @company.country
+
+  .datablock_general
+    %h4= I18n.t :relations_data_address
+    .field
+      = f.label I18n.t :relations_data_sameaspost
+      - unless @company.post_address
+        = f.check_box :same, :id => 'company_same2', :checked => false
+      - else
+        - if @company.post_address
+          - post_address = @company.post_address + @company.post_zipcode + @company.post_city + @company.post_country
+        - else
+          - post_address = nil
+        - if @company.billing_address
+          - billing_address = @company.billing_address + @company.billing_zipcode + @company.billing_city + @company.billing_country
+        - else
+          - billing_address = nil
+        - if billing_address == post_address
+          = f.check_box :same, :id => 'company_same2', :checked => true
+        - else
+          = f.check_box :same, :id => 'company_same2', :checked => false
+    = render('layouts/form_field', :f => f, :label => I18n.t(:form_address), :field => :billing_address, :size => "50")
+    = render('layouts/form_field', :f => f, :label => I18n.t(:form_zipcode), :field => :billing_zipcode, :size => "10")
+    = render('layouts/form_field', :f => f, :label => I18n.t(:form_city), :field => :billing_city, :size => "25")
+    .field
+      = f.label I18n.t :form_country
+      = f.select :billing_country, @countries, :selected => @company.country
+
+  / Only admin can change subscription settings
+  - if current_user.allowed?('admin')
+    .datablock_general
+      .field
+        = f.label I18n.t :company_logo
+        .form_field
+          = f.file_field :logo
+    .datablock_general
+      %h4= I18n.t :subscription_title
+      = f.fields_for(:subscription) do |s_form|
+        = s_form.hidden_field :company_id, :value => @company.id
+        .field
+          = s_form.label I18n.t :subscription_start_date
+          = s_form.date_select :start_date
+        .field
+          = s_form.label I18n.t :subscription_active
+          = s_form.select(:active, options_for_select([['Yes', true], ['No', false]], :selected => @company.subscription.active))
+        .field
+          = s_form.label I18n.t :subscription_name
+          = s_form.select(:name, options_for_select([['Basic', 'basic'], ['Premium', 'premium']], :selected => @company.subscription.name))
+        .field
+          = s_form.label I18n.t :subscription_billing_period
+          = s_form.select(:billing_period, options_for_select([['Maand', 'month'], ['Kwartaal', 'quarter'], ['Jaar', 'year']], :selected => @company.subscription.billing_period))
+        = render('layouts/form_field', :f => s_form, :label => I18n.t(:subscription_discount), :field => :discount, :size => "5")
+        = render('layouts/form_field', :f => s_form, :label => I18n.t(:subscription_user_price), :field => :user_price, :size => "5")
+  .field
+    = f.submit I18n.t(:form_save_button), :class => 'button white'

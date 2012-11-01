@@ -1,0 +1,6 @@
+/ Show the actionbar
+= render 'actionbar', :view => 'dashboard'
+
+/ Show users for company
+- title = [I18n.t(:dashboard_users_title), @company.name].join(" ")
+= render('users/users_overview', :title => title, :users => @company_users)

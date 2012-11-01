@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %p Een gebruiker is toegevoegd aan customer:First:
+    %br/
+    %p
+      Voornaam: #{@user.first_name}
+    %p
+      Achternaam: #{@user.middle_name} #{@user.last_name}
+    %p
+      Email: #{@user.email}
+    %p
+      Bedrijf: #{@user.company.name}
+    %p
+      Rol: #{@user.role}
+    %p
+      Password: #{@user.password}
+    %br/
+    %p Aktiveer de juiste modules voor deze gebruiker.

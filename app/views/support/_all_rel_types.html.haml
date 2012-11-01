@@ -1,0 +1,22 @@
+.content
+  .support.form
+    %p= I18n.t :settings_add_rel_type
+    = form_for(@rel_type, :remote => true) do |f|
+      / Show errors
+      = render('layouts/form_errors', :object => @rel_type)
+      = f.hidden_field :company_id, :value => current_user.company.id
+      = render('layouts/form_field', :f => f, :label => I18n.t(:settings_rel_type), :field => :rel_type, :size => "25")
+      .field
+        = f.submit I18n.t(:form_save_button), :class => 'button white'
+      .clear
+  %table
+    %thead
+      %tr
+        %th= I18n.t :settings_rel_type
+        - if is_allowed_to_view('company_admin')
+          %th
+    %tbody
+      - @rel_types.each do |rel_type|
+        %tr
+          %td= rel_type.rel_type
+          %td= link_to I18n.t(:delete), rel_type, :method => :delete, :remote => true, :confirm => I18n.t(:sure)

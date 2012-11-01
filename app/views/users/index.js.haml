@@ -1,0 +1,15 @@
+$('#support_canvas').empty();
+- if (@active == "country")
+  $('#support_canvas').html("#{escape_javascript(render("support/all_countries"))}");
+- elsif (@active == "dossier_status")
+  $('#support_canvas').html("#{escape_javascript(render("support/all_dossier_statuses"))}");
+- elsif (@active == "sector")
+  $('#support_canvas').html("#{escape_javascript(render("support/all_sectors"))}");
+- elsif (@active == "branch")
+  $('#support_canvas').html("#{escape_javascript(render("support/all_branches"))}");
+- elsif (@active == "sector")
+  $('#support_canvas').html("#{escape_javascript(render("support/all_sectors"))}");
+- elsif (@active == "tasktype")
+  $('#support_canvas').html("#{escape_javascript(render("support/all_tasktypes"))}");
+- elsif (@active == "rel_type")
+  $('#support_canvas').html("#{escape_javascript(render("support/all_rel_types"))}");

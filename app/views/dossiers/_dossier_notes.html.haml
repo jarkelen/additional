@@ -1,0 +1,5 @@
+%li#notes
+  / Show all notes for this dossier
+  .dossierpage_large
+    %h3.note= I18n.t :notes_all
+    = render("notes/all_notes", :notes => dossier_notes, :layout => "small")

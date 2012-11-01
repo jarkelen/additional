@@ -1,0 +1,5 @@
+%li#tasks
+  / Show all tasks for this dossier
+  .dossierpage_large
+    %h3.task= I18n.t :task_all
+    = render("tasks/all_tasks", :tasks => dossier_tasks, :layout => "small")

@@ -1,0 +1,11 @@
+#contentblock.activities.eight.columns
+  .content_title.general
+  %h3= I18n.t :activities_all
+  .eight.columns
+    = will_paginate @activities_all
+  %ul#updates
+    - @activities_all.each do |activity|
+      %li
+        %span.date= activity.created_at.in_time_zone.strftime("%d-%m-%Y @ %H:%M")
+        %br/
+        %span.update= activity.activity

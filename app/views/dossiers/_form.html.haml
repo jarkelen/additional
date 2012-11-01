@@ -1,0 +1,18 @@
+.form
+  = form_for(@dossier) do |f|
+
+    / Show errors
+    = render('layouts/form_errors', :object => @dossier)
+
+    = f.hidden_field :user_id, :value => current_user.id
+    = f.hidden_field :company_id, :value => current_user.company.id
+
+    = render('layouts/form_field', :f => f, :label => I18n.t(:dossier_title), :field => :title, :size => "50")
+    .field
+      = f.label I18n.t :dossier_status
+      = f.select :status, @dossier_statuses, :selected => @dossier.status
+    = render('layouts/form_field', :f => f, :label => I18n.t(:dossier_budget), :field => :budget, :size => "25")
+    = render('layouts/form_field', :f => f, :label => I18n.t(:dossier_fte), :field => :fte, :size => "25")
+    .field
+      = f.submit I18n.t(:form_save_button), :class => 'button white'
+    .clear

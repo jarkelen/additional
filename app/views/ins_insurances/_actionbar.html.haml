@@ -1,0 +1,23 @@
+#action_bar.twelve.columns
+  .action_button.mod
+    = link_to I18n.t(:mod_ins_all),  ins_insurances_url
+
+  / Show buttons for index
+  - if view == 'index'
+    .action_button.mod
+      = link_to I18n.t(:mod_ins_new_title),  new_ins_insurance_url
+    .action_button.mod
+      - if @conditions
+        = link_to I18n.t(:relations_excel_export), ins_insurances_url(:conditions => @conditions, :format => 'csv'), :target => 'blank'
+      - else
+        = link_to I18n.t(:relations_excel_export), ins_insurances_url(:format => 'csv'), :target => 'blank'
+    - if current_user.allowed?("company_admin")
+      .action_button.mod
+        = link_to I18n.t(:nav_settings), ins_insurances_settings_url
+
+  / Show buttons for show
+  - if view == 'show'
+    .action_button.mod
+      = link_to I18n.t(:form_edit_button), edit_ins_insurance_url(@insurance)
+    .action_button.mod
+      = link_to I18n.t(:form_delete_button), @insurance, :method => :delete, :data => { :confirm => I18n.t(:sure) }

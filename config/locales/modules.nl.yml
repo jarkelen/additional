@@ -1,0 +1,38 @@
+"nl":
+    # Mods short
+    mod_short_platform:             PLF
+    mod_short_insurance:            INS
+
+    # Mod Insurance
+    mod_ins_title:                  Verzekering
+    mod_ins_new_title:              Toevoegen verzekering
+    mod_ins_edit_title:             Wijzigen verzekering
+    mod_ins_index_title:            Verzekeringen
+    mod_ins_show_title:             Verzekering details
+    mod_ins_all:                    Alle verzekeringen
+    mod_ins_insurance_nr:           Polisnummer
+    mod_ins_relation:               Relatie
+    mod_ins_branch:                 Branch
+    mod_ins_insurance_type:         Type verzekering
+    mod_ins_market:                 Markt
+    mod_ins_start_date:             Startdatum
+    mod_ins_duration:               Duur (maanden)
+    mod_ins_first_contract_expiration_date: Eerste contract vervaldatum
+    mod_ins_main_premium_expiration_date:   Hoofdpremievervaldatum
+    mod_ins_premium_expiration_date_short:   Vervaldatum
+    mod_ins_extension:              Verlenging
+    mod_ins_payment_continuation:   Betaaltermijn
+    mod_ins_arrear_calculation:     Naverrekening
+    mod_ins_attachment:             Bijlage
+    mod_ins_attachment_open:        Klik om te openen
+    mod_ins_settings_branches:      Branches
+    mod_ins_settings_types:         Verzekeringen
+    mod_ins_settings_markets:       Markten
+    mod_ins_settings_add_branch:    Toevoegen branch
+    mod_ins_settings_add_type:      Toevoegen verzekering
+    mod_ins_settings_add_market:    Toevoegen markt
+    mod_ins_attachment:             Bijlage
+    mod_ins_attachment_open:        Klik om te openen
+    message_insurance_updated:      Verzekering is succesvol gewijzigd
+    message_insurance_created:      Verzekering is succesvol aangemaakt
+    message_insurance_deleted:      Verzekering is succesvol verwijderd

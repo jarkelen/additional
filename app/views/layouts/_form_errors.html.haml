@@ -1,0 +1,10 @@
+/ Show errors and notifications when needed
+- if object.errors.any?
+  #error_explanation
+    %h2
+      = pluralize(object.errors.count, I18n.t(:form_error))
+      = I18n.t(:form_error_title)
+      \:
+    %ul
+      - object.errors.full_messages.each do |msg|
+        %li= msg

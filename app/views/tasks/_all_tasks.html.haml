@@ -1,0 +1,36 @@
+/ Show all tasks for this contact
+.tasks_canvas
+  - unless @tasks.blank?
+    - @tasks.each do |task|
+      .taskdetails
+        %ul
+          %li.header= task.task_type
+          %li.info
+            = I18n.t :task_details_date_due
+            \:
+            .info_right= task.due_at.strftime("%d-%m-%Y")
+          %li.info
+            = I18n.t :task_index_relation
+            \:
+            .info_right= link_to task.contact.relation.name, "/relations/" + task.contact.relation.id.to_s
+          %li.info
+            = I18n.t :task_details_contact
+            \:
+            .info_right= link_to task.contact.full_name, "/contacts/" + task.contact.id.to_s
+          %li.info
+            = I18n.t :task_details_by
+            .info_right= link_to task.user.full_name, "/users/" + task.user.id.to_s
+          %li.task_text= task.task
+
+          / Send extra info with delete link, to know where the delete action comes from
+          - if request.path.index('contacts')
+            - @context = 'contacts'
+          - elsif request.path.index('tasks')
+            - @context = 'tasks'
+          - else
+            - @context = 'dashboard'
+
+          %li.task_link= link_to I18n.t(:task_delete), task_path(task, :context => @context), :class => 'delete_link', :remote => :true, :method => :delete, :data => { :confirm => I18n.t(:sure) }
+  - else
+    / No data found
+    = render("layouts/nodata")

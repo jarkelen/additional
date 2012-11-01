@@ -1,0 +1,72 @@
+/ Show the actionbar
+= render 'actionbar', :view => 'show'
+
+/ Show insurance
+#contentblock.twelve.columns
+  .content_title.mod
+  %h3= I18n.t :mod_ins_show_title
+  .form
+    .datablock_mod
+      %ul#profile
+        %li
+          = I18n.t :mod_ins_insurance_nr
+          \:
+        %li= @insurance.insurance_nr
+        %li
+          = I18n.t :mod_ins_relation
+          \:
+        %li= link_to @insurance.relation.name, relation_path(@insurance.relation)
+        %li
+          = I18n.t :mod_ins_branch
+          \:
+        %li= @insurance.branch
+        %li
+          = I18n.t :mod_ins_insurance_type
+          \:
+        %li= @insurance.insurance_type
+        %li
+          = I18n.t :mod_ins_market
+          \:
+        %li= @insurance.market
+        %li
+          = I18n.t :mod_ins_start_date
+          \:
+        %li= @insurance.start_date.strftime("%d-%m-%Y")
+        %li
+          = I18n.t :mod_ins_duration
+          \:
+        %li= @insurance.duration
+        %li
+          = I18n.t :mod_ins_first_contract_expiration_date
+          \:
+        %li= @insurance.first_contract_expiration_date.strftime("%d-%m-%Y")
+        %li
+          = I18n.t :mod_ins_main_premium_expiration_date
+          \:
+        %li= @insurance.main_premium_expiration_date.strftime("%d-%m")
+        %li
+          = I18n.t :mod_ins_extension
+          \:
+        %li= @insurance.extension
+        %li
+          = I18n.t :mod_ins_payment_continuation
+          \:
+        %li= @insurance.payment_continuation
+        %li
+          = I18n.t :mod_ins_arrear_calculation
+          \:
+        %li
+          - if @insurance.arrear_calculation
+            = I18n.t :bool_yes
+          - else
+            = I18n.t :bool_no
+
+        / Show 3 attachmenta
+        - unless @insurance.attachment_1.blank?
+          %li= link_to @insurance.attachment1.url.to_s, @insurance.attachment_1, :target => 'blank'
+          
+        - unless @insurance.attachment_2.blank?
+          %li= link_to @insurance.attachment_2.url.to_s, @insurance.attachment_2, :target => 'blank'
+        - unless @insurance.attachment_3.blank?
+          %li= link_to @insurance.attachment_3.url.to_s, @insurance.attachment_3, :target => 'blank'
+      .clear

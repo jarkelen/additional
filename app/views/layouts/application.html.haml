@@ -1,0 +1,94 @@
+!!!
+/[if lt IE 7 ] <html class="ie ie6" lang="en">
+/[if IE 7 ] <html class="ie ie7" lang="en">
+/[if IE 8 ] <html class="ie ie8" lang="en">
+/ [if (gte IE 9)|!(IE)]><!
+%html{:lang => "en"}
+  / <![endif]
+  %head
+    /
+      Basic Page Needs
+      \==================================================
+    %meta{:charset => "utf-8"}/
+    %title customer:First
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    /
+      Mobile Specific Metas
+      \==================================================
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}/
+    /
+      General CSS
+      \==================================================
+    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Ubuntu"
+    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Gloria+Hallelujah"
+    = stylesheet_link_tag "application"
+
+    = javascript_include_tag "application"
+
+
+    %link{:href => "favicon.ico", :rel => "favicon"}/
+    = csrf_meta_tags
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  %body
+    / Don't show header for print view
+    - if @view == 'screen' || @view.nil?
+      .banner.top
+        .container
+          .sixteen.columns
+            %header
+              .title
+                %h1= link_to "customer:First", public_home_url
+                %h2 anywhere anytime relation management
+              .userinfo
+                .info_button.general
+                  - if current_user
+                    %p
+                      = I18n.t :welcome
+                      = current_user.first_name
+                      \!
+                    %p
+                      = link_to I18n.t(:dashboard_title), users_dashboard_url
+                      | #{link_to I18n.t(:logout_link), logout_url}
+                  - else
+                    %p= link_to I18n.t(:login_link), login_url
+    / Don't show sidebar for print view
+    - if @view == 'screen' || @view.nil?
+      / Don't show sidebar for visitors
+      - if current_user
+        / show sidebar (only for logged in pages)
+        - if params[:controller] == 'site' and params[:action] == 'index'
+          .container
+            / Show error and info messages
+            = render("layouts/message")
+            / Show info pages
+            = yield
+        - else
+          .container
+            %aside.four.columns
+              = render("layouts/sidebar")
+              - if content_for?(:activities)
+                = yield :activities
+            / Show base pages
+            .twelve.columns
+              / show error and info messages
+              = render("layouts/message")
+              = yield
+      - else
+        .container
+          / Show info pages
+          = yield
+    - else
+      .container.print
+        = yield
+    / Don't show footer for print view
+    - if @view == 'screen' || @view.nil?
+      .banner.bottom
+        .footer
+          %p
+            \&copy; 2011 #{mail_to "support@customerfirstcrm.nl", "customer:First"}
+    / Javascript
+    = yield :scripts
+    / javascript_include_tag "application"
+    / javascript_include_tag "https://maps.googleapis.com/maps/api/js?sensor=true"

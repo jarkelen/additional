@@ -1,0 +1,22 @@
+#action_bar.twelve.columns
+  / Show buttons for new
+  - if view == 'new'
+    .action_button.general
+      = link_to I18n.t(:company_all), '/site/dashboard'
+
+  / Show buttons for edit
+  - if view == 'edit'
+    - if current_user.allowed?('admin')
+      .action_button.general
+        = link_to I18n.t(:company_all), '/site/dashboard'
+
+  / Show buttons for show
+  - if view == 'show'
+    - if current_user.allowed?('company_admin')
+      / Show button to edit company profile (only for (company) admins)
+      .action_button.general
+        = link_to I18n.t(:company_edit_title), "/companies/" + current_user.company.id.to_s + "/edit"
+    / Show button to all companies (only for admins)
+    - if current_user.allowed?('admin')
+      .action_button.general
+        = link_to I18n.t(:company_all), '/site/dashboard'

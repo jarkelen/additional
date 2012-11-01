@@ -1,0 +1,18 @@
+:erb
+  // Clear tasks canvas and reload all remaining tasks, based on where you are
+  var url = $(location).attr('href');
+  if (url.indexOf("contacts") > 0){
+    // When on contact show page
+    $('#content_output').empty();
+    $('ul.tabs a').removeClass('active');
+    $('#content_output').html("<div class='content_title task'></div><h3><%= I18n.t :task_all %></h3><%= escape_javascript(render('tasks/all_tasks', :tasks => @tasks, :layout => 'normal')) %></div>");
+    $('a#tasks_tab').addClass('active');
+  }
+  else {
+    // When on tasks index page
+    $('.tasks_canvas').empty();
+    $('.tasks_canvas').html("<%= escape_javascript(render('tasks/all_tasks', :tasks => @tasks, :layout => 'normal')) %>");
+  }
+
+
+

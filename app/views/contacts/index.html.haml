@@ -1,0 +1,20 @@
+/ Show the actionbar
+= render 'actionbar', :view => 'index'
+
+#contentblock.twelve.columns
+  .content_title.contact
+  .contacts_canvas
+    / Set page title with optional extra info
+    - if @extra_info
+      - page_title = I18n.t(:contacts_index_title) + ' ' + I18n.t(:contacts_extra_title) + ' "' + @extra_info + '"'
+    - else
+      - page_title = I18n.t(:contacts_index_title)
+
+    / Show page title
+    = render('layouts/pagetitle', :title => page_title, :path => contacts_path)
+
+    / Show alphabet letters
+    = render('contacts/alphabet')
+
+    / Show all contacts
+    = render('all_contacts', :contacts => @contacts, :layout => "normal")

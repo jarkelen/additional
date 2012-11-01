@@ -1,0 +1,14 @@
+/ Show the actionbar
+= render 'actionbar', :view => 'settings'
+
+/ Support tables
+#contentblock.twelve.columns
+  .content_title.mod
+  %h3= I18n.t :settings_title
+  .settings_menu.three.columns
+    %ul.settings_tabs
+      %li= link_to I18n.t(:mod_ins_settings_branches), ins_insurances_settings_path(:area => "branch"), :remote => true, :class => "active"
+      %li= link_to I18n.t(:mod_ins_settings_types), ins_insurances_settings_path(:area => "type"), :remote => true
+      %li= link_to I18n.t(:mod_ins_settings_markets), ins_insurances_settings_path(:area => "market"), :remote => true
+  #support_canvas.nine.columns
+    = render("all_branches")

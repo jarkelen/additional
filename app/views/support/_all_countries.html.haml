@@ -1,0 +1,22 @@
+.content
+  .support.form
+    %p= I18n.t :country_new_title
+    = form_for(@country, :remote => true) do |f|
+      / Show errors
+      = render('layouts/form_errors', :object => @country)
+      = f.hidden_field :company_id, :value => current_user.company.id
+      = render('layouts/form_field', :f => f, :label => I18n.t(:country_title), :field => :country, :size => "25")
+      .field
+        = f.submit I18n.t(:form_save_button), :class => 'button white'
+      .clear
+  %table
+    %thead
+      %tr
+        %th= I18n.t :country_title
+        - if is_allowed_to_view('company_admin')
+          %th
+    %tbody
+      - @countries.each do |country|
+        %tr
+          %td= country.country
+          %td= link_to I18n.t(:delete), country, :method => :delete, :remote => true, :confirm => I18n.t(:sure)

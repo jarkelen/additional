@@ -1,0 +1,8 @@
+/ Show the actionbar
+= render 'actionbar', :view => 'edit'
+
+#contentblock.twelve.columns
+  .content_title.relation
+  %h3= I18n.t :relations_edit_title
+  = render 'form'
+  .clear

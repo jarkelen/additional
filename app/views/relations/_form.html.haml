@@ -1,0 +1,139 @@
+.form
+  = form_for @relation, :html => {:multipart => true} do |f|
+
+    / Show errors
+    = render('layouts/form_errors', :object => @relation)
+    = f.hidden_field :company_id, :value => current_user.company_id
+
+    .datablock_relation
+      %h4= I18n.t :relations_data_general
+      - if @relation.relation_nr?
+        .field
+          = f.label I18n.t :relations_index_nr_large
+          = f.text_field :relation_nr, :size => 10, :disabled => true, :class => 'disabled'
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_name), :field => :name, :size => "50")
+      .field
+        .fieldpusher= f.label I18n.t(:relations_index_group_large)
+        .fieldpusher= f.select(:relationgroup, options_for_select(@relationgroups, @relation.relationgroup), :include_blank => true)
+        .labelpusher= I18n.t(:relations_newgroup_new)
+        .fieldpusher= f.text_field :relationgroup_new, :size => 3
+      .field
+        = f.label I18n.t :relations_type
+        = f.select :relation_type, @rel_types
+      .field
+        = f.label I18n.t :relations_status
+        = f.select(:status, options_for_select([['prospect', 'prospect'], ['actief', 'actief'], ['inactief', 'inactief']], :selected => @relation.status))
+      .field
+        = f.label I18n.t(:relations_company_contact) + ' ' + current_user.company.name
+        = f.select :company_contact, current_user.company.users.all.collect {|u| [ u.first_name.to_s + ' ' + u.middle_name.to_s + ' ' + u.last_name.to_s, u.id ] }
+      .field
+        = f.label I18n.t :relations_legal
+        = f.select(:legal, options_for_select([['BV', 'BV'], ['NV', 'NV'], ['VOF', 'VOF'], ['eenmanszaak', 'eenmanszaak'], ['stichting', 'stichting'], ['vereniging', 'vereniging'], ['particulier', 'particulier'], ['overig', 'overig']], :include_blank => true, :selected => @relation.legal))
+      = render('layouts/form_field', :f => f, :label => I18n.t(:relations_bankaccount), :field => :bankaccount, :size => "15")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:relations_kvk_nr), :field => :kvk_nr, :size => "10")
+      .field
+        = f.label I18n.t :relations_nr_employees
+        = f.select(:nr_employees, options_for_select([['1-5', '1-5'], ['6-10', '6-10'], ['11-25', '11-25'], ['26-50', '26-50'], ['51-100', '51-100'], ['100+', '100+'], ['n.v.t', 'n.v.t.']], :selected => @relation.nr_employees))
+      .field
+        = f.label I18n.t :relations_industry
+        = f.collection_select(:industry, @sectors, :sector, :sector, :include_blank => true)
+      .field
+        = f.label I18n.t :relations_branch
+        = f.grouped_collection_select(:branch, @sectors, :branches, :sector, :branch, :branch, include_blank: true)
+
+    / Custom fields
+    .datablock_relation
+      %h4= I18n.t :relations_data_custom
+      .field
+        = f.label I18n.t :relations_custom_label
+        = f.label I18n.t :relations_custom_value
+      .field
+        = f.text_field :custom_label_1, :size => 25
+        = f.text_field :custom_field_1, :size => 25
+      .field
+        = f.text_field :custom_label_2, :size => 25
+        = f.text_field :custom_field_2, :size => 25
+      .field
+        = f.text_field :custom_label_3, :size => 25
+        = f.text_field :custom_field_3, :size => 25
+
+    / Communication fields
+    .datablock_relation
+      %h4= I18n.t :relations_data_social
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_telephone), :field => :telephone, :size => "25")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_fax), :field => :fax, :size => "25")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_email), :field => :email, :size => "50")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_website), :field => :website, :size => "50")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_linkedin), :field => :linkedin, :size => "25")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_facebook), :field => :facebook, :size => "25")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_twitter), :field => :twitter, :size => "25")
+
+    / Address fields
+    .datablock_relation
+      %h4= I18n.t :relations_data_visit
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_address), :field => :visit_address, :size => "50")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_zipcode), :field => :visit_zipcode, :size => "10")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_city), :field => :visit_city, :size => "25")
+      .field
+        = f.label I18n.t :form_country
+        = f.select :visit_country, @countries
+ 
+    / Post address fields
+    .datablock_relation
+      %h4= I18n.t :relations_data_post
+      .field
+        = f.label I18n.t :relations_data_sameasvisit
+        - if @relation.visit_address != nil
+          - visit_address = @relation.visit_address + @relation.visit_zipcode + @relation.visit_city + @relation.visit_country
+          - if @relation.post_address != nil
+            - post_address = @relation.post_address + @relation.post_zipcode + @relation.post_city + @relation.post_country
+          - else
+            - post_address == nil
+          - if visit_address == post_address
+            = f.check_box :same, :id => 'relation_same', :checked => true
+          - else
+            = f.check_box :same, :id => 'relation_same', :checked => false
+        - else
+          = f.check_box :same, :id => 'relation_same', :checked => false
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_postbox), :field => :post_address, :size => "50")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_zipcode), :field => :post_zipcode, :size => "10")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_city), :field => :post_city, :size => "25")
+      .field
+        = f.label I18n.t :form_country
+        = f.select :post_country, @countries
+
+    / Billing address fields
+    .datablock_relation
+      %h4= I18n.t :relations_data_address
+      .field
+        = f.label I18n.t :relations_data_sameaspost
+        - if @relation.post_address != nil
+          - post_address = @relation.post_address + @relation.post_zipcode + @relation.post_city + @relation.post_country
+          - if @relation.billing_address != nil
+            - billing_address = @relation.billing_address + @relation.billing_zipcode + @relation.billing_city + @relation.billing_country
+          - else
+            - billing_address == nil
+          - if billing_address == post_address
+            = f.check_box :same, :id => 'relation_same2', :checked => true
+          - else
+            = f.check_box :same, :id => 'relation_same2', :checked => false
+        - else
+          = f.check_box :same, :id => 'relation_same2', :checked => false
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_address), :field => :billing_address, :size => "50")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_zipcode), :field => :billing_zipcode, :size => "10")
+      = render('layouts/form_field', :f => f, :label => I18n.t(:form_city), :field => :billing_city, :size => "25")
+      .field
+        = f.label I18n.t :form_country
+        = f.select :billing_country, @countries
+
+    / Logo and remarks
+    .datablock_relation
+      .field
+        = f.label I18n.t :relations_logo
+        = f.file_field :logo
+      .field.textarea
+        = f.label I18n.t :form_remarks
+        = f.text_area(:remarks, :size => "50x8")
+    .field
+      = f.submit I18n.t(:form_save_button), :class => 'button white'
+    .clear

@@ -1,0 +1,42 @@
+.notes_canvas
+  - unless @notes.blank?
+    - @notes.each do |note|
+      .notedetails_small
+        %ul
+          %li.content_title.note
+          %li.header= note.subject
+          %li.info
+            = I18n.t :notes_index_date
+            .info_right= note.created_at.strftime("%d-%m-%Y @ %H:%M")
+          %li.info
+            = I18n.t :notes_details_via
+            .info_right= note.note_type
+          %li.info
+            = I18n.t :notes_details_by
+            .info_right= link_to note.user.full_name, "users/" + note.user.id.to_s
+          %li.info
+            = I18n.t :notes_details_contact
+            .info_right= link_to note.contact.full_name, "/contacts/" + note.contact.id.to_s
+          %li.info
+            = I18n.t :notes_index_relation
+            .info_right= link_to note.contact.relation.name, "/relations/" + note.contact.relation.id.to_s
+          %li.note_text
+            - unless note.attachment.blank?
+              .note_attachment
+                = image_tag('attachment.gif')
+                = link_to(I18n.t(:notes_attachment_file), note.attachment.url, :target => '_blank')
+            - unless note.url.blank?
+              .note_attachment
+                = image_tag('attachment.gif')
+                = link_to(I18n.t(:notes_attachment_url), note.url, :target => '_blank')
+            = note.note
+
+          / Send extra info with delete link, to know what the context is
+          - if request.path.index('contacts') != nil
+            - @context = 'contacts'
+          - elsif request.path.index('notes') != nil
+            - @context = 'notes'
+          %li.note_link= link_to I18n.t(:delete), note_path(note, :context => @context), :remote => :true, :class => 'delete_link', :method => :delete, :data => { :confirm => I18n.t(:sure) }  
+  - else
+    / No data found
+    = render("layouts/nodata")

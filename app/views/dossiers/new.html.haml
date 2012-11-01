@@ -1,0 +1,8 @@
+/ Show the actionbar
+= render 'actionbar', :view => 'new'
+
+#contentblock.twelve.columns
+  .content_title.dossier
+  %h3= I18n.t :dossier_new_title
+  = render 'form'
+  .clear

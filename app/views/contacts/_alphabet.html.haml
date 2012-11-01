@@ -1,0 +1,8 @@
+/ Show all the letters of the alphabet and links to surnames
+.letter_filter
+  .letter_first.found= link_to I18n.t(:all), contacts_path, :remote => true
+  - @letter_array.each do |letter|
+    - if @contact_array.include? letter
+      .letter.found= link_to letter, contacts_path(:letter => letter), :remote => true
+    - else
+      .letter.notfound= letter

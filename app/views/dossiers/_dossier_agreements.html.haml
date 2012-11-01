@@ -1,0 +1,5 @@
+%li#agreements
+  / Show all agreements for this dossier
+  .dossierpage_large
+    %h3.agreement= I18n.t :agreement_all
+    = render("agreements/all_agreements", :agreements => dossier_agreements)

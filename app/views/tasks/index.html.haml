@@ -1,0 +1,13 @@
+#contentblock.twelve.columns
+  .content_title.task
+  / Set page title
+  - if @extra_info
+    - page_title = I18n.t(:task_index_title) + ' ' + I18n.t(:task_extra_title) + ' "' + @extra_info + '"'
+  - else
+    - page_title = I18n.t(:task_index_title)
+
+  / Show page title
+  = render('layouts/pagetitle', :title => page_title, :path => tasks_path)
+
+  / Show all tasks for this contact
+  = render("tasks/all_tasks", :layout => "normal")
