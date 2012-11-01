@@ -62,11 +62,11 @@
             = I18n.t :bool_no
 
         / Show 3 attachmenta
-        - unless @insurance.attachment_1.blank?
-          %li= link_to @insurance.attachment1.url.to_s, @insurance.attachment_1, :target => 'blank'
+        / unless @insurance.attachment_1.blank?
+        /%li= link_to @insurance.attachment_1.url.to_s, @insurance.attachment_1, :target => 'blank'
           
-        - unless @insurance.attachment_2.blank?
-          %li= link_to @insurance.attachment_2.url.to_s, @insurance.attachment_2, :target => 'blank'
-        - unless @insurance.attachment_3.blank?
-          %li= link_to @insurance.attachment_3.url.to_s, @insurance.attachment_3, :target => 'blank'
+        / unless @insurance.attachment_2.blank?
+        /%li= link_to @insurance.attachment_2.url.to_s, @insurance.attachment_2, :target => 'blank'
+        / unless @insurance.attachment_3.blank?
+        /%li= link_to @insurance.attachment_3.url.to_s, @insurance.attachment_3, :target => 'blank'
       .clear

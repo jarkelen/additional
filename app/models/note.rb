@@ -14,7 +14,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #
-require 'file_size_validator'
+#require 'file_size_validator'
 
 class Note < ActiveRecord::Base
 	belongs_to :contact

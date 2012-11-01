@@ -94,17 +94,6 @@ class User < ActiveRecord::Base
 		end
   end
 
-  # Get all active projects for current user
-  def get_active_projects
-    tms_projects.where('start_date <= ?', Time.now).where('end_date IS NULL OR end_date >= ?', Time.now)
-  end
-
-  private 
-  def set_mods
-    self.mod_mobility  = true
-    self.mod_timesheet = true
-  end
-  
   private 
   def create_random_password
     self.password = SecureRandom.hex(5)
