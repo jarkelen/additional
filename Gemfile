@@ -16,7 +16,7 @@ gem 'bcrypt-ruby'
 gem 'haml', "~> 3.1.6"
 gem 'activerecord-postgresql-adapter'
 gem 'gmaps4rails'
-gem 'pg'
+#gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -31,6 +31,7 @@ group :development, :test do
 	gem 'hpricot'
 	gem 'ruby_parser'
 	gem 'yaml_db'
+  gem 'sqlite3'
 
 	gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 
