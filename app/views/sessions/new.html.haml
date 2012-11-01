@@ -1,16 +1,3 @@
 .sixteen.columns
   #loginblock
     .content_title.general
-    %h2= I18n.t :login_title
-    .content
-      / render("layouts/message")
-      = form_tag(sessions_path, :class => 'form') do
-        .field
-          = label_tag I18n.t :form_email
-          = text_field_tag :email
-        .field
-          = label_tag I18n.t :form_password
-          = password_field_tag :password
-        .field
-          = submit_tag I18n.t(:login_title), :class => 'button white'
-        .clear
