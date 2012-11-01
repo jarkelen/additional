@@ -3,7 +3,7 @@
     .content_title.general
     %h2= I18n.t :login_title
     .content
-      = render("layouts/message")
+      / render("layouts/message")
       = form_tag(sessions_path, :class => 'form') do
         .field
           = label_tag I18n.t :form_email
