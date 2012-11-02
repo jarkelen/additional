@@ -14,9 +14,9 @@
     add:                           	toevoegen
     edit:                           wijzigen
     delete:                         verwijderen
-    search:							            Zoeken...
-    #all:							              alle
-    or:								              of
+    search:							"Zoeken..."
+    all:							"alle"
+    or:								"of"
     to:                             aan
     till:                           t/m
     cancel:							            Annuleren
