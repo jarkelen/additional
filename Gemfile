@@ -13,9 +13,10 @@ gem 'vcard'
 gem 'pdfkit'
 gem 'comma'
 gem 'bcrypt-ruby'
-gem 'haml', "~> 3.1.6"
 gem 'activerecord-postgresql-adapter'
 gem 'gmaps4rails'
+gem 'haml-rails'
+
 #gem 'pg'
 
 # Gems used only for assets and not required
@@ -39,12 +40,6 @@ group :development, :test do
 
 	gem 'database_cleaner'
 	gem 'launchy'
-
-	gem 'guard', '~> 1.2.3'
-  gem "guard-rspec", '~> 1.2.0'
-  gem "guard-cucumber", '~> 1.2.0'
-  gem "guard-spork", '~> 1.1.0'
-
 	gem 'rspec-rails', '~> 2.11.0'
   gem 'capybara', '~> 1.1.2'
 	gem 'capybara-email', '~> 0.1.2'
