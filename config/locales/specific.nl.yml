@@ -15,9 +15,6 @@
     edit:                           wijzigen
     delete:                         verwijderen
     search:							"Zoeken..."
-    all:							"alle"
-    or:								"of"
-    to:                             aan
     till:                           t/m
     cancel:							            Annuleren
     no_data_found:				        	Er zijn geen gegevens gevonden
