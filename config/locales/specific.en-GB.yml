@@ -1,475 +1,475 @@
 "en-GB":
-    # General
-    not_allowed:                    "You don't have sufficient rights for this activity"
-    welcome:                        "Welcome"
-    hello:                          "Hello"
-    logout_link:                    "Logout"
-    login_link:                     "Login" 
-    back:                           "Back"
-    sure:                           "Are you sure?"
-    ago:                            "ago"
-    bool_yes:                       "Yes"
-    printpreview:                   "Print preview"
-    bool_no:                        "No"
-    add:                           	"add"
-    edit:                           "edit"
-    delete:                         "remove"
-    search:						    "Search..."
-    all:							"all"
-    or:							    "or"
-    to:                             "to"
-    till:                           "till"
-    cancel:							"Cancel"
-    no_data_found:					"Unfortunately no data could be found"
-    open_link:				        "Click to open"
-    no_choice:                      "No selection made"
-    always_password:                "Always enter password to process changes"
+  # General
+  not_allowed:                    "You don't have sufficient rights for this activity"
+  welcome:                        "Welcome"
+  hello:                          "Hello"
+  logout_link:                    "Logout"
+  login_link:                     "Login" 
+  back:                           "Back"
+  sure:                           "Are you sure?"
+  ago:                            "ago"
+  bool_yes:                       "Yes"
+  printpreview:                   "Print preview"
+  bool_no:                        "No"
+  add:                            "add"
+  edit:                           "edit"
+  delete:                         "remove"
+  search:                         "Search..."
+  all:                            "all"
+  or:                             "or"
+  to:                             "to"
+  till:                           "till"
+  cancel:                         "Cancel"
+  no_data_found:                  "Unfortunately no data could be found"
+  open_link:                      "Click to open"
+  no_choice:                      "No selection made"
+  always_password:                "Always enter password to process changes"
 
-    # User dashboard
-    dashboard_title:								My Dashboard
-    dashboard_introtext1:     			Welkom bij het relatieportaal van
-    dashboard_introtext2:			      . Hier kunnen relaties zelfstandig bepaalde handelingen uitvoeren. Voor inhoudelijke vragen kunt U contact opnemen via 
-    dashboard_mynotes:							My Notes
-    dashboard_mytasks:							My Tasks    
-    dashboard_users_title:          Overview users of company
+  # User dashboard
+  dashboard_title:                                My Dashboard
+  dashboard_introtext1:               Welkom bij het relatieportaal van
+  dashboard_introtext2:                 . Hier kunnen relaties zelfstandig bepaalde handelingen uitvoeren. Voor inhoudelijke vragen kunt U contact opnemen via 
+  dashboard_mynotes:                          My Notes
+  dashboard_mytasks:                          My Tasks    
+  dashboard_users_title:          Overview users of company
 
-    # Support
-    support_title:                   Support
-    support_general_videos:          Algemeen
-    support_timesheets_videos:       Timesheets
-    support_introtext:               Op deze pagina staan video's waarin bepaalde aspecten van het gebruik van deze applicatie worden uitgelegd. Klik op een video om af te spelen.
+  # Support
+  support_title:                   Support
+  support_general_videos:          Algemeen
+  support_timesheets_videos:       Timesheets
+  support_introtext:               Op deze pagina staan video's waarin bepaalde aspecten van het gebruik van deze applicatie worden uitgelegd. Klik op een video om af te spelen.
 
-    # Activities
-    activities_all:						      Updates
-    activities_all_link:				    more updates
+  # Activities
+  activities_all:                           Updates
+  activities_all_link:                    more updates
 
-    # Settings tab
-    settings_title:					        Table maintenance
-    settings_sector:					      Sector
-    settings_sectors:				        Sectors
-    settings_add_sector:		        Add sector
-    settings_branch:					      Branch
-    settings_branches:				      Branches
-    settings_add_branch:		        Add branch
-    settings_dossier_status:			  Dossier status
-    settings_dossier_statuses:		  Dossier statusses
-    settings_add_dossier_status:		Add dossier status
-    settings_countries:				      Countries
-    settings_tasktype:              Taak type
-    settings_tasktypes:             Taak types
-    settings_add_tasktype:          Toevoegen taak type
-    settings_rel_type:              Relation type
-    settings_rel_types:             Relation types
-    settings_add_rel_type:          Add relation type
+  # Settings tab
+  settings_title:                         Table maintenance
+  settings_sector:                          Sector
+  settings_sectors:                       Sectors
+  settings_add_sector:                Add sector
+  settings_branch:                          Branch
+  settings_branches:                    Branches
+  settings_add_branch:                Add branch
+  settings_dossier_status:              Dossier status
+  settings_dossier_statuses:        Dossier statusses
+  settings_add_dossier_status:        Add dossier status
+  settings_countries:                   Countries
+  settings_tasktype:              Taak type
+  settings_tasktypes:             Taak types
+  settings_add_tasktype:          Toevoegen taak type
+  settings_rel_type:              Relation type
+  settings_rel_types:             Relation types
+  settings_add_rel_type:          Add relation type
 
-    # Countries
-    country_index_title:						Countries
-    country_new_title:							Add country
-    country_edit_title:							Edit country
-    country_title:									Country
-        
-    # Subscription
-    subscription_new_title:					Add subscription
-    subscription_edit_title:				Edit subscription
-    subscription_title:							Subscription
-    subscription_name:							Subscription type
-    subscription_licenses:					Licences
-    subscription_discount:					Discount
-    subscription_user_price:				Price per user
-    subscription_active:						Active
-    subscription_billing_period:		Invoicing
-    subscription_start_date:				Startdate
-    subscription_mod_platform:		  Platform
-    subscription_mod_insurance:     Insurance
-    subscription_mods:							Modules
-    subscription_email:             Send email
-    subscription_reset:             Password
-    subscription_send_email_to_user:  Send email to user
-    subscription_send_email_to_admin: Send email to admin
+  # Countries
+  country_index_title:                        Countries
+  country_new_title:                          Add country
+  country_edit_title:                         Edit country
+  country_title:                                  Country
+      
+  # Subscription
+  subscription_new_title:                 Add subscription
+  subscription_edit_title:                Edit subscription
+  subscription_title:                         Subscription
+  subscription_name:                          Subscription type
+  subscription_licenses:                  Licences
+  subscription_discount:                  Discount
+  subscription_user_price:                Price per user
+  subscription_active:                        Active
+  subscription_billing_period:        Invoicing
+  subscription_start_date:                Startdate
+  subscription_mod_platform:        Platform
+  subscription_mod_insurance:     Insurance
+  subscription_mods:                          Modules
+  subscription_email:             Send email
+  subscription_reset:             Password
+  subscription_send_email_to_user:  Send email to user
+  subscription_send_email_to_admin: Send email to admin
 
-    # Session
-    session_logged_in:							You have been logged in sucessfully
-    session_logged_out:							You have been logged out sucessfully
-    session_unauthenticated:				You have to login first
-    session_locked:									Your account has been locked
-    session_invalid:								Invalid e-mail or password
-    session_timeout:								Your session has expired, please login again
-    session_password_updated:				Your password has been changed, you are now logged in
-    session_signed_up:							The user has been registered
-    session_destroyed:							The user has been removed
+  # Session
+  session_logged_in:                          You have been logged in sucessfully
+  session_logged_out:                         You have been logged out sucessfully
+  session_unauthenticated:                You have to login first
+  session_locked:                                 Your account has been locked
+  session_invalid:                                Invalid e-mail or password
+  session_timeout:                                Your session has expired, please login again
+  session_password_updated:               Your password has been changed, you are now logged in
+  session_signed_up:                          The user has been registered
+  session_destroyed:                          The user has been removed
 
-    # Form
-    form_name:                      Name
-    form_address:                  	Street
-    form_address2:                  Street additional
-    form_zipcode:                   Postcode
-    form_city:                      City
-    form_to:                        attn.
-    form_country:                   Country
-    form_postbox:                  	Postbox
-    form_email:                     Email address
-    form_role:                   		Role    
-    form_password:                  Password (mandatory)
-    form_website:                   Website
-    form_telephone:                 Telephone number
-    form_fax:                 			Fax number
-    form_twitter:                   Twitter
-    form_facebook:                  Facebook
-    form_linkedin:                  LinkedIn
-    form_remarks:                   Remarks
-    form_edit_button:               Edit
-    form_delete_button:             Remove
-    form_new_button:                Add
-    form_save_button:               Save
-    form_filter_button:             Filter
-    form_search_button:             Search
-    form_error:                   	error(s)
-    form_error_title:             	caused the failure of the registration
-    form_showprofile:               open profile
-    form_ok:						OK
+  # Form
+  form_name:                      Name
+  form_address:                   Street
+  form_address2:                  Street additional
+  form_zipcode:                   Postcode
+  form_city:                      City
+  form_to:                        attn.
+  form_country:                   Country
+  form_postbox:                   Postbox
+  form_email:                     Email address
+  form_role:                          Role    
+  form_password:                  Password (mandatory)
+  form_website:                   Website
+  form_telephone:                 Telephone number
+  form_fax:                           Fax number
+  form_twitter:                   Twitter
+  form_facebook:                  Facebook
+  form_linkedin:                  LinkedIn
+  form_remarks:                   Remarks
+  form_edit_button:               Edit
+  form_delete_button:             Remove
+  form_new_button:                Add
+  form_save_button:               Save
+  form_filter_button:             Filter
+  form_search_button:             Search
+  form_error:                     error(s)
+  form_error_title:               caused the failure of the registration
+  form_showprofile:               open profile
+  form_ok:                        OK
 
-    # Agreement CRUD
-    agreement_edit_title:           Change agreement
-    agreement_show_title:           Agreement details
-    agreement_index_title:          Agreements
-    agreement_extra_title:         	with
-    agreement_new_title:           	Add agreement
-    agreement_all:                  Agreements
-    agreement_single:               Agreement
-    agreement_date:               	Date
+  # Agreement CRUD
+  agreement_edit_title:           Change agreement
+  agreement_show_title:           Agreement details
+  agreement_index_title:          Agreements
+  agreement_extra_title:          with
+  agreement_new_title:            Add agreement
+  agreement_all:                  Agreements
+  agreement_single:               Agreement
+  agreement_date:                 Date
 
-    # dossier CRUD
-    dossier_edit_title:           	Change dossier
-    dossier_show_title:           	Dossier details
-    dossier_extra_title:         		with
-    dossier_index_title:          	Dossiers
-    dossier_new_title:           		Add dossier
-    dossier_add_title:           		Add to dossier (optional)
-    dossier_all:                  	Dossiers
-    dossier_single:               	Dossier
-    dossier_general:                General
-    dossier_title:               		Title
-    dossier_status:               	Status
-    dossier_budget:               	Budget
-    dossier_fte:               			FTE
-    dossier_nr_tasks:				Tasks
-    dossier_nr_notes:				Notes
-    dossier_nr_contacts:			Contacts
-    dossier_nr_agreements:			Agreements
-    dossier_explantion:				Dossiers are a collection of relations, contacts, tasks, notes and agreements which are bundled to have a total overview when working on a specific, temporary case, like e.g. the offer process for a potential client. The contents of a dossier are just a loose bundle, when a dossier gets removed, then the parts which belonged to the dossier will not be removed.
+  # dossier CRUD
+  dossier_edit_title:             Change dossier
+  dossier_show_title:             Dossier details
+  dossier_extra_title:                with
+  dossier_index_title:            Dossiers
+  dossier_new_title:                  Add dossier
+  dossier_add_title:                  Add to dossier (optional)
+  dossier_all:                    Dossiers
+  dossier_single:                 Dossier
+  dossier_general:                General
+  dossier_title:                      Title
+  dossier_status:                 Status
+  dossier_budget:                 Budget
+  dossier_fte:                        FTE
+  dossier_nr_tasks:               Tasks
+  dossier_nr_notes:               Notes
+  dossier_nr_contacts:            Contacts
+  dossier_nr_agreements:          Agreements
+  dossier_explantion:             Dossiers are a collection of relations, contacts, tasks, notes and agreements which are bundled to have a total overview when working on a specific, temporary case, like e.g. the offer process for a potential client. The contents of a dossier are just a loose bundle, when a dossier gets removed, then the parts which belonged to the dossier will not be removed.
 
-    # Task CRUD
-    task_edit_title:           			Change task
-    task_show_title:           			Task details
-    task_index_title:          			Tasks
-    task_extra_title:          			with content
-    task_new_title:           			Add task
-    task_all:                  			Tasks
-    task_type:                  		Type
-    task_task:                  		Task
-    task_due_at:                  	Deadline
-    task_text:											Add the task description here
-    task_index_date_due:						Deadline
-    task_index_relation:						Relation
-    task_index_type:								Type
-    task_details_date:							Date
-    task_details_date_due:					Deadline
-    task_details_by:								By
-    task_details_contact:						Contact
-    task_delete:										ready
-    task_todo:						    Owner
+  # Task CRUD
+  task_edit_title:                    Change task
+  task_show_title:                    Task details
+  task_index_title:                   Tasks
+  task_extra_title:                   with content
+  task_new_title:                     Add task
+  task_all:                           Tasks
+  task_type:                          Type
+  task_task:                          Task
+  task_due_at:                    Deadline
+  task_text:                                          Add the task description here
+  task_index_date_due:                        Deadline
+  task_index_relation:                        Relation
+  task_index_type:                                Type
+  task_details_date:                          Date
+  task_details_date_due:                  Deadline
+  task_details_by:                                By
+  task_details_contact:                       Contact
+  task_delete:                                        ready
+  task_todo:                          Owner
 
-    # Notes CRUD
-    notes_edit_title:           		Change note
-    notes_show_title:           		Note details
-    notes_index_title:          		Notes
-    notes_extra_title:          		with content
-    notes_new_title:           			Add note
-    notes_all:                  		Notes
-    notes_subject:									Subject
-    notes_subject_form:							Add the subject here
-    notes_text:											Add the note here
-    notes_attachment:								Attachment
-    notes_attachment_file:					attachment
-    notes_attachment_url:						link
-    notes_details_date:							Noted at
-    notes_details_by:								By
-    notes_details_contact:					Contact
-    notes_details_via:							Contact by
-    notes_index_date:								Date
-    notes_index_relation:						Relation
-    notes_index_type:								Type
-    notes_index_text:								Note
-    notes_index_subject:						Subject
-    notes_url:						url
+  # Notes CRUD
+  notes_edit_title:                   Change note
+  notes_show_title:                   Note details
+  notes_index_title:                  Notes
+  notes_extra_title:                  with content
+  notes_new_title:                    Add note
+  notes_all:                          Notes
+  notes_subject:                                  Subject
+  notes_subject_form:                         Add the subject here
+  notes_text:                                         Add the note here
+  notes_attachment:                               Attachment
+  notes_attachment_file:                  attachment
+  notes_attachment_url:                       link
+  notes_details_date:                         Noted at
+  notes_details_by:                               By
+  notes_details_contact:                  Contact
+  notes_details_via:                          Contact by
+  notes_index_date:                               Date
+  notes_index_relation:                       Relation
+  notes_index_type:                               Type
+  notes_index_text:                               Note
+  notes_index_subject:                        Subject
+  notes_url:                      url
 
-    # Contacts CRUD
-    contacts_edit_title:           	Change contact
-    contacts_show_title:           	Contact details
-    contacts_index_title:          	Contacts
-    contacts_extra_title:          	starting with
-    contacts_new_title:           	Add contact
-    contacts_new_vcard:             Import vCard
-    contacts_all:                  	Contacts
-    contacts_all_short:             Contacts
-    contacts_data_general:         	General data
-    contacts_data_social:         	Communication
-    contacts_function:							Function
-    contacts_telephone_business:		Telephone business
-    contacts_telephone_private:			Telephone private
-    contacts_telephone_mobile:			Telephone mobile
-    contacts_business:							business
-    contacts_fax:		                Faxnumber
-    contacts_no_fax:		            no faxnumber
-    contacts_private:								private
-    contacts_mobile:								mobile
-    contacts_background:						Background
-    contacts_relation:							Relation
-    contacts_with:									by
-    contacts_no_business:						no business phone
-    contacts_no_private:						no private phone
-    contacts_no_mobile:							no mobile phone
-    contacts_no_email:							no email
-    contacts_salutation:			Salutation
-    contacts_gender:				Gender
-    contacts_title:				    Title
-    contacts_birthdate:				Birth date
-    contacts_vcard_explanation:     Select here the vCard which must be imported as a new contact
-    contacts_has_boss:		          Manager
-    contacts_organigram:            Org chart
-    contacts_organigram_noboss:		  no manager
-    contacts_organigram_nopeople:		no employees
-    contacts_organigram_link:       show orgchart
+  # Contacts CRUD
+  contacts_edit_title:            Change contact
+  contacts_show_title:            Contact details
+  contacts_index_title:           Contacts
+  contacts_extra_title:           starting with
+  contacts_new_title:             Add contact
+  contacts_new_vcard:             Import vCard
+  contacts_all:                   Contacts
+  contacts_all_short:             Contacts
+  contacts_data_general:          General data
+  contacts_data_social:           Communication
+  contacts_function:                          Function
+  contacts_telephone_business:        Telephone business
+  contacts_telephone_private:         Telephone private
+  contacts_telephone_mobile:          Telephone mobile
+  contacts_business:                          business
+  contacts_fax:                       Faxnumber
+  contacts_no_fax:                    no faxnumber
+  contacts_private:                               private
+  contacts_mobile:                                mobile
+  contacts_background:                        Background
+  contacts_relation:                          Relation
+  contacts_with:                                  by
+  contacts_no_business:                       no business phone
+  contacts_no_private:                        no private phone
+  contacts_no_mobile:                         no mobile phone
+  contacts_no_email:                          no email
+  contacts_salutation:            Salutation
+  contacts_gender:                Gender
+  contacts_title:                 Title
+  contacts_birthdate:             Birth date
+  contacts_vcard_explanation:     Select here the vCard which must be imported as a new contact
+  contacts_has_boss:                Manager
+  contacts_organigram:            Org chart
+  contacts_organigram_noboss:       no manager
+  contacts_organigram_nopeople:       no employees
+  contacts_organigram_link:       show orgchart
 
-    # Relation CRUD
-    relations_edit_title:           Change relation details
-    relations_show_title:           Relation details
-    relations_data_general:         General data
-    relations_data_social:         	Communication
-    relations_data_address:         Billing address
-    relations_data_visit:         	Visit address
-    relations_data_post:         	  Post address
-    relations_data_remarks:         Remark
-    relations_data_custom:         	Custom fields
-    relations_data_sameasvisit:		  Identical to visit address
-    relations_data_sameaspost:		  Identical to post address
-    relations_data_hierarchy:       Hierarchy
-    relations_index_title:          Overview relations
-    relations_index_name:           Name
-    relations_index_city:           City
-    relations_index_nr_large:       Relation number
-    relations_index_nr:             Nr.
-    relations_index_group:          Group
-    relations_newgroup:             New relationgroup
-    relations_newgroup_new:         or add a new one (3 characters)
-    relations_index_group_large:    Relationgroup
-    relations_contactshort:   			Contact
-    relations_contact_internal:     Contact internal
-    relations_index_contact:        Contact
-    relations_index_type:           Type
-    relations_index_status:         Status
-    relations_index_newrelation:    New relation
-    relations_edit_title:           Change relation
-    relations_new_title:            New relation
-    relations_type:                 Type
-    relations_status:               Status
-    relations_company_contact:      Contact
-    relations_kvk_nr:               Chamber of commerce number
-    relations_tax_nr:               VAT number
-    relations_bankaccount:          Bank account
-    relations_industry:             Sector
-    relations_branch:               Branch
-    relations_legal:                Legal
-    relations_nr_employees:         Number of employees
-    relations_all:                  All relations
-    relations_logo:                 Upload logo (200x100 pix)
-    relations_custom_label:         Label (e.g.. 'Customer number')
-    relations_custom_value:         Waarde (e.g. '12345')
-    relations_excel_export:         Export to excel
+  # Relation CRUD
+  relations_edit_title:           Change relation details
+  relations_show_title:           Relation details
+  relations_data_general:         General data
+  relations_data_social:          Communication
+  relations_data_address:         Billing address
+  relations_data_visit:           Visit address
+  relations_data_post:              Post address
+  relations_data_remarks:         Remark
+  relations_data_custom:          Custom fields
+  relations_data_sameasvisit:       Identical to visit address
+  relations_data_sameaspost:        Identical to post address
+  relations_data_hierarchy:       Hierarchy
+  relations_index_title:          Overview relations
+  relations_index_name:           Name
+  relations_index_city:           City
+  relations_index_nr_large:       Relation number
+  relations_index_nr:             Nr.
+  relations_index_group:          Group
+  relations_newgroup:             New relationgroup
+  relations_newgroup_new:         or add a new one (3 characters)
+  relations_index_group_large:    Relationgroup
+  relations_contactshort:             Contact
+  relations_contact_internal:     Contact internal
+  relations_index_contact:        Contact
+  relations_index_type:           Type
+  relations_index_status:         Status
+  relations_index_newrelation:    New relation
+  relations_edit_title:           Change relation
+  relations_new_title:            New relation
+  relations_type:                 Type
+  relations_status:               Status
+  relations_company_contact:      Contact
+  relations_kvk_nr:               Chamber of commerce number
+  relations_tax_nr:               VAT number
+  relations_bankaccount:          Bank account
+  relations_industry:             Sector
+  relations_branch:               Branch
+  relations_legal:                Legal
+  relations_nr_employees:         Number of employees
+  relations_all:                  All relations
+  relations_logo:                 Upload logo (200x100 pix)
+  relations_custom_label:         Label (e.g.. 'Customer number')
+  relations_custom_value:         Waarde (e.g. '12345')
+  relations_excel_export:         Export to excel
 
-    # Company CRUD
-    company_new_title:              Add company
-    company_edit_title:             Change company
-    company_show_title:             Company data
-    company_code:                   Code (3 characters)
-    company_code_short:             Code
-    company_all:                    Alle companies
-    company_single:                 Company
-    company_logo:                   Company logo
-    company_users:                  Users
+  # Company CRUD
+  company_new_title:              Add company
+  company_edit_title:             Change company
+  company_show_title:             Company data
+  company_code:                   Code (3 characters)
+  company_code_short:             Code
+  company_all:                    Alle companies
+  company_single:                 Company
+  company_logo:                   Company logo
+  company_users:                  Users
 
-    # Users CRUD
-    users_index_title:              Overview users
-    users_index_name:               Name
-    users_index_firstname:          First name
-    users_index_middlename:         Middle name
-    users_index_lastname:           Surname
-    users_index_logincount:         Logins
-    users_index_lastsignin:         Last login
-    users_index_createdat:          Created at
-    users_index_lastedited:         Last change
-    users_index_newuser:            New user
-    users_index_edit:               change
-    users_index_delete:             remove
-    users_index_neverloggedin:      Never logged in
-    users_edit_title:               My profile
-    users_change_title:         		Change profile
-    users_show_title:             	User data
-    users_edit_admin_title:         Change user
-    users_new_admin_title:          New user
-    users_all:                      All users
-    users_firstname:               	First name    
-    users_middlename:               Middle name    
-    users_lastname:                	Surname    
-    users_position:                	Function    
-    users_department:              	Department    
-    users_locale:              			Language
-    users_reputation:				        Reputation   
-    users_role:                     Role
-    users_data_general:         	  General data
-    users_tms_timesheet:            Timesheet settings
-    users_tms_internal:             Employee type
-    users_tms_department:           Department
-    users_tms_manager:              Manager
-    users_tms_holiday:              Private holidays
-    users_tms_start_period:         Start date
-    users_tms_leave_period:         End date
-    users_tms_bonus_from:           Bonus from
-    users_tms_internal_show:        Internal employee
-    users_tms_external_show:        External employee
-    users_mob_mobility:             Mobility settings
-    users_mob_car_type:             Car type
-    users_mob_private_km:           Private km
+  # Users CRUD
+  users_index_title:              Overview users
+  users_index_name:               Name
+  users_index_firstname:          First name
+  users_index_middlename:         Middle name
+  users_index_lastname:           Surname
+  users_index_logincount:         Logins
+  users_index_lastsignin:         Last login
+  users_index_createdat:          Created at
+  users_index_lastedited:         Last change
+  users_index_newuser:            New user
+  users_index_edit:               change
+  users_index_delete:             remove
+  users_index_neverloggedin:      Never logged in
+  users_edit_title:               My profile
+  users_change_title:                 Change profile
+  users_show_title:               User data
+  users_edit_admin_title:         Change user
+  users_new_admin_title:          New user
+  users_all:                      All users
+  users_firstname:                First name    
+  users_middlename:               Middle name    
+  users_lastname:                 Surname    
+  users_position:                 Function    
+  users_department:               Department    
+  users_locale:                       Language
+  users_reputation:                       Reputation   
+  users_role:                     Role
+  users_data_general:               General data
+  users_tms_timesheet:            Timesheet settings
+  users_tms_internal:             Employee type
+  users_tms_department:           Department
+  users_tms_manager:              Manager
+  users_tms_holiday:              Private holidays
+  users_tms_start_period:         Start date
+  users_tms_leave_period:         End date
+  users_tms_bonus_from:           Bonus from
+  users_tms_internal_show:        Internal employee
+  users_tms_external_show:        External employee
+  users_mob_mobility:             Mobility settings
+  users_mob_car_type:             Car type
+  users_mob_private_km:           Private km
 
-    # Updates
-    update_contact:           			has contact
-    update_marketplace:           	has marketplace
-    update_offer:           	      has offer
-    update_bid:           				  has bid for offer
-    update_relation:           			has relation
-    update_note:           					has note
-    update_task:           					has task
-    update_agreement:           		has aagreement
-    update_dossier:           			has dossier
-    update_user:           					has user
-    update_invoice:           			has invoice
-    update_insurance:           		has insurance
-    update_ownuser:           			has his profile
-    update_company:           			has company
-    update_timesheet:           		has timesheet
-    update_car:           		      has car
-    update_eoy:                       has a end km
-    update_declaration:           	has a declaration
-    update_new:             				added
-    update_edit:            				edited
-    update_delete:          				removed
-    update_taskdelete:          		finished
-    update_tmsnew:             		  added
-    update_tmssend:            			send
-    update_tmsapprove:            	approved
-    update_tmsdisapprove:           disapproved
+  # Updates
+  update_contact:                     has contact
+  update_marketplace:             has marketplace
+  update_offer:                     has offer
+  update_bid:                           has bid for offer
+  update_relation:                    has relation
+  update_note:                            has note
+  update_task:                            has task
+  update_agreement:                   has aagreement
+  update_dossier:                     has dossier
+  update_user:                            has user
+  update_invoice:                     has invoice
+  update_insurance:                   has insurance
+  update_ownuser:                     has his profile
+  update_company:                     has company
+  update_timesheet:                   has timesheet
+  update_car:                       has car
+  update_eoy:                       has a end km
+  update_declaration:             has a declaration
+  update_new:                             added
+  update_edit:                            edited
+  update_delete:                          removed
+  update_taskdelete:                  finished
+  update_tmsnew:                    added
+  update_tmssend:                     send
+  update_tmsapprove:              approved
+  update_tmsdisapprove:           disapproved
 
-    # Alerts
-    alert_boxtitle:                 Attention!
-    alert_task_start:               Task
-    alert_task_due:                 has a deadline due in 3 days!
-    alert_invoice_start:            Invoice
-    alert_invoice_due:              has been expired!
-    alert_dismiss:                  dismiss
-    alert_details:                  details
+  # Alerts
+  alert_boxtitle:                 Attention!
+  alert_task_start:               Task
+  alert_task_due:                 has a deadline due in 3 days!
+  alert_invoice_start:            Invoice
+  alert_invoice_due:              has been expired!
+  alert_dismiss:                  dismiss
+  alert_details:                  details
 
-    # Messages
-    message_user_updated:           User has been changed succesfully
-    message_user_created:           User has been added succesfully
-    message_user_deleted:           User has been removed succesfully
-    message_company_created:        Company has been added succesfully
-    message_company_updated:        Company has been changed succesfully
-    message_company_deleted:        Company has been removed succesfully
-    message_subscription_created:   Subscription has been added succesfully
-    message_subscription_updated:   Subscription has been changed succesfully
-    message_subscription_deleted:   Subscription has been removed succesfully
-    message_relation_updated:       Relation has been changed succesfully
-    message_relation_created:       Relation has been added succesfully
-    message_relation_deleted:       Relation has been removed succesfully
-    message_contact_updated:       	Contact has been changed succesfully
-    message_contact_created:       	Contact has been added succesfully
-    message_contact_deleted:       	Contact has been removed succesfully
-    message_note_updated:       		Note has been changed succesfully
-    message_note_created:       		Note has been added succesfully
-    message_note_deleted:       		Note has been removed succesfully
-    message_task_updated:       		Task has been changed succesfully
-    message_task_created:       		Task has been added succesfully
-    message_task_deleted:       		Task has been removed succesfully
-    message_agreement_updated:      Agreement has been changed succesfully
-    message_agreement_created:      Agreement has been added succesfully
-    message_agreement_deleted:      Agreement has been removed succesfully
-    message_dossier_updated:      	Dossier has been changed succesfully
-    message_dossier_created:      	Dossier has been added succesfully
-    message_dossier_deleted:      	Dossier has been removed succesfully
-    message_dossier_status_deleted:	Dossier status has been removed succesfully
-    message_dossier_status_created:	Dossier status has been added succesfully
-    message_country_updated:      	Country has been changed succesfully
-    message_country_created:      	Country has been added succesfully
-    message_country_deleted:      	Country has been removed succesfully
-    message_branch_created:      	Branch has been added succesfully
-    message_branch_deleted:      	Branch has been removed succesfully
-    message_sector_created:      	Sector has been added succesfully
-    message_sector_deleted:      	Sector has been removed succesfully
-    message_vcard_imported:         vCard has been imported succesfully
-    message_public_email_sent:      Your email addres has been received and we will contact you soon!
+  # Messages
+  message_user_updated:           User has been changed succesfully
+  message_user_created:           User has been added succesfully
+  message_user_deleted:           User has been removed succesfully
+  message_company_created:        Company has been added succesfully
+  message_company_updated:        Company has been changed succesfully
+  message_company_deleted:        Company has been removed succesfully
+  message_subscription_created:   Subscription has been added succesfully
+  message_subscription_updated:   Subscription has been changed succesfully
+  message_subscription_deleted:   Subscription has been removed succesfully
+  message_relation_updated:       Relation has been changed succesfully
+  message_relation_created:       Relation has been added succesfully
+  message_relation_deleted:       Relation has been removed succesfully
+  message_contact_updated:        Contact has been changed succesfully
+  message_contact_created:        Contact has been added succesfully
+  message_contact_deleted:        Contact has been removed succesfully
+  message_note_updated:               Note has been changed succesfully
+  message_note_created:               Note has been added succesfully
+  message_note_deleted:               Note has been removed succesfully
+  message_task_updated:               Task has been changed succesfully
+  message_task_created:               Task has been added succesfully
+  message_task_deleted:               Task has been removed succesfully
+  message_agreement_updated:      Agreement has been changed succesfully
+  message_agreement_created:      Agreement has been added succesfully
+  message_agreement_deleted:      Agreement has been removed succesfully
+  message_dossier_updated:        Dossier has been changed succesfully
+  message_dossier_created:        Dossier has been added succesfully
+  message_dossier_deleted:        Dossier has been removed succesfully
+  message_dossier_status_deleted: Dossier status has been removed succesfully
+  message_dossier_status_created: Dossier status has been added succesfully
+  message_country_updated:        Country has been changed succesfully
+  message_country_created:        Country has been added succesfully
+  message_country_deleted:        Country has been removed succesfully
+  message_branch_created:         Branch has been added succesfully
+  message_branch_deleted:         Branch has been removed succesfully
+  message_sector_created:         Sector has been added succesfully
+  message_sector_deleted:         Sector has been removed succesfully
+  message_vcard_imported:         vCard has been imported succesfully
+  message_public_email_sent:      Your email addres has been received and we will contact you soon!
 
-    # Navigation menu
-    nav_home:                       Home  
-    nav_support:                       Support
-    nav_companies:                  Companies    
-    nav_users:                  		Users    
-    nav_relations:                  Relations   
-    nav_contacts:                  	Contacts    
-    nav_notes:                  		Notes    
-    nav_tasks:                  		Tasks    
-    nav_agreements:                 Agreements    
-    nav_dossiers:                 	Dossiers    
-    nav_profile:                    Profile    
-    nav_profile_myprofile:          My profile    
-    nav_profile_company:            Company profile    
-    nav_settings:                   Settings    
-    nav_admin_dashboard:            Site dashboard    
-    nav_marketplace:				        Marketplace 
-    nav_employee:								    Employees  
-    nav_invoice:								    Invoices
-    nav_insurance:					        Insurances
-    nav_timesheet:					        Timesheets
-    nav_declaration:					      Declarations
-    nav_mobility:					          Mobility
+  # Navigation menu
+  nav_home:                       Home  
+  nav_support:                       Support
+  nav_companies:                  Companies    
+  nav_users:                          Users    
+  nav_relations:                  Relations   
+  nav_contacts:                   Contacts    
+  nav_notes:                          Notes    
+  nav_tasks:                          Tasks    
+  nav_agreements:                 Agreements    
+  nav_dossiers:                   Dossiers    
+  nav_profile:                    Profile    
+  nav_profile_myprofile:          My profile    
+  nav_profile_company:            Company profile    
+  nav_settings:                   Settings    
+  nav_admin_dashboard:            Site dashboard    
+  nav_marketplace:                        Marketplace 
+  nav_employee:                                   Employees  
+  nav_invoice:                                    Invoices
+  nav_insurance:                          Insurances
+  nav_timesheet:                          Timesheets
+  nav_declaration:                          Declarations
+  nav_mobility:                             Mobility
 
-    # Homepage
-    home_content_title:             Here comes the title.    
-    home_content_text:              Here comes the text.
+  # Homepage
+  home_content_title:             Here comes the title.    
+  home_content_text:              Here comes the text.
 
-    login_title:                    Login
-    login_remember:                 Remember me
-    register_title:                 Register
-    register_edit_title:            My profile
-    register_button:                OK
-    register_edit_help1:            leave empty if you don't want to change it
-    register_edit_help2:            we need your current password to confirm the change
-    password_title:                 Forgot password?
-    password_confirm:               Add your password for confirmation
-    password_instructions:          Send me reset instructions
-    password_edit_title:            Change your password
-    unlock:                         Send unlock instructions again
-    confirmation:                   Send confirmation instructions again
-    mailer_confirm_text:            You can confirm your account with the link below
-    mailer_confirm_link:            Confirm my account
-    mailer_reset_content1:          Someone has asked to change your password and you can do this by clicking the link below
-    mailer_reset_content2:          When you didn't request this, please ignore this email
-    mailer_reset_content3:          Your password will not be changed till you visit the link above and enter your new password
-    mailer_unlock_content1:        	Your account has been locked by a high number of attempts to login
-    mailer_unlock_content2:         Click the link below to unlock your account
-    mailer_unlock_link:             Unlock my account
+  login_title:                    Login
+  login_remember:                 Remember me
+  register_title:                 Register
+  register_edit_title:            My profile
+  register_button:                OK
+  register_edit_help1:            leave empty if you don't want to change it
+  register_edit_help2:            we need your current password to confirm the change
+  password_title:                 Forgot password?
+  password_confirm:               Add your password for confirmation
+  password_instructions:          Send me reset instructions
+  password_edit_title:            Change your password
+  unlock:                         Send unlock instructions again
+  confirmation:                   Send confirmation instructions again
+  mailer_confirm_text:            You can confirm your account with the link below
+  mailer_confirm_link:            Confirm my account
+  mailer_reset_content1:          Someone has asked to change your password and you can do this by clicking the link below
+  mailer_reset_content2:          When you didn't request this, please ignore this email
+  mailer_reset_content3:          Your password will not be changed till you visit the link above and enter your new password
+  mailer_unlock_content1:         Your account has been locked by a high number of attempts to login
+  mailer_unlock_content2:         Click the link below to unlock your account
+  mailer_unlock_link:             Unlock my account
 
-    # will_paginate
-    will_paginate:
-        previous_label: "&#8592; Previous"
-        next_label: "Next &#8594;"
-        page_gap: "&hellip;"
+  # will_paginate
+  will_paginate:
+      previous_label: "&#8592; Previous"
+      next_label: "Next &#8594;"
+      page_gap: "&hellip;"
