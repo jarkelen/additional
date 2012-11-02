@@ -15,7 +15,7 @@
     edit:                           edit
     delete:                         remove
     search:													Search...
-    all:														all
+    #all:														all
     or:															or
     to:                             to
     till:                           till

@@ -15,7 +15,7 @@
     edit:                           wijzigen
     delete:                         verwijderen
     search:							            Zoeken...
-    all:							              alle
+    #all:							              alle
     or:								              of
     to:                             aan
     till:                           t/m
