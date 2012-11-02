@@ -1,472 +1,472 @@
 "nl":
-    # # General
-    # not_allowed:                    U heeft niet voldoende rechten voor deze aktiviteit
-    # welcome:                        Welkom
-    # hello:                          Hallo
-    # logout_link:                    Uitloggen
-    # login_link:                  	  Inloggen
-    # back:                           Terug
-    # sure:                           Weet U het zeker?
-    # ago:                            geleden
-    # bool_yes:                       Ja
-    # bool_no:                        Nee
-    # printpreview:                   PDF
-    # add:                           	toevoegen
-    # edit:                           wijzigen
-    # delete:                         verwijderen
-    # search:							"Zoeken..."
-    # till:                           t/m
-    # cancel:							            Annuleren
-    # no_data_found:				        	Er zijn geen gegevens gevonden
-    # open_link:				        	    Klik om te openen
-    # no_choice:                      <geen keuze gemaakt>
-    # always_password:                Vul wachtwoord in om wijzigingen door te voeren
+    # General
+    not_allowed:                    "U heeft niet voldoende rechten voor deze aktiviteit"
+    welcome:                        "Welkom"
+    hello:                          "Hallo"
+    logout_link:                    "Uitloggen"
+    login_link:                  	"Inloggen"
+    back:                           "Terug"
+    sure:                           "Weet U het zeker?"
+    ago:                            "geleden"
+    bool_yes:                       "Ja"
+    bool_no:                        "Nee"
+    printpreview:                   "PDF"
+    add:                           	"toevoegen"
+    edit:                           "wijzigen"
+    delete:                         "verwijderen"
+    search:							"Zoeken..."
+    till:                           "t/m"
+    cancel:							"Annuleren"
+    no_data_found:				    "Er zijn geen gegevens gevonden"
+    open_link:				        "Klik om te openen"
+    no_choice:                      "<geen keuze gemaakt>"
+    always_password:                "Vul wachtwoord in om wijzigingen door te voeren"
 
-    # # User dashboard
-    # dashboard_title:								Mijn Dashboard
-    # dashboard_introtext1:     			Welkom bij het relatieportaal van
-    # dashboard_introtext2:			      . Hier kunnen relaties zelfstandig bepaalde handelingen uitvoeren. Voor inhoudelijke vragen kunt U contact opnemen via
-    # dashboard_mynotes:							Mijn Notities
-    # dashboard_mytasks:							Mijn Taken
-    # dashboard_users_title:          Overzicht gebruikers voor bedrijf
+    # User dashboard
+    dashboard_title:								Mijn Dashboard
+    dashboard_introtext1:     			Welkom bij het relatieportaal van
+    dashboard_introtext2:			      . Hier kunnen relaties zelfstandig bepaalde handelingen uitvoeren. Voor inhoudelijke vragen kunt U contact opnemen via
+    dashboard_mynotes:							Mijn Notities
+    dashboard_mytasks:							Mijn Taken
+    dashboard_users_title:          Overzicht gebruikers voor bedrijf
 
-    # # Support
-    # support_title:                   Support
-    # support_general_videos:          Algemeen
-    # support_timesheets_videos:       Timesheets
-    # support_introtext:               Op deze pagina staan video's waarin bepaalde aspecten van het gebruik van deze applicatie worden uitgelegd. Klik op een video om af te spelen.
-    # # Activities
-    # activities_all:									Updates
-    # activities_all_link:						meer updates
+    # Support
+    support_title:                   Support
+    support_general_videos:          Algemeen
+    support_timesheets_videos:       Timesheets
+    support_introtext:               Op deze pagina staan video's waarin bepaalde aspecten van het gebruik van deze applicatie worden uitgelegd. Klik op een video om af te spelen.
+    # Activities
+    activities_all:									Updates
+    activities_all_link:						meer updates
 
-    # # Settings tab
-    # settings_title:					        Onderhoud tabellen
-    # settings_sector:					      Sector
-    # settings_sectors:				        Sectoren
-    # settings_add_sector:		        Toevoegen sector
-    # settings_branch:					      Branch
-    # settings_branches:				      Branches
-    # settings_add_branch:		        Toevoegen branch
-    # settings_dossier_status:			  Dossier status
-    # settings_dossier_statuses:		  Dossier statussen
-    # settings_add_dossier_status:		Toevoegen dossier status
-    # settings_countries:				      Landen
-    # settings_tasktype:              Taak type
-    # settings_tasktypes:             Taak types
-    # settings_add_tasktype:          Toevoegen taak type
-    # settings_rel_type:              Relatie type
-    # settings_rel_types:             Relatie types
-    # settings_add_rel_type:          Toevoegen relatie type
+    # Settings tab
+    settings_title:					        Onderhoud tabellen
+    settings_sector:					      Sector
+    settings_sectors:				        Sectoren
+    settings_add_sector:		        Toevoegen sector
+    settings_branch:					      Branch
+    settings_branches:				      Branches
+    settings_add_branch:		        Toevoegen branch
+    settings_dossier_status:			  Dossier status
+    settings_dossier_statuses:		  Dossier statussen
+    settings_add_dossier_status:		Toevoegen dossier status
+    settings_countries:				      Landen
+    settings_tasktype:              Taak type
+    settings_tasktypes:             Taak types
+    settings_add_tasktype:          Toevoegen taak type
+    settings_rel_type:              Relatie type
+    settings_rel_types:             Relatie types
+    settings_add_rel_type:          Toevoegen relatie type
 
-    # # Countries
-    # country_index_title:						Landen
-    # country_new_title:							Toevoegen land
-    # country_edit_title:							Wijzigen land
-    # country_title:									Land
+    # Countries
+    country_index_title:						Landen
+    country_new_title:							Toevoegen land
+    country_edit_title:							Wijzigen land
+    country_title:									Land
 
-    # # Subscription
-    # subscription_new_title:					Toevoegen abonnement
-    # subscription_edit_title:				Wijzigen abonnement
-    # subscription_title:							Abonnement
-    # subscription_name:							Abonnement type
-    # subscription_licenses:					Licenties
-    # subscription_discount:					Korting
-    # subscription_user_price:				Prijs per gebruiker
-    # subscription_active:						Aktief
-    # subscription_billing_period:		Fakturatie
-    # subscription_start_date:				Startdatum
-    # subscription_mod_platform:		  Platform
-    # subscription_mod_insurance:     Verzekeringen
-    # subscription_mods:							Modules
-    # subscription_email:             Email versturen
-    # subscription_email:             Email versturen
-    # subscription_reset:             Wachtwoord
-    # subscription_send_email_to_user:  Verstuur email aan user
-    # subscription_send_email_to_admin:  Verstuur email aan admin
+    # Subscription
+    subscription_new_title:					Toevoegen abonnement
+    subscription_edit_title:				Wijzigen abonnement
+    subscription_title:							Abonnement
+    subscription_name:							Abonnement type
+    subscription_licenses:					Licenties
+    subscription_discount:					Korting
+    subscription_user_price:				Prijs per gebruiker
+    subscription_active:						Aktief
+    subscription_billing_period:		Fakturatie
+    subscription_start_date:				Startdatum
+    subscription_mod_platform:		  Platform
+    subscription_mod_insurance:     Verzekeringen
+    subscription_mods:							Modules
+    subscription_email:             Email versturen
+    subscription_email:             Email versturen
+    subscription_reset:             Wachtwoord
+    subscription_send_email_to_user:  Verstuur email aan user
+    subscription_send_email_to_admin:  Verstuur email aan admin
 
-    # # Session
-    # session_logged_in:							U bent succesvol ingelogd
-    # session_logged_out:							U bent succesvol uitgelogd
-    # session_unauthenticated:				U moet hier eerst inloggen a.u.b.
-    # session_locked:									Uw account is gelocked
-    # session_invalid:								Ongeldig e-mail of wachtwoord
-    # session_timeout:								Uw sessie is verlopen log a.u.b. opnieuw in
-    # session_password_updated:				Uw wachtwoord is gewijzigd U bent nu ingelogd
-    # session_signed_up:							De gebruiker is nu geregistreerd
-    # session_destroyed:							De gebruiker is verwijderd
+    # Session
+    session_logged_in:							U bent succesvol ingelogd
+    session_logged_out:							U bent succesvol uitgelogd
+    session_unauthenticated:				U moet hier eerst inloggen a.u.b.
+    session_locked:									Uw account is gelocked
+    session_invalid:								Ongeldig e-mail of wachtwoord
+    session_timeout:								Uw sessie is verlopen log a.u.b. opnieuw in
+    session_password_updated:				Uw wachtwoord is gewijzigd U bent nu ingelogd
+    session_signed_up:							De gebruiker is nu geregistreerd
+    session_destroyed:							De gebruiker is verwijderd
 
-    # # Form
-    # form_name:                      Naam
-    # form_address:                  	Straat
-    # form_address2:                  Straat vervolg
-    # form_zipcode:                   Postcode
-    # form_city:                      Plaats
-    # form_to:                        t.a.v.
-    # form_country:                   Land
-    # form_postbox:                  	Postadres/straat
-    # form_email:                     Email adres
-    # form_role:                   	  Rol
-    # form_password:                  Wachtwoord
-    # form_website:                   Website
-    # form_telephone:                 Telefoonnummer
-    # form_fax:                 		  Faxnummer
-    # form_twitter:                   Twitter
-    # form_facebook:                  Facebook
-    # form_linkedin:                  LinkedIn
-    # form_remarks:                   Opmerkingen
-    # form_edit_button:               Wijzigen
-    # form_delete_button:             Verwijderen
-    # form_new_button:                Toevoegen
-    # form_save_button:               Opslaan
-    # form_filter_button:             Filter
-    # form_search_button:             Zoeken
-    # form_error:                   	fout(en)
-    # form_error_title:             	zorgden er voor dat de registratie niet goed ging
-    # form_ok:						OK
-    # form_showprofile:               open profiel
+    # Form
+    form_name:                      Naam
+    form_address:                  	Straat
+    form_address2:                  Straat vervolg
+    form_zipcode:                   Postcode
+    form_city:                      Plaats
+    form_to:                        t.a.v.
+    form_country:                   Land
+    form_postbox:                  	Postadres/straat
+    form_email:                     Email adres
+    form_role:                   	  Rol
+    form_password:                  Wachtwoord
+    form_website:                   Website
+    form_telephone:                 Telefoonnummer
+    form_fax:                 		  Faxnummer
+    form_twitter:                   Twitter
+    form_facebook:                  Facebook
+    form_linkedin:                  LinkedIn
+    form_remarks:                   Opmerkingen
+    form_edit_button:               Wijzigen
+    form_delete_button:             Verwijderen
+    form_new_button:                Toevoegen
+    form_save_button:               Opslaan
+    form_filter_button:             Filter
+    form_search_button:             Zoeken
+    form_error:                   	fout(en)
+    form_error_title:             	zorgden er voor dat de registratie niet goed ging
+    form_ok:						OK
+    form_showprofile:               open profiel
 
-    # # Agreement CRUD
-    # agreement_edit_title:           Wijzigen afspraak
-    # agreement_show_title:           Afspraak details
-    # agreement_index_title:          Afspraken
-    # agreement_extra_title:         	met daarin
-    # agreement_new_title:           	Toevoegen afspraak
-    # agreement_all:                  Afspraken
-    # agreement_single:               Afspraak
-    # agreement_date:               	Datum
+    # Agreement CRUD
+    agreement_edit_title:           Wijzigen afspraak
+    agreement_show_title:           Afspraak details
+    agreement_index_title:          Afspraken
+    agreement_extra_title:         	met daarin
+    agreement_new_title:           	Toevoegen afspraak
+    agreement_all:                  Afspraken
+    agreement_single:               Afspraak
+    agreement_date:               	Datum
 
-    # # dossier CRUD
-    # dossier_edit_title:           	Wijzigen dossier
-    # dossier_show_title:           	Dossier details
-    # dossier_index_title:          	Dossiers
-    # dossier_extra_title:         		met daarin
-    # dossier_new_title:           		Toevoegen dossier
-    # dossier_add_title:           		Toevoegen aan dossier (optioneel)
-    # dossier_all:                  	Dossiers
-    # dossier_single:               	Dossier
-    # dossier_general:                Algemeen
-    # dossier_title:               		Titel
-    # dossier_status:               	Status
-    # dossier_budget:               	Budget
-    # dossier_fte:               			FTE
-    # dossier_nr_tasks:								Taken
-    # dossier_nr_notes:								Notities
-    # dossier_nr_contacts:						Contacten
-    # dossier_nr_agreements:					Afspraken
-    # dossier_explantion:							Dossiers vormen een verzameling van relaties, contactpersonen, taken, notities en afspraken die zijn gebundeld om een totaaloverzicht te hebben tijdens het werken aan een specifieke, tijdelijke zaak, zoals b.v. het offerte traject voor een potentiele klant. De inhoud van een dossier is slechts een losse bundeling, als een dossier wordt verwijderd dan verdwijnen niet de stukken die tot het dossier behoorden.
+    # dossier CRUD
+    dossier_edit_title:           	Wijzigen dossier
+    dossier_show_title:           	Dossier details
+    dossier_index_title:          	Dossiers
+    dossier_extra_title:         		met daarin
+    dossier_new_title:           		Toevoegen dossier
+    dossier_add_title:           		Toevoegen aan dossier (optioneel)
+    dossier_all:                  	Dossiers
+    dossier_single:               	Dossier
+    dossier_general:                Algemeen
+    dossier_title:               		Titel
+    dossier_status:               	Status
+    dossier_budget:               	Budget
+    dossier_fte:               			FTE
+    dossier_nr_tasks:								Taken
+    dossier_nr_notes:								Notities
+    dossier_nr_contacts:						Contacten
+    dossier_nr_agreements:					Afspraken
+    dossier_explantion:							Dossiers vormen een verzameling van relaties, contactpersonen, taken, notities en afspraken die zijn gebundeld om een totaaloverzicht te hebben tijdens het werken aan een specifieke, tijdelijke zaak, zoals b.v. het offerte traject voor een potentiele klant. De inhoud van een dossier is slechts een losse bundeling, als een dossier wordt verwijderd dan verdwijnen niet de stukken die tot het dossier behoorden.
 
-    # # Task CRUD
-    # task_edit_title:           			Wijzigen taak
-    # task_show_title:           			Taak details
-    # task_index_title:          			Taken
-    # task_extra_title:          			met inhoud
-    # task_new_title:           			Toevoegen taak
-    # task_all:                  			Taken
-    # task_type:                  		Type
-    # task_task:                  		Taak
-    # task_due_at:                  	    Deadline
-    # task_text:							Voer hier de taakbeschrijving in
-    # task_index_date_due:				Deadline
-    # task_index_relation:				Relatie
-    # task_index_type:					Type
-    # task_details_date:					Datum
-    # task_details_date_due:			    Deadline
-    # task_details_by:					Door
-    # task_details_contact:				Contact
-    # task_delete:						gereed
-    # task_todo:						    Uitvoerder
+    # Task CRUD
+    task_edit_title:           			Wijzigen taak
+    task_show_title:           			Taak details
+    task_index_title:          			Taken
+    task_extra_title:          			met inhoud
+    task_new_title:           			Toevoegen taak
+    task_all:                  			Taken
+    task_type:                  		Type
+    task_task:                  		Taak
+    task_due_at:                  	    Deadline
+    task_text:							Voer hier de taakbeschrijving in
+    task_index_date_due:				Deadline
+    task_index_relation:				Relatie
+    task_index_type:					Type
+    task_details_date:					Datum
+    task_details_date_due:			    Deadline
+    task_details_by:					Door
+    task_details_contact:				Contact
+    task_delete:						gereed
+    task_todo:						    Uitvoerder
 
-    # # Notes CRUD
-    # notes_edit_title:           		Wijzigen notitie
-    # notes_show_title:           		Notitie details
-    # notes_index_title:          		Notities
-    # notes_extra_title:          		met inhoud
-    # notes_new_title:           			Toevoegen notitie
-    # notes_all:                  		Notities
-    # notes_subject:									Onderwerp
-    # notes_subject_form:							Vul hier het onderwerp in
-    # notes_text:											Voer hier de notitie in
-    # notes_attachment:								Bijlage
-    # notes_attachment_file:					bijlage
-    # notes_attachment_url:						link
-    # notes_details_date:							Genoteerd op
-    # notes_details_by:								Door
-    # notes_details_contact:					Contact
-    # notes_details_via:							Contact via
-    # notes_index_date:								Datum
-    # notes_index_relation:						Relatie
-    # notes_index_type:								Type
-    # notes_index_text:								Notitie
-    # notes_index_subject:						Onderwerp
-    # notes_url:											url
+    # Notes CRUD
+    notes_edit_title:           		Wijzigen notitie
+    notes_show_title:           		Notitie details
+    notes_index_title:          		Notities
+    notes_extra_title:          		met inhoud
+    notes_new_title:           			Toevoegen notitie
+    notes_all:                  		Notities
+    notes_subject:									Onderwerp
+    notes_subject_form:							Vul hier het onderwerp in
+    notes_text:											Voer hier de notitie in
+    notes_attachment:								Bijlage
+    notes_attachment_file:					bijlage
+    notes_attachment_url:						link
+    notes_details_date:							Genoteerd op
+    notes_details_by:								Door
+    notes_details_contact:					Contact
+    notes_details_via:							Contact via
+    notes_index_date:								Datum
+    notes_index_relation:						Relatie
+    notes_index_type:								Type
+    notes_index_text:								Notitie
+    notes_index_subject:						Onderwerp
+    notes_url:											url
 
-    # # Contacts CRUD
-    # contacts_edit_title:            Wijzigen contactpersoon
-    # contacts_show_title:           	Contactpersoon details
-    # contacts_index_title:          	Contactpersonen
-    # contacts_extra_title:          	startend met
-    # contacts_new_title:           	Toevoegen contactpersoon
-    # contacts_new_vcard:             Importeren vCard
-    # contacts_all:                  	Contactpersonen
-    # contacts_all_short:             Contacten
-    # contacts_data_general:         	Algemene gegevens
-    # contacts_data_social:         	Communicatie
-    # contacts_function:				Functie
-    # contacts_telephone_business:	Telefoon zakelijk
-    # contacts_telephone_private:		Telefoon prive
-    # contacts_telephone_mobile:		Telefoon mobiel
-    # contacts_fax:		              Faxnummer
-    # contacts_no_fax:		          geen faxnummer
-    # contacts_business:				zakelijk
-    # contacts_private:				prive
-    # contacts_mobile:				mobiel
-    # contacts_background:			Achtergrond
-    # contacts_relation:				Relatie
-    # contacts_with:					bij
-    # contacts_no_business:			geen telefoon werk
-    # contacts_no_private:			geen telefoon prive
-    # contacts_no_mobile:				geen telefoon mobiel
-    # contacts_no_email:				geen email
-    # contacts_salutation:			Aanhef
-    # contacts_gender:				Geslacht
-    # contacts_title:				    Titulatuur
-    # contacts_birthdate:				Geboortedatum
-    # contacts_vcard_explanation:     Selecteer hier de vCard die moet worden geimporteerd als contactpersoon
-    # contacts_has_boss:		          Leidinggevende
-    # contacts_organigram:            Organigram
-    # contacts_organigram_noboss:		  geen leidinggevende
-    # contacts_organigram_nopeople:		geen medewerkers
-    # contacts_organigram_link:       toon organigram
+    # Contacts CRUD
+    contacts_edit_title:            Wijzigen contactpersoon
+    contacts_show_title:           	Contactpersoon details
+    contacts_index_title:          	Contactpersonen
+    contacts_extra_title:          	startend met
+    contacts_new_title:           	Toevoegen contactpersoon
+    contacts_new_vcard:             Importeren vCard
+    contacts_all:                  	Contactpersonen
+    contacts_all_short:             Contacten
+    contacts_data_general:         	Algemene gegevens
+    contacts_data_social:         	Communicatie
+    contacts_function:				Functie
+    contacts_telephone_business:	Telefoon zakelijk
+    contacts_telephone_private:		Telefoon prive
+    contacts_telephone_mobile:		Telefoon mobiel
+    contacts_fax:		              Faxnummer
+    contacts_no_fax:		          geen faxnummer
+    contacts_business:				zakelijk
+    contacts_private:				prive
+    contacts_mobile:				mobiel
+    contacts_background:			Achtergrond
+    contacts_relation:				Relatie
+    contacts_with:					bij
+    contacts_no_business:			geen telefoon werk
+    contacts_no_private:			geen telefoon prive
+    contacts_no_mobile:				geen telefoon mobiel
+    contacts_no_email:				geen email
+    contacts_salutation:			Aanhef
+    contacts_gender:				Geslacht
+    contacts_title:				    Titulatuur
+    contacts_birthdate:				Geboortedatum
+    contacts_vcard_explanation:     Selecteer hier de vCard die moet worden geimporteerd als contactpersoon
+    contacts_has_boss:		          Leidinggevende
+    contacts_organigram:            Organigram
+    contacts_organigram_noboss:		  geen leidinggevende
+    contacts_organigram_nopeople:		geen medewerkers
+    contacts_organigram_link:       toon organigram
 
-    # # Relation CRUD
-    # relations_edit_title:           Wijzigen relatie details
-    # relations_show_title:           Relatie details
-    # relations_data_general:         Algemene gegevens
-    # relations_data_social:         	Communicatie
-    # relations_data_address:         Factuuradres
-    # relations_data_visit:         	Bezoekadres
-    # relations_data_post:         	  Postadres
-    # relations_data_custom:         	Vrije velden
-    # relations_data_remarks:         Opmerking
-    # relations_data_sameasvisit:		  Identiek aan bezoekadres
-    # relations_data_sameaspost:		  Identiek aan postadres
-    # relations_data_hierarchy:       Hierarchie
-    # relations_index_title:          Overzicht relaties
-    # relations_index_name:           Naam
-    # relations_index_nr_large:       Relatienummer
-    # relations_index_nr:             Nr.
-    # relations_index_group:          Groep
-    # relations_index_group_large:    Relatiegroep
-    # relations_newgroup:             Nieuwe relatiegroep
-    # relations_newgroup_new:         of voeg een nieuwe toe (3 tekens)
-    # relations_index_city:           Plaats
-    # relations_contactshort:   	  	Contact
-    # relations_contact_internal:     Contact intern
-    # relations_index_contact:        Contactpersoon
-    # relations_index_type:           Type
-    # relations_index_status:         Status
-    # relations_index_newrelation:    Nieuwe relatie
-    # relations_edit_title:           Wijzigen relatie
-    # relations_new_title:            Nieuwe relatie
-    # relations_type:                 Type
-    # relations_status:               Status
-    # relations_company_contact:      Contactpersoon
-    # relations_kvk_nr:               KVK nummer
-    # relations_tax_nr:               BTW nummer
-    # relations_bankaccount:          Banknummer
-    # relations_industry:             Sector
-    # relations_branch:               Branch
-    # relations_legal:                Juridische vorm
-    # relations_nr_employees:         Aantal medewerkers
-    # relations_all:                  Alle relaties
-    # relations_logo:                 Logo uploaden (200x100 pix)
-    # relations_custom_label:         Label (bv Klantnummer)
-    # relations_custom_value:         Waarde (bv 12345)
-    # relations_excel_export:         Exporteren naar excel
+    # Relation CRUD
+    relations_edit_title:           Wijzigen relatie details
+    relations_show_title:           Relatie details
+    relations_data_general:         Algemene gegevens
+    relations_data_social:         	Communicatie
+    relations_data_address:         Factuuradres
+    relations_data_visit:         	Bezoekadres
+    relations_data_post:         	  Postadres
+    relations_data_custom:         	Vrije velden
+    relations_data_remarks:         Opmerking
+    relations_data_sameasvisit:		  Identiek aan bezoekadres
+    relations_data_sameaspost:		  Identiek aan postadres
+    relations_data_hierarchy:       Hierarchie
+    relations_index_title:          Overzicht relaties
+    relations_index_name:           Naam
+    relations_index_nr_large:       Relatienummer
+    relations_index_nr:             Nr.
+    relations_index_group:          Groep
+    relations_index_group_large:    Relatiegroep
+    relations_newgroup:             Nieuwe relatiegroep
+    relations_newgroup_new:         of voeg een nieuwe toe (3 tekens)
+    relations_index_city:           Plaats
+    relations_contactshort:   	  	Contact
+    relations_contact_internal:     Contact intern
+    relations_index_contact:        Contactpersoon
+    relations_index_type:           Type
+    relations_index_status:         Status
+    relations_index_newrelation:    Nieuwe relatie
+    relations_edit_title:           Wijzigen relatie
+    relations_new_title:            Nieuwe relatie
+    relations_type:                 Type
+    relations_status:               Status
+    relations_company_contact:      Contactpersoon
+    relations_kvk_nr:               KVK nummer
+    relations_tax_nr:               BTW nummer
+    relations_bankaccount:          Banknummer
+    relations_industry:             Sector
+    relations_branch:               Branch
+    relations_legal:                Juridische vorm
+    relations_nr_employees:         Aantal medewerkers
+    relations_all:                  Alle relaties
+    relations_logo:                 Logo uploaden (200x100 pix)
+    relations_custom_label:         Label (bv Klantnummer)
+    relations_custom_value:         Waarde (bv 12345)
+    relations_excel_export:         Exporteren naar excel
 
-    # # Company CRUD
-    # company_new_title:              Toevoegen bedrijf
-    # company_edit_title:             Wijzigen bedrijf
-    # company_show_title:             Bedrijfsgegevens
-    # company_code:                   Code (3 karakters)
-    # company_code_short:             Code
-    # company_all:                    Alle bedrijven
-    # company_single:                 Bedrijf
-    # company_logo:                   Bedrijfslogo
-    # company_users:                  Gebruikers
+    # Company CRUD
+    company_new_title:              Toevoegen bedrijf
+    company_edit_title:             Wijzigen bedrijf
+    company_show_title:             Bedrijfsgegevens
+    company_code:                   Code (3 karakters)
+    company_code_short:             Code
+    company_all:                    Alle bedrijven
+    company_single:                 Bedrijf
+    company_logo:                   Bedrijfslogo
+    company_users:                  Gebruikers
 
-    # # Users CRUD
-    # users_index_title:              Overzicht gebruikers
-    # users_index_name:               Naam
-    # users_index_firstname:          Voornaam
-    # users_index_middlename:         Tussenvoegsel
-    # users_index_lastname:           Achternaam
-    # users_index_logincount:         Logins
-    # users_index_lastsignin:         Laatste login
-    # users_index_createdat:          Aangemaakt
-    # users_index_lastedited:         Gewijzigd
-    # users_index_newuser:            Nieuwe gebruiker
-    # users_index_edit:               Wijzigen
-    # users_index_delete:             Verwijderen
-    # users_index_neverloggedin:      Nooit ingelogd
-    # users_edit_title:               Mijn profiel
-    # users_change_title:         		Wijzigen profiel
-    # users_show_title:             	Medewerker profiel
-    # users_edit_admin_title:         Wijzigen gebruiker
-    # users_new_admin_title:          Nieuwe gebruiker
-    # users_all:                      Alle gebruikers
-    # users_firstname:               	Voornaam
-    # users_middlename:               Tussenvoegsel
-    # users_lastname:                	Achternaam
-    # users_position:                	Functie
-    # users_department:              	Afdeling
-    # users_locale:              			Taal
-    # users_reputation:								Reputatie
-    # users_role:                     Rol
-    # users_data_general:         	  Algemene gegevens
-    # users_tms_timesheet:            Timesheet instellingen
-    # users_tms_internal:             Medewerker type
-    # users_tms_department:           Afdeling
-    # users_tms_manager:              Manager
-    # users_tms_holiday:              Vakantiedagen
-    # users_tms_start_period:         Datum in dienst
-    # users_tms_leave_period:         Datum uit dienst
-    # users_tms_bonus_from:           Bonus vanaf
-    # users_tms_internal_show:        Interne medewerker
-    # users_tms_external_show:        Externe medewerker
-    # users_mob_mobility:             Mobiliteit instellingen
-    # users_mob_car_type:             Auto type
-    # users_mob_private_km:           Prive km
+    # Users CRUD
+    users_index_title:              Overzicht gebruikers
+    users_index_name:               Naam
+    users_index_firstname:          Voornaam
+    users_index_middlename:         Tussenvoegsel
+    users_index_lastname:           Achternaam
+    users_index_logincount:         Logins
+    users_index_lastsignin:         Laatste login
+    users_index_createdat:          Aangemaakt
+    users_index_lastedited:         Gewijzigd
+    users_index_newuser:            Nieuwe gebruiker
+    users_index_edit:               Wijzigen
+    users_index_delete:             Verwijderen
+    users_index_neverloggedin:      Nooit ingelogd
+    users_edit_title:               Mijn profiel
+    users_change_title:         		Wijzigen profiel
+    users_show_title:             	Medewerker profiel
+    users_edit_admin_title:         Wijzigen gebruiker
+    users_new_admin_title:          Nieuwe gebruiker
+    users_all:                      Alle gebruikers
+    users_firstname:               	Voornaam
+    users_middlename:               Tussenvoegsel
+    users_lastname:                	Achternaam
+    users_position:                	Functie
+    users_department:              	Afdeling
+    users_locale:              			Taal
+    users_reputation:								Reputatie
+    users_role:                     Rol
+    users_data_general:         	  Algemene gegevens
+    users_tms_timesheet:            Timesheet instellingen
+    users_tms_internal:             Medewerker type
+    users_tms_department:           Afdeling
+    users_tms_manager:              Manager
+    users_tms_holiday:              Vakantiedagen
+    users_tms_start_period:         Datum in dienst
+    users_tms_leave_period:         Datum uit dienst
+    users_tms_bonus_from:           Bonus vanaf
+    users_tms_internal_show:        Interne medewerker
+    users_tms_external_show:        Externe medewerker
+    users_mob_mobility:             Mobiliteit instellingen
+    users_mob_car_type:             Auto type
+    users_mob_private_km:           Prive km
 
-    # # Updates
-    # update_contact:           			heeft contactpersoon
-    # update_marketplace:           	heeft marktplaats
-    # update_offer:           				heeft opdracht
-    # update_bid:           				  heeft aanbod voor opdracht
-    # update_relation:           			heeft relatie
-    # update_note:           					heeft notitie
-    # update_task:           					heeft taak
-    # update_agreement:           		heeft afspraak
-    # update_dossier:           			heeft dossier
-    # update_user:           					heeft gebruiker
-    # update_ownuser:           			heeft zijn profiel
-    # update_company:           			heeft bedrijf
-    # update_invoice:           			heeft faktuur
-    # update_insurance:           		heeft verzekering
-    # update_timesheet:           		heeft timesheet
-    # update_car:           		      heeft auto
-    # update_eoy:                       heeft een eindstand
-    # update_declaration:           	heeft declaratie
-    # update_new:             				toegevoegd
-    # update_edit:            				gewijzigd
-    # update_delete:          				verwijderd
-    # update_taskdelete:          		afgerond
-    # update_tmsnew:             		  ingevoerd
-    # update_tmssend:            			verstuurd
-    # update_tmsapprove:            	goedgekeurd
-    # update_tmsdisapprove:           afgekeurd
+    # Updates
+    update_contact:           			heeft contactpersoon
+    update_marketplace:           	heeft marktplaats
+    update_offer:           				heeft opdracht
+    update_bid:           				  heeft aanbod voor opdracht
+    update_relation:           			heeft relatie
+    update_note:           					heeft notitie
+    update_task:           					heeft taak
+    update_agreement:           		heeft afspraak
+    update_dossier:           			heeft dossier
+    update_user:           					heeft gebruiker
+    update_ownuser:           			heeft zijn profiel
+    update_company:           			heeft bedrijf
+    update_invoice:           			heeft faktuur
+    update_insurance:           		heeft verzekering
+    update_timesheet:           		heeft timesheet
+    update_car:           		      heeft auto
+    update_eoy:                       heeft een eindstand
+    update_declaration:           	heeft declaratie
+    update_new:             				toegevoegd
+    update_edit:            				gewijzigd
+    update_delete:          				verwijderd
+    update_taskdelete:          		afgerond
+    update_tmsnew:             		  ingevoerd
+    update_tmssend:            			verstuurd
+    update_tmsapprove:            	goedgekeurd
+    update_tmsdisapprove:           afgekeurd
 
-    # # Alerts
-    # alert_boxtitle:                 Let op!
-    # alert_task_start:               Taak
-    # alert_task_due:                 heeft een deadline korter dan 3 dagen!
-    # alert_invoice_start:            Faktuur
-    # alert_invoice_due:              is verlopen!
-    # alert_dismiss:                  sluiten
-    # alert_details:                  details
+    # Alerts
+    alert_boxtitle:                 Let op!
+    alert_task_start:               Taak
+    alert_task_due:                 heeft een deadline korter dan 3 dagen!
+    alert_invoice_start:            Faktuur
+    alert_invoice_due:              is verlopen!
+    alert_dismiss:                  sluiten
+    alert_details:                  details
 
-    # # Messages
-    # message_user_updated:           Gebruiker is succesvol gewijzigd
-    # message_user_created:           Gebruiker is succesvol aangemaakt
-    # message_user_deleted:           Gebruiker is succesvol verwijderd
-    # message_company_created:        Bedrijf is succesvol aangemaakt
-    # message_company_updated:        Bedrijf is succesvol gewijzigd
-    # message_company_deleted:        Bedrijf is succesvol verwijderd
-    # message_subscription_created:   Abonnement is succesvol aangemaakt
-    # message_subscription_updated:   Abonnement is succesvol gewijzigd
-    # message_subscription_deleted:   Abonnement is succesvol verwijderd
-    # message_relation_updated:       Relatie is succesvol gewijzigd
-    # message_relation_created:       Relatie is succesvol aangemaakt
-    # message_relation_deleted:       Relatie is succesvol verwijderd
-    # message_contact_updated:       	Contactpersoon is succesvol gewijzigd
-    # message_contact_created:       	Contactpersoon is succesvol aangemaakt
-    # message_contact_deleted:       	Contactpersoon is succesvol verwijderd
-    # message_note_updated:       		Notitie is succesvol gewijzigd
-    # message_note_created:       		Notitie is succesvol aangemaakt
-    # message_note_deleted:       		Notitie is succesvol verwijderd
-    # message_task_updated:       		Taak is succesvol gewijzigd
-    # message_task_created:       		Taak is succesvol aangemaakt
-    # message_task_deleted:       		Taak is succesvol verwijderd
-    # message_agreement_updated:      Afsraak is succesvol gewijzigd
-    # message_agreement_created:      Afspraak is succesvol aangemaakt
-    # message_agreement_deleted:      Afspraak is succesvol verwijderd
-    # message_dossier_updated:      	Dossier is succesvol gewijzigd
-    # message_dossier_created:      	Dossier is succesvol aangemaakt
-    # message_dossier_deleted:      	Dossier is succesvol verwijderd
-    # message_dossier_status_deleted:	Dossier status is succesvol verwijderd
-    # message_dossier_status_created:	Dossier status is succesvol toegevoegd
-    # message_country_updated:      	Land is succesvol gewijzigd
-    # message_country_created:      	Land is succesvol aangemaakt
-    # message_country_deleted:      	Land is succesvol verwijderd
-    # message_branch_created:      	  Branch is succesvol aangemaakt
-    # message_branch_deleted:      	  Branch is succesvol verwijderd
-    # message_sector_created:      	  Sector is succesvol aangemaakt
-    # message_sector_deleted:      	  Sector is succesvol verwijderd
-    # message_vcard_imported:         vCard is succesvol geimporteerd
-    # message_public_email_sent:      Uw email adres is door ons ontvangen en wij nemen contact met U op!
+    # Messages
+    message_user_updated:           Gebruiker is succesvol gewijzigd
+    message_user_created:           Gebruiker is succesvol aangemaakt
+    message_user_deleted:           Gebruiker is succesvol verwijderd
+    message_company_created:        Bedrijf is succesvol aangemaakt
+    message_company_updated:        Bedrijf is succesvol gewijzigd
+    message_company_deleted:        Bedrijf is succesvol verwijderd
+    message_subscription_created:   Abonnement is succesvol aangemaakt
+    message_subscription_updated:   Abonnement is succesvol gewijzigd
+    message_subscription_deleted:   Abonnement is succesvol verwijderd
+    message_relation_updated:       Relatie is succesvol gewijzigd
+    message_relation_created:       Relatie is succesvol aangemaakt
+    message_relation_deleted:       Relatie is succesvol verwijderd
+    message_contact_updated:       	Contactpersoon is succesvol gewijzigd
+    message_contact_created:       	Contactpersoon is succesvol aangemaakt
+    message_contact_deleted:       	Contactpersoon is succesvol verwijderd
+    message_note_updated:       		Notitie is succesvol gewijzigd
+    message_note_created:       		Notitie is succesvol aangemaakt
+    message_note_deleted:       		Notitie is succesvol verwijderd
+    message_task_updated:       		Taak is succesvol gewijzigd
+    message_task_created:       		Taak is succesvol aangemaakt
+    message_task_deleted:       		Taak is succesvol verwijderd
+    message_agreement_updated:      Afsraak is succesvol gewijzigd
+    message_agreement_created:      Afspraak is succesvol aangemaakt
+    message_agreement_deleted:      Afspraak is succesvol verwijderd
+    message_dossier_updated:      	Dossier is succesvol gewijzigd
+    message_dossier_created:      	Dossier is succesvol aangemaakt
+    message_dossier_deleted:      	Dossier is succesvol verwijderd
+    message_dossier_status_deleted:	Dossier status is succesvol verwijderd
+    message_dossier_status_created:	Dossier status is succesvol toegevoegd
+    message_country_updated:      	Land is succesvol gewijzigd
+    message_country_created:      	Land is succesvol aangemaakt
+    message_country_deleted:      	Land is succesvol verwijderd
+    message_branch_created:      	  Branch is succesvol aangemaakt
+    message_branch_deleted:      	  Branch is succesvol verwijderd
+    message_sector_created:      	  Sector is succesvol aangemaakt
+    message_sector_deleted:      	  Sector is succesvol verwijderd
+    message_vcard_imported:         vCard is succesvol geimporteerd
+    message_public_email_sent:      Uw email adres is door ons ontvangen en wij nemen contact met U op!
 
-    # # Navigation menu
-    # nav_home:                       Home
-    # nav_support:                       Support
-    # nav_companies:                  Bedrijven
-    # nav_users:                  		Gebruikers
-    # nav_relations:                  Relaties
-    # nav_contacts:                  	Contactpersonen
-    # nav_notes:                  		Notities
-    # nav_tasks:                  		Taken
-    # nav_agreements:                 Afspraken
-    # nav_dossiers:                 	Dossiers
-    # nav_profile:                    Profiel
-    # nav_profile_myprofile:          Mijn profiel
-    # nav_profile_company:            Bedrijfsprofiel
-    # nav_settings:                   Instellingen
-    # nav_admin_dashboard:            Site dashboard
-    # nav_marketplace:				        Marktplaats
-    # nav_employee:					          Medewerkers
-    # nav_invoice:					          Fakturen
-    # nav_insurance:					        Verzekeringen
-    # nav_timesheet:					        Timesheets
-    # nav_declaration:					      Declaraties
-    # nav_mobility:					          Mobiliteit
+    # Navigation menu
+    nav_home:                       Home
+    nav_support:                       Support
+    nav_companies:                  Bedrijven
+    nav_users:                  		Gebruikers
+    nav_relations:                  Relaties
+    nav_contacts:                  	Contactpersonen
+    nav_notes:                  		Notities
+    nav_tasks:                  		Taken
+    nav_agreements:                 Afspraken
+    nav_dossiers:                 	Dossiers
+    nav_profile:                    Profiel
+    nav_profile_myprofile:          Mijn profiel
+    nav_profile_company:            Bedrijfsprofiel
+    nav_settings:                   Instellingen
+    nav_admin_dashboard:            Site dashboard
+    nav_marketplace:				        Marktplaats
+    nav_employee:					          Medewerkers
+    nav_invoice:					          Fakturen
+    nav_insurance:					        Verzekeringen
+    nav_timesheet:					        Timesheets
+    nav_declaration:					      Declaraties
+    nav_mobility:					          Mobiliteit
 
-    # # Homepage
-    # home_content_title:             Hier komt de titel.
-    # home_content_text:              Hier komt de tekst.
+    # Homepage
+    home_content_title:             Hier komt de titel.
+    home_content_text:              Hier komt de tekst.
 
-    # login_title:                    Inloggen
-    # login_remember:                 Onthoud me
-    # register_title:                 Registreren
-    # register_edit_title:            Mijn profiel
-    # register_button:                OK
-    # register_edit_help1:            leeg laten als U het niet wilt wijzigen
-    # register_edit_help2:            we hebben uw huidig wachtwoord nodig om uw wijziging te bevestigen
-    # password_confirm:               Wachtwoord ter bevestiging
-    # password_title:                 Wachtwoord vergeten?
-    # password_instructions:          Stuur me reset instructies
-    # password_edit_title:            Wijzig uw wachtwoord
-    # unlock:                         Stuur unlock instructies opnieuw
-    # confirmation:                   Stuur bevestiging instructies opnieuw
-    # mailer_confirm_text:            U kunt uw account bevestigen met onderstaande link
-    # mailer_confirm_link:            Bevestig mijn account
-    # mailer_reset_content1:          Iemand heeft gevraagd om uw wachtwoord te wijzigen en U kunt dit doen door op onderstaande link te klikken.
-    # mailer_reset_content2:          Indien U hierom niet heeft verzocht dan kunt U deze email negeren.
-    # mailer_reset_content3:          Uw wachtwoord zal niet wijzigen totdat U bovenstaande link bezoekt en een nieuw wachtwoord ingeeft.
-    # mailer_unlock_content1:         Uw account is gelocked door een hoog aantal ongeldige pogingen om in te loggen.
-    # mailer_unlock_content2:         Klik op onderstaande link om uw account te unlocken
-    # mailer_unlock_link:             Unlock mijn account
+    login_title:                    Inloggen
+    login_remember:                 Onthoud me
+    register_title:                 Registreren
+    register_edit_title:            Mijn profiel
+    register_button:                OK
+    register_edit_help1:            leeg laten als U het niet wilt wijzigen
+    register_edit_help2:            we hebben uw huidig wachtwoord nodig om uw wijziging te bevestigen
+    password_confirm:               Wachtwoord ter bevestiging
+    password_title:                 Wachtwoord vergeten?
+    password_instructions:          Stuur me reset instructies
+    password_edit_title:            Wijzig uw wachtwoord
+    unlock:                         Stuur unlock instructies opnieuw
+    confirmation:                   Stuur bevestiging instructies opnieuw
+    mailer_confirm_text:            U kunt uw account bevestigen met onderstaande link
+    mailer_confirm_link:            Bevestig mijn account
+    mailer_reset_content1:          Iemand heeft gevraagd om uw wachtwoord te wijzigen en U kunt dit doen door op onderstaande link te klikken.
+    mailer_reset_content2:          Indien U hierom niet heeft verzocht dan kunt U deze email negeren.
+    mailer_reset_content3:          Uw wachtwoord zal niet wijzigen totdat U bovenstaande link bezoekt en een nieuw wachtwoord ingeeft.
+    mailer_unlock_content1:         Uw account is gelocked door een hoog aantal ongeldige pogingen om in te loggen.
+    mailer_unlock_content2:         Klik op onderstaande link om uw account te unlocken
+    mailer_unlock_link:             Unlock mijn account
 
-    # # will_paginate
-    # will_paginate:
-    #     previous_label: "&#8592; Vorige"
-    #     next_label: "Volgende &#8594;"
-    #     page_gap: "&hellip;"
+    # will_paginate
+    will_paginate:
+        previous_label: "&#8592; Vorige"
+        next_label: "Volgende &#8594;"
+        page_gap: "&hellip;"
