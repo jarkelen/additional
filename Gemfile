@@ -34,8 +34,6 @@ group :development, :test do
 	gem 'yaml_db'
   gem 'sqlite3'
 
-	gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
-
 	gem 'factory_girl_rails', '~> 3.5.0'
 
 	gem 'database_cleaner'
