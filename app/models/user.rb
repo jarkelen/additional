@@ -60,7 +60,7 @@ class User < ActiveRecord::Base
   end
 
   def update_sign_in_stats
-    update_attributes(last_sign_in_at: Time.now, sign_in_count: sign_in_count + 1)
+    #update_attributes(last_sign_in_at: Time.now, sign_in_count: sign_in_count + 1)
   end
 
   # Get module subscription and translate it
