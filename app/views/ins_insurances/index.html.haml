@@ -21,29 +21,5 @@
         = select_tag('insurance_type', options_from_collection_for_select(@insurance_types, :ins_type, :ins_type), :include_blank => true)
         = select_tag('expiration_date', options_from_collection_for_select(@insurances, :main_premium_expiration_date, :date_for_select), :include_blank => true)
         = submit_tag I18n.t(:form_filter_button)
-
-    / Show insurances overview
-    .indextable
-      %table#mod_index.tablesorter
-        %thead
-          %tr
-            %th= link_to I18n.t :mod_ins_insurance_nr
-            %th= link_to I18n.t :mod_ins_relation
-            %th.centered= link_to I18n.t :mod_ins_branch
-            %th.centered= link_to I18n.t :mod_ins_insurance_type
-            %th.centered= link_to I18n.t :mod_ins_premium_expiration_date_short
-            %th
-            - if current_user.allowed?("company_admin")
-              %th
-        %tbody
-          - unless @insurances.blank?
-            - @insurances.each do |insurance|
-              %tr
-                %td= link_to insurance.insurance_nr, ins_insurance_path(insurance)
-                %td= link_to insurance.relation.name, relation_path(insurance.relation_id)
-                %td.centered= insurance.branch
-                %td.centered= insurance.insurance_type
-                %td.centered= insurance.main_premium_expiration_date.strftime("%d-%m")
-                %td.centered= link_to I18n.t(:edit), edit_ins_insurance_path(insurance)
-                - if current_user.allowed?("company_admin")
-                  %td.centered= link_to I18n.t(:delete), insurance, :method => :delete, :data => { :confirm => I18n.t(:sure) }
+    
+    = render('insurances_overview')

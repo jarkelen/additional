@@ -1,53 +1,8 @@
-# == Schema Information
+# -----------------------------------------------
 #
 # Table name: relations
 #
-#  id                :integer         not null, primary key
-#  relation_nr       :string(255)
-#  name              :string(255)
-#  company_contact   :integer
-#  website           :string(255)
-#  kvk_nr            :integer
-#  industry          :integer
-#  legal             :string(255)
-#  nr_employees      :string(255)
-#  telephone   			 :string(255)
-#  fax         			 :string(255)
-#  email       			 :string(255)
-#  facebook          :string(255)
-#  twitter           :string(255)
-#  linkedin          :string(255)
-#  billing_address   :string(255)
-#  billing_zipcode   :string(255)
-#  billing_city      :string(255)
-#  billing_country   :string(255)
-#  visit_address     :string(255)
-#  visit_zipcode     :string(255)
-#  visit_city        :string(255)
-#  visit_country     :string(255)
-#  post_address      :string(255)
-#  post_zipcode      :string(255)
-#  post_city         :string(255)
-#  post_country      :string(255)
-#  remarks           :text
-#  relation_type     :string(255)
-#  status				     :string(255)
-#  latitude				   :float
-#  longitude				 :float
-#  gmaps			     	 :boolean
-#  logo			     	 	 :string(255)
-#  branch		     	 	 :integer
-#  bankaccount			 :string(255)
-#  custom_label_1    :string(255)
-#  custom_field_1    :string(255)
-#  custom_label_2    :string(255)
-#  custom_field_2    :string(255)
-#  custom_label_3    :string(255)
-#  custom_field_3    :string(255)
-#	 company_id				 :integer
-#  created_at        :datetime
-#  updated_at        :datetime
-#
+# -----------------------------------------------
 class Relation < ActiveRecord::Base
   belongs_to :company
   has_many :contacts, :dependent => :destroy
@@ -57,8 +12,7 @@ class Relation < ActiveRecord::Base
   has_many :ins_insurances
   has_many :tms_projects, :dependent => :destroy
   
-  
-	# Geocode the address to create the Google map
+  # Geocode the address to create the Google map
   acts_as_gmappable :lat => "latitude", :lng => "longitude"
 	
 	# Add logo uploader
@@ -162,7 +116,7 @@ class Relation < ActiveRecord::Base
 
   # Fill a dropdown list with grouped relationgroups
   def self.dropdown_list
-    all(:group => 'relationgroup').map { |relation| [relation.relationgroup, relation.relationgroup] }
+    #all(group: 'id',relationgroup').map { |relation| [relation.relationgroup, relation.relationgroup] }
   end
 
   #------------------------------- INSTANCE METHODS -------------------------------

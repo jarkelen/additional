@@ -1,51 +1,12 @@
 / Show title
 .sixteen.columns
   .seven.columns
-    = render('layouts/pagetitle', :title => I18n.t(:dashboard_title), :path => 'nosearch')
-  / Show introtext for customers
-  - if current_user.role == 'customer'
-    #contentblock.twelve.columns
-      .content_title.general
-      .introtext
-        = I18n.t :dashboard_introtext1
-        = current_user.company.name
-        = I18n.t :dashboard_introtext2
-        = current_user.company.telephone
-        = I18n.t :or
-        = mail_to current_user.company.email, current_user.company.email
-/ Only show platform modules for authorized users
-- if current_user.mod_platform == true
-  #contentblock.twelve.columns
-    .content_title.general
-    .content
-      .dashboard_info
-        %h2= link_to @nr_relations, relations_path
-        %p= I18n.t :nav_relations
-      .dashboard_info
-        %h2= link_to @nr_dossiers, dossiers_path
-        %p= I18n.t :nav_dossiers
-      .dashboard_info
-        %h2= link_to @nr_contacts, contacts_path
-        %p= I18n.t :nav_contacts
-      .dashboard_info
-        %h2= link_to @nr_tasks, tasks_path
-        %p= I18n.t :nav_tasks
-      .dashboard_info
-        %h2= link_to @nr_notes, notes_path
-        %p= I18n.t :nav_notes
-      .dashboard_info
-        %h2= link_to @nr_agreements, agreements_path
-        %p= I18n.t :nav_agreements
-    .clear
-  / Show tasks
-  #contentblock.twelve.columns
-    .content_title.task
-    %h3= I18n.t :task_all
-    / Show all tasks for this contact
-    = render("tasks/all_tasks", :tasks => @tasks, :layout => "normal")
-  / Show dossiers
-  #contentblock.twelve.columns
-    .content_title.dossier
-    %h3= I18n.t :dossier_all
-    / Show all dossiers for this contact
-    = render("dossiers/all_dossiers", :dossiers => @dossiers, :layout => "normal")
+    = render('layouts/pagetitle', title: I18n.t(:dashboard_title), path: 'nosearch')
+
+/ Show expiring insurances
+#contentblock.twelve.columns
+  .content_title.mod
+  = render('layouts/pagetitle', title: I18n.t(:mod_ins_index_title), path: 'nosearch')
+
+  .content.insurances_canvas
+    = render('ins_insurances/insurances_overview')

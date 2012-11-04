@@ -6,7 +6,6 @@
     / Only show platform modules for authorized users
     - if current_user.allowed?('company_admin')
       %li#general= link_to I18n.t(:nav_profile_company), company_url(current_user.company)
-      %li#general= link_to I18n.t(:nav_settings), users_url
     - if current_user.allowed?('admin')
       %li#general= link_to I18n.t(:nav_admin_dashboard), dashboard_url
 
@@ -17,22 +16,17 @@
     %ul#sidebar
       %li#relation= link_to I18n.t(:nav_relations), relations_path
       %li#contact= link_to I18n.t(:nav_contacts), contacts_path
-      - if current_user.mod_platform
-        %li#note= link_to I18n.t(:nav_notes), notes_path
-        %li#task= link_to I18n.t(:nav_tasks), tasks_path
-        %li#agreement= link_to I18n.t(:nav_agreements), agreements_path
-        %li#dossier= link_to I18n.t(:nav_dossiers), dossiers_path
-/ Only show active modules for current user
-- if current_user.mod_insurance
-  #contentblock.four.columns
-    .content_title.general
-    %ul#sidebar
+
+      / Only show active modules for current user
       - if current_user.mod_insurance
         %li#mod= link_to I18n.t(:nav_insurance), ins_insurances_url
+
 / Show the last 10 user activities
 - if current_user.allowed?('company_admin')
   = render("activities/recent")
+
+/ Show version info
 #version.four.columns
-  %p version: 1.2
-  %p updated: 20-08-2012
-  %p= mail_to 'support', 'support@customerfirstcrm.nl'
+  %p version: 2.0
+  %p updated: 03-11-2012
+  %p= mail_to 'support', 'johnvanarkelen@gmail.com'

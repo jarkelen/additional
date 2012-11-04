@@ -16,35 +16,22 @@ gem 'bcrypt-ruby'
 gem 'activerecord-postgresql-adapter'
 gem 'gmaps4rails'
 gem 'haml-rails'
+gem 'newrelic_rpm'
 
-#gem 'pg'
-
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'sass-rails', "  ~> 3.2.5"
   gem 'coffee-rails', "~> 3.2.2"
   gem 'uglifier'
 end
 
-# Gems used in dev and test environment
 group :development, :test do
 	gem 'hpricot'
 	gem 'ruby_parser'
 	gem 'yaml_db'
-  gem 'sqlite3'
-
 	gem 'factory_girl_rails', '~> 3.5.0'
-
-	gem 'database_cleaner'
 	gem 'launchy'
-	gem 'rspec-rails', '~> 2.11.0'
-  gem 'capybara', '~> 1.1.2'
-	gem 'capybara-email', '~> 0.1.2'
-  gem 'selenium-webdriver', '~> 2.24.0'
-	gem 'spork', '> 0.9.0.rc'
-  gem 'spork-rails', '~> 3.2.0'
-
-  gem 'shoulda', '~> 3.1.1'
-  gem 'letter_opener'
+	gem 'rspec-rails'
+  gem 'capybara'
+  gem 'shoulda'
+  gem 'pg', '~> 0.14.1'
 end

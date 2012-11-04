@@ -15,6 +15,7 @@
   edit:                           "wijzigen"
   delete:                         "verwijderen"
   search:                         "Zoeken..."
+  all:                            Alle
   till:                           "t/m"
   cancel:                         "Annuleren"
   no_data_found:                  "Er zijn geen gegevens gevonden"
