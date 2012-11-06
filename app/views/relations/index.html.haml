@@ -32,7 +32,7 @@
             %th= link_to I18n.t :relations_index_city
             %th= link_to I18n.t :relations_index_type
             %th= link_to I18n.t :relations_index_status
-            %th= link_to I18n.t :relations_index_insurances
+            %th.centered= link_to I18n.t :relations_index_insurances
             %th
             - if is_allowed_to_view('company_admin')
               %th
@@ -52,7 +52,7 @@
               %td= relation.visit_city
               %td= relation.relation_type
               %td= relation.status
-              %td= current_relation_insurances.to_s
+              %td.centered= current_relation_insurances.to_s
               %td= link_to I18n.t(:edit), edit_relation_path(relation)
               - if is_allowed_to_view('company_admin')
                 %td= link_to I18n.t(:delete), relation, :method => :delete, :data => { :confirm => I18n.t(:sure) }

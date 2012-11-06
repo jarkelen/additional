@@ -13,7 +13,7 @@ class InsInsurancesController < ApplicationController
 
 	def index
 		if params[:filter]
-			@extra_info = I18n.t(:mod_inv_filtered)
+			@extra_info = I18n.t(:mod_ins_filtered)
 			@insurances = current_user.company.ins_insurances.filter(params)
 			@csv_insurances = @insurances
 		else
