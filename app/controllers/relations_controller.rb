@@ -53,6 +53,9 @@ class RelationsController < ApplicationController
 
     # Show relation's contacts
     @contacts = @relation.contacts.get_contacts(params)
+
+    # Show relation's insurances
+    @insurances = @relation.ins_insurances
   end
 
   def new

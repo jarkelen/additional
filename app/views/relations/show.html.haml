@@ -134,3 +134,13 @@
     / Show alphabet letters
     = render('contacts/alphabet')
     = render("contacts/all_contacts", :contacts => @contacts, :layout => "normal")
+
+/ Show all insurances for this relation
+#contentblock.twelve.columns
+  .content_title.mod
+    - page_title = I18n.t(:mod_ins_index_title)
+
+  = render('layouts/pagetitle', :title => page_title, :path => 'nosearch')
+
+  .content.insurances_canvas
+    = render('ins_insurances/insurances_overview')

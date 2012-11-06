@@ -1,25 +1,8 @@
-# == Schema Information
+#-----------------------------------------------------
 #
 # Table name: ins_insurances
 #
-#  id                               :integer         not null, primary key
-#  insurance_nr                     :string(255)
-#  branch  			                    :string(255)
-#  insurance_type                   :string(255)
-#  market                           :string(255)
-#  start_date                       :datetime
-#  duration                         :integer
-#  first_contract_expiration_date   :datetime
-#  main_premium_expiration_date     :datetime
-#  extension                        :string(255)
-#  payment_continuation             :string(255)
-#  arrear_calculation               :boolean
-#  attachment_1				              :string(255)
-#  attachment_2				              :string(255)
-#  attachment_3				              :string(255)
-#  relation_id                      :integer
-#  company_id                       :integer
-#
+#-----------------------------------------------------
 class InsInsurance < ActiveRecord::Base
 	belongs_to :relation
 	belongs_to :company
