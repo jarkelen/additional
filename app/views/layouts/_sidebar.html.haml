@@ -6,6 +6,7 @@
     / Only show platform modules for authorized users
     - if current_user.allowed?('company_admin')
       %li#general= link_to I18n.t(:nav_profile_company), company_url(current_user.company)
+      %li#general= link_to I18n.t(:nav_settings), users_url
     - if current_user.allowed?('admin')
       %li#general= link_to I18n.t(:nav_admin_dashboard), dashboard_url
 
