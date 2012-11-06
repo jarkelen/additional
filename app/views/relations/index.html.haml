@@ -40,10 +40,10 @@
             %tr
               %td= relation.relation_nr
               %td
-                - if relation.relationgroup?
-                  = relation.relationgroup
-                - else
+                - if relation.relationgroup.blank?
                   \-
+                - else
+                  = relation.relationgroup
               %td= link_to relation.name, relation_path(relation)
               %td= relation.visit_city
               %td= relation.relation_type
