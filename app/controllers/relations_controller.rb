@@ -57,7 +57,6 @@ class RelationsController < ApplicationController
 
   def new
     @relation = Relation.new
-    @relationgroups = Relation.uniq.pluck(:relationgroup)
 
     # Set listbox data
     get_listbox_data    

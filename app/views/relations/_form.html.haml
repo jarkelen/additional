@@ -14,7 +14,8 @@
       = render('layouts/form_field', :f => f, :label => I18n.t(:form_name), :field => :name, :size => "50")
       .field
         .fieldpusher= f.label I18n.t(:relations_index_group_large)
-        .fieldpusher= f.select(:relationgroup, @relationgroups, :include_blank => true) unless @relationgroups.blank?
+
+        .fieldpusher= f.collection_select(:relationgroup, Relation.select("DISTINCT(relationgroup)").order("relationgroup"), :relationgroup, :relationgroup)
         .labelpusher= I18n.t(:relations_newgroup_new)
         .fieldpusher= f.text_field :relationgroup_new, :size => 3
       .field
