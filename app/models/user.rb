@@ -1,28 +1,5 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  id                     :integer         not null, primary key
-#  email                  :string(255)     default(""), not null
-#  password_digest				:string(255)
-#  first_name             :string(255)
-#  middle_name            :string(255)
-#  last_name              :string(255)
-#  position               :string(255)
-#  department             :string(255)
-#  role										:string(255)
-#  locale									:string(255)
-#  sign_in_count          :integer         default(0)
-#  last_sign_in_at        :datetime
-#	 mod_platform           :boolean
-#  mod_insurance          :boolean
-#  company_id             :integer
-#  created_at             :datetime
-#  updated_at             :datetime
-#
 class User < ActiveRecord::Base 
   before_validation :create_random_password, :on => :create
-  before_validation :set_mods
   
   belongs_to :company
   has_many :activities
@@ -30,7 +7,6 @@ class User < ActiveRecord::Base
   has_many :tasks
   has_many :bids
   has_many :agreements
-  has_many :dossiers
   
   has_secure_password
   

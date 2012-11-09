@@ -1,13 +1,3 @@
-# == Schema Information
-#
-# Table name: sectors
-#
-#  id          :integer         not null, primary key
-#  sector      :string(255)
-#  company_id  :integer
-#  created_at  :datetime
-#  updated_at  :datetime
-#
 class Sector < ActiveRecord::Base
 	belongs_to :company
   has_many :branches

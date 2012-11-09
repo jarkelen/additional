@@ -1,8 +1,3 @@
-#-----------------------------------------------------
-#
-# Table name: ins_insurances
-#
-#-----------------------------------------------------
 class InsInsurance < ActiveRecord::Base
 	belongs_to :relation
 	belongs_to :company

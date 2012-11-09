@@ -1,13 +1,3 @@
-# == Schema Information
-#
-# Table name: ins_branches
-#
-#  id          :integer         not null, primary key
-#  branch      :string(255)
-#  company_id  :integer
-#  created_at  :datetime
-#  updated_at  :datetime
-#
 class InsBranch < ActiveRecord::Base
 	belongs_to :company
 	has_many :ins_types

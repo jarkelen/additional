@@ -54,9 +54,6 @@
       .field
         = f.text_field :custom_label_3, :size => 25
         = f.text_field :custom_field_3, :size => 25
-    .datablock_contact
-      %h4= I18n.t :dossier_add_title
-      = select_tag("dossier_ids[]", options_for_select(current_user.company.dossiers.find(:all).collect { |dossier| [dossier.title, dossier.id] }, @contact.dossiers.collect { |dossier| dossier.id}), :include_blank => true, :multiple=>true, :size=> 10 )
     .field
       = f.submit I18n.t(:form_save_button), :class => 'button white'
     .clear

@@ -30,7 +30,7 @@ describe InsInsurance do
   end
 
   describe ".filter" do
-    it "shows specific insurances when a filter is applied" do
+    pending "shows specific insurances when a filter is applied" do
       InsInsurance.filter({ :insurance_nr => @insurance_a.insurance_nr }).should have(1).record
     end
 

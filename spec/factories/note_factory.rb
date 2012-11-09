@@ -7,6 +7,5 @@ FactoryGirl.define do
     url           nil
     user_id       { FactoryGirl.create(:user) }
     contact_id    { FactoryGirl.create(:contact) }
-    dossier_id    { FactoryGirl.create(:dossier) }
   end
 end

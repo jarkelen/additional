@@ -8,7 +8,6 @@ describe Relation do
   it { should have_many(:agreements) }
   it { should have_many(:contacts) }
   it { should have_many(:ins_insurances) }
-  it { should have_many(:tms_projects) }
 
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:relation_nr) }
@@ -68,7 +67,7 @@ describe Relation do
                                        :name => "Test Inc.")
     end
 
-    it "should return Test Inc." do
+    pending "should return Test Inc." do
       Relation.filter({ :name => @relation.name }).should have(1).record
     end
 

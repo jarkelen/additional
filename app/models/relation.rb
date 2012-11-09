@@ -1,8 +1,3 @@
-# -----------------------------------------------
-#
-# Table name: relations
-#
-# -----------------------------------------------
 class Relation < ActiveRecord::Base
   belongs_to :company
   has_many :contacts, :dependent => :destroy
@@ -10,7 +5,6 @@ class Relation < ActiveRecord::Base
   has_many :notes, :through => :contacts
   has_many :agreements, :through => :contacts
   has_many :ins_insurances
-  has_many :tms_projects, :dependent => :destroy
   
   # Geocode the address to create the Google map
   acts_as_gmappable :lat => "latitude", :lng => "longitude"

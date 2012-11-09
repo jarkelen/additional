@@ -1,39 +1,6 @@
 / Show title
 = render('layouts/pagetitle', :title => "Site dashboard", :path => 'nosearch')
 
-/ Show numbers of things added by all users and companies
-#contentblock.twelve.columns
-  .content_title.general
-  .content
-    .dashboard_info
-      %h2= @nr_companies
-      %p= I18n.t :nav_companies
-    .dashboard_info
-      %h2= @nr_users
-      %p= I18n.t :nav_users
-    .dashboard_info
-      %h2= @nr_dossiers
-      %p= I18n.t :nav_dossiers
-    .dashboard_info
-      %h2= @nr_relations
-      %p= I18n.t :nav_relations
-    .dashboard_info
-      %h2= @nr_dossiers
-      %p= I18n.t :nav_dossiers
-    .dashboard_info
-      %h2= @nr_contacts
-      %p= I18n.t :nav_contacts
-    .dashboard_info
-      %h2= @nr_tasks
-      %p= I18n.t :nav_tasks
-    .dashboard_info
-      %h2= @nr_notes
-      %p= I18n.t :nav_notes
-    .dashboard_info
-      %h2= @nr_agreements
-      %p= I18n.t :nav_agreements
-  .clear
-
 / Add new company  
 #action_bar
   .action_button.general

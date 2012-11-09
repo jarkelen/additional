@@ -1,36 +1,3 @@
-# == Schema Information
-#
-# Table name: contacts
-#
-#  id                 :integer         not null, primary key
-#  first_name         :string(255)
-#  middle_name        :string(255)
-#  last_name          :string(255)
-#  email              :string(255)
-#  function           :string(255)
-#  telephone_business :string(255)
-#  telephone_private  :string(255)
-#  telephone_mobile   :string(255)
-#  twitter            :string(255)
-#  facebook           :string(255)
-#  linkedin           :string(255)
-#  background         :text
-#  salutation         :string(255)
-#  gender             :string(255)
-#  title              :string(255)
-#  fax                :string(255)
-#  birth_date         :date
-#  custom_label_1     :string(255)
-#  custom_field_1     :string(255)
-#  custom_label_2     :string(255)
-#  custom_field_2     :string(255)
-#  custom_label_3     :string(255)
-#  custom_field_3     :string(255)
-#  has_boss           :integer
-#  relation_id        :integer
-#  created_at         :datetime
-#  updated_at         :datetime
-#
 class Contact < ActiveRecord::Base
   belongs_to :relation
   has_and_belongs_to_many :dossiers

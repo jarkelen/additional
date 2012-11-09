@@ -1,13 +1,3 @@
-# == Schema Information
-#
-# Table name: tasktypes
-#
-#  id         		:integer         not null, primary key
-#  tasktype 		  :string(255)
-#  company_id 		:integer
-#  created_at 		:datetime
-#  updated_at 		:datetime
-#
 class Tasktype < ActiveRecord::Base
 	belongs_to :company
 

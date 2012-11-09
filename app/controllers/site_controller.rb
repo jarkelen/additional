@@ -24,15 +24,6 @@ class SiteController < ApplicationController
   end
   
   def dashboard
-    # Count records for dashboard info
-    @nr_companies = Company.count
-    @nr_users = User.count
-    @nr_relations = Relation.count
-    @nr_contacts = Contact.count
-    @nr_tasks = Task.count
-    @nr_notes = Note.count
-    @nr_agreements = Agreement.count
-    @nr_dossiers = Dossier.count
 
     # Get all companies
     @companies = Company.order("created_at DESC").includes([:subscription, :users])
