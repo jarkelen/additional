@@ -34,4 +34,5 @@ group :development, :test do
   gem 'capybara'
   gem 'shoulda'
   gem 'pg', '~> 0.14.1'
+  gem 'better_errors'
 end
