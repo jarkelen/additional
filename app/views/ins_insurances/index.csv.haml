@@ -1,8 +1,6 @@
-- headers = ["polisnummer", "branch", "verzekering", "markt", "startdatum", "duur", "eerste contractvervaldatum", "hoofdpremievervaldatum", "verlenging", "betaaltermijn", "naverrekening", "relatie"] %>
+- headers = %W(polisnummer branch verzekering markt startdatum duur eerste contractvervaldatum hoofdpremievervaldatum verlenging betaaltermijn naverrekening relatie)
 
-<%= CSV.generate_line headers %>
-<% @csv_insurances.each do |insurance| %>
-<% row = [ insurance.insurance_nr,insurance.branch,insurance.insurance_type,insurance.market,insurance.start_date,insurance.duration,insurance.first_contract_expiration_date,insurance.main_premium_expiration_date,insurance.extension,insurance.payment_continuation,insurance.arrear_calculation,insurance.relation.name] %>
-<%= CSV.generate_line(row).html_safe %>
-<% end %>
-
+= CSV.generate_line headers
+- @csv_insurances.each do |insurance|
+  - row = [ insurance.insurance_nr,insurance.branch,insurance.insurance_type,insurance.market,insurance.start_date,insurance.duration,insurance.first_contract_expiration_date,insurance.main_premium_expiration_date,insurance.extension,insurance.payment_continuation,insurance.arrear_calculation,insurance.relation.name]
+  = CSV.generate_line(row).html_safe
