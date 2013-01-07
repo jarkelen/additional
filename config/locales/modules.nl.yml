@@ -34,6 +34,7 @@
     mod_ins_attachment:             Bijlage
     mod_ins_attachment_open:        Klik om te openen
     mod_ins_filtered:               gefilterd
+    mod_inv_filtered:               gefilterd
     message_insurance_updated:      Verzekering is succesvol gewijzigd
     message_insurance_created:      Verzekering is succesvol aangemaakt
     message_insurance_deleted:      Verzekering is succesvol verwijderd
