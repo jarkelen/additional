@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.9'
 gem 'jquery-rails', '2.0.2'
 gem 'kaminari', "~> 0.13.0"
 gem 'rails-i18n'
