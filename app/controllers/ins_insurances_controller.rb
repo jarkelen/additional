@@ -17,7 +17,7 @@ class InsInsurancesController < ApplicationController
 			@insurances = current_user.company.ins_insurances.filter(params)
 			@csv_insurances = @insurances
 		else
-			@insurances = current_user.company.ins_insurances.order("insurance_nr ASC")
+			@insurances = current_user.company.ins_insurances.where(status: "actief").order("insurance_nr ASC")
 			@csv_insurances = @insurances
 		end
 

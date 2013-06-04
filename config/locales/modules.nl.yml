@@ -17,6 +17,8 @@
     mod_ins_market:                 Markt
     mod_ins_start_date:             Startdatum
     mod_ins_duration:               Duur (maanden)
+    mod_ins_status:                 Status
+    mod_ins_end_date:               Einddatum
     mod_ins_first_contract_expiration_date: Eerste contract vervaldatum
     mod_ins_main_premium_expiration_date:   Hoofdpremievervaldatum
     mod_ins_premium_expiration_date_short:   Vervaldatum

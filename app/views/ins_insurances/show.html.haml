@@ -13,6 +13,10 @@
           \:
         %li= @insurance.insurance_nr
         %li
+          = I18n.t :mod_ins_status
+          \:
+        %li= @insurance.status
+        %li
           = I18n.t :mod_ins_relation
           \:
         %li= link_to @insurance.relation.name, relation_path(@insurance.relation)
@@ -32,6 +36,13 @@
           = I18n.t :mod_ins_start_date
           \:
         %li= @insurance.start_date.strftime("%d-%m-%Y")
+        %li
+          = I18n.t :mod_ins_end_date
+          \:
+        - if @insurance.end_date.blank?
+          %li -
+        - else
+          %li= @insurance.end_date.strftime("%d-%m-%Y")
         %li
           = I18n.t :mod_ins_duration
           \:
@@ -64,7 +75,7 @@
         / Show 3 attachmenta
         / unless @insurance.attachment_1.blank?
         /%li= link_to @insurance.attachment_1.url.to_s, @insurance.attachment_1, :target => 'blank'
-          
+
         / unless @insurance.attachment_2.blank?
         /%li= link_to @insurance.attachment_2.url.to_s, @insurance.attachment_2, :target => 'blank'
         / unless @insurance.attachment_3.blank?

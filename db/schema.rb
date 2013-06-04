@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120821163118) do
+ActiveRecord::Schema.define(:version => 20130604140023) do
 
   create_table "activities", :force => true do |t|
     t.string   "activity"
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(:version => 20120821163118) do
     t.string   "twitter"
     t.string   "facebook"
     t.string   "linkedin"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "code"
     t.string   "bucket"
     t.string   "website"
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(:version => 20120821163118) do
   create_table "dossier_statuses", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "status"
   end
 
   create_table "dossiers", :force => true do |t|
@@ -151,14 +152,17 @@ ActiveRecord::Schema.define(:version => 20120821163118) do
     t.datetime "main_premium_expiration_date"
     t.string   "extension"
     t.string   "payment_continuation"
-    t.string   "arrear_calculation"
+    t.text     "arrear_calculation"
     t.integer  "relation_id"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",                                           :null => false
     t.integer  "company_id"
     t.string   "attachment_1"
     t.string   "attachment_2"
     t.string   "attachment_3"
+    t.string   "attachment_4"
+    t.string   "status",                         :default => "actief"
+    t.datetime "end_date"
   end
 
   add_index "ins_insurances", ["company_id"], :name => "index_modules_insurance_insurances_on_company_id"
@@ -212,7 +216,7 @@ ActiveRecord::Schema.define(:version => 20120821163118) do
     t.integer  "kvk_nr"
     t.string   "industry"
     t.string   "legal"
-    t.integer  "nr_employees"
+    t.string   "nr_employees",    :limit => 25
     t.string   "facebook"
     t.string   "twitter"
     t.string   "linkedin"
@@ -225,8 +229,8 @@ ActiveRecord::Schema.define(:version => 20120821163118) do
     t.string   "visit_city"
     t.string   "visit_country"
     t.text     "remarks"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.string   "relation_type"
     t.string   "telephone"
     t.string   "fax"
@@ -307,23 +311,22 @@ ActiveRecord::Schema.define(:version => 20120821163118) do
   end
 
   create_table "users", :force => true do |t|
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
-    t.boolean  "admin",           :default => false
+    t.string   "email"
+    t.integer  "sign_in_count"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.datetime "last_sign_in_at"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "position"
     t.string   "department"
+    t.integer  "company_id"
     t.string   "password_digest"
     t.string   "role"
     t.string   "middle_name"
     t.string   "locale"
     t.boolean  "mod_platform",    :default => true
     t.boolean  "mod_insurance"
-    t.string   "email"
-    t.integer  "sign_in_count"
-    t.datetime "last_sign_in_at"
-    t.integer  "company_id"
   end
 
 end

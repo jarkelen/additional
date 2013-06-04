@@ -20,6 +20,7 @@
         = select_tag('branch', options_from_collection_for_select(@branches, :branch, :branch), :include_blank => true)
         = select_tag('insurance_type', options_from_collection_for_select(@insurance_types, :ins_type, :ins_type), :include_blank => true)
         = select_tag('expiration_date', options_from_collection_for_select(@insurances, :main_premium_expiration_date, :date_for_select), :include_blank => true)
+        = select_tag('status', options_for_select([['Actief', 'actief'], ['Beeindigd', 'beeindigd']]), :include_blank => true)
         = submit_tag I18n.t(:form_filter_button)
-    
+
     = render('insurances_overview')

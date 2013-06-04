@@ -5,16 +5,16 @@ class InsInsurance < ActiveRecord::Base
 	attr_accessible :insurance_nr, :branch, :insurance_type, :market, :start_date, :duration,
 									:first_contract_expiration_date, :main_premium_expiration_date,
 									:extension, :payment_continuation, :arrear_calculation, :attachment_1,
-									:attachment_2, :attachment_3, :relation_id, :company_id
+									:attachment_2, :attachment_3, :relation_id, :company_id, :status, :end_date
 
 	# Add attachment uploader
 	mount_uploader :attachment_1, InsuranceUploader
 	mount_uploader :attachment_2, InsuranceUploader
 	mount_uploader :attachment_2, InsuranceUploader
 
-	validates       :insurance_nr, :branch, :insurance_type, :market, :start_date, :duration, 
-									:first_contract_expiration_date, :main_premium_expiration_date, 
-									:extension, :payment_continuation, :relation_id, :company_id, 
+	validates       :insurance_nr, :branch, :insurance_type, :market, :start_date, :duration,
+									:first_contract_expiration_date, :main_premium_expiration_date,
+									:extension, :payment_continuation, :relation_id, :company_id, :status,
 									presence: true
 
   #------------------------------- CLASS METHODS -------------------------------
@@ -41,6 +41,11 @@ class InsInsurance < ActiveRecord::Base
     # Filter on type
     unless params[:insurance_type].blank?
       conditions[:insurance_type] = params[:insurance_type]
+    end
+
+    # Filter on status
+    unless params[:status].blank?
+      conditions[:status] = params[:status]
     end
 
     # Filter on market
