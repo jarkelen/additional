@@ -1,4 +1,4 @@
 Additional
 ==========
 
-Customer Relation Management for small sized companies
+Old skool CRM for small companies
