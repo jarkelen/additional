@@ -9,7 +9,7 @@ class UserMailer < ActionMailer::Base
 
   def registration_inform_admin(user)
 	  @user = user
-	  mail(:to => "support@customerfirstcrm.nl", :subject => "customer:First nieuwe gebruiker toegevoegd")
+	  mail(:to => "johnvanarkelen@gmail.com", :subject => "customer:First nieuwe gebruiker toegevoegd")
   end
 
   def visitor_info_email(visitor_email)
