@@ -1,19 +1,19 @@
-class User < ActiveRecord::Base 
+class User < ActiveRecord::Base
   before_validation :create_random_password, :on => :create
-  
+
   belongs_to :company
   has_many :activities
   has_many :notes
   has_many :tasks
   has_many :bids
   has_many :agreements
-  
+
   has_secure_password
-  
+
   attr_accessible :first_name, :middle_name, :last_name, :email, :password, :position, :department,
                   :locale, :role, :sign_in_count, :last_sign_in_at, :mod_platform, :mod_insurance,
-                  :company
-                  
+                  :company, :company_id
+
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   FIRST_NAME_MAX_LENGTH = 25
@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   												:format   	=> { :with => email_regex },
   												:uniqueness => { :case_sensitive => false }
 
-  validates :role, :company, :presence 	=> true
+  validates :role, :presence 	=> true
 
   def self.dropdown_list(user)
     where("company_id = ?", user.company).map { |user| [user.full_name, user.id] }
@@ -43,12 +43,12 @@ class User < ActiveRecord::Base
   def get_module_subscription(mod)
     (mod) ? I18n.t(:bool_yes) : I18n.t(:bool_no)
   end
-  
+
   # Create a full name form the name parts
   def full_name
-    full_name = first_name 
+    full_name = first_name
     full_name += ' ' + middle_name if middle_name
-    full_name += ' ' + last_name 
+    full_name += ' ' + last_name
   end
 
   # Check if current user is allowed to do something based on his role
@@ -70,7 +70,7 @@ class User < ActiveRecord::Base
 		end
   end
 
-  private 
+  private
   def create_random_password
     self.password = SecureRandom.hex(5)
   end
