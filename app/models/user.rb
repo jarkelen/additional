@@ -73,6 +73,7 @@ class User < ActiveRecord::Base
   private
   def create_random_password
     self.password = SecureRandom.hex(5)
+    puts "PASSWORD #{self.password}"
   end
 
 end
