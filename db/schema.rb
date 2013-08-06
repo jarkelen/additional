@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130604140023) do
+ActiveRecord::Schema.define(:version => 20130806060909) do
 
   create_table "activities", :force => true do |t|
     t.string   "activity"
@@ -163,6 +163,7 @@ ActiveRecord::Schema.define(:version => 20130604140023) do
     t.string   "attachment_4"
     t.string   "status",                         :default => "actief"
     t.datetime "end_date"
+    t.string   "collection"
   end
 
   add_index "ins_insurances", ["company_id"], :name => "index_modules_insurance_insurances_on_company_id"

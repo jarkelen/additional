@@ -47,6 +47,9 @@
     .field
       = f.label I18n.t :mod_ins_payment_continuation
       = f.select(:payment_continuation, options_for_select([['jaar', 'jaar'], ['kwartaal', 'kwartaal'], ['maand', 'maand']], :selected => @insurance.payment_continuation))
+    .field
+      = f.label I18n.t :mod_ins_collection
+      = f.select(:collection, options_for_select([['Additional', 'Additional'], ['Maatschappij', 'Maatschappij']], :selected => :collection, :include_blank => true))
 
     - if @insurance.arrear_calculation == "true"
       = render('layouts/form_truefalse_select', :f => f, :label => I18n.t(:mod_ins_arrear_calculation), :field => :arrear_calculation, :selected => true)

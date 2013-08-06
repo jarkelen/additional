@@ -9,6 +9,7 @@ FactoryGirl.define do
     first_contract_expiration_date      1.year.from_now
     main_premium_expiration_date        3.year.from_now
     extension                           true
+    collection                          "Additional"
     arrear_calculation                  true
     payment_continuation                '01-01'
     attachment_1                        'test.pdf'
