@@ -42,6 +42,7 @@ class InsInsurancesController < ApplicationController
 	  @markets = InsMarket.all(:conditions => ["company_id = ?", current_user.company_id])
 	  @branches = InsBranch.all(:conditions => ["company_id = ?", current_user.company_id])
 	  @types = InsType.all(:conditions => ["company_id = ?", current_user.company_id])
+	  @insurers = InsInsurer.all(:conditions => ["company_id = ?", current_user.company_id])
   end
 
   def create
@@ -59,6 +60,7 @@ class InsInsurancesController < ApplicationController
 		  @markets = InsMarket.all(:conditions => ["company_id = ?", current_user.company_id])
 		  @branches = InsBranch.all(:conditions => ["company_id = ?", current_user.company_id])
 		  @types = InsType.all(:conditions => ["company_id = ?", current_user.company_id])
+	  @insurers = InsInsurer.all(:conditions => ["company_id = ?", current_user.company_id])
 		  render action: "new"
 	  end
 
@@ -70,6 +72,7 @@ class InsInsurancesController < ApplicationController
 	  @markets = InsMarket.all(:conditions => ["company_id = ?", current_user.company_id])
 	  @branches = InsBranch.all(:conditions => ["company_id = ?", current_user.company_id])
 	  @types = InsType.all(:conditions => ["company_id = ?", current_user.company_id])
+	  @insurers = InsInsurer.all(:conditions => ["company_id = ?", current_user.company_id])
   end
 
   def update
@@ -86,6 +89,7 @@ class InsInsurancesController < ApplicationController
 			@markets = InsMarket.all(:conditions => ["company_id = ?", current_user.company_id])
 			@branches = InsBranch.all(:conditions => ["company_id = ?", current_user.company_id])
 			@types = InsType.all(:conditions => ["company_id = ?", current_user.company_id])
+		  @insurers = InsInsurer.all(:conditions => ["company_id = ?", current_user.company_id])
 			render :action => "edit"
 		end
   end
@@ -114,6 +118,10 @@ class InsInsurancesController < ApplicationController
 			@markets = InsMarket.all(:conditions => ["company_id = ?", current_user.company_id])
 			@market = InsMarket.new
 			@active = "market"
+		elsif params[:area] == "insurer"
+			@insurers = InsInsurer.all(:conditions => ["company_id = ?", current_user.company_id])
+			@insurer = InsInsurer.new
+			@active = "insurer"
 		else
 			@branches = InsBranch.all(:conditions => ["company_id = ?", current_user.company_id])
 			@branch = InsBranch.new

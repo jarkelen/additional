@@ -1,0 +1,21 @@
+.content
+  .support.form
+    %p= I18n.t :mod_ins_settings_add_insurer
+    = form_for(@insurer, :remote => true) do |f|
+      / Show errors
+      = render('layouts/form_errors', :object => @insurer)
+      = f.hidden_field :company_id, :value => current_user.company.id
+      = render('layouts/form_field', :f => f, :label => I18n.t(:mod_ins_insurer), :field => :insurer, :size => "25")
+      .field
+        = f.submit I18n.t(:form_save_button), :class => 'button white'
+      .clear
+  %table
+    %thead
+      %tr
+        %th= I18n.t :mod_ins_insurer
+        %th
+    %tbody
+      - @insurers.each do |insurer|
+        %tr
+          %td= insurer.insurer
+          %td= link_to I18n.t(:delete), insurer, :method => :delete, :remote => true, :data => { :confirm => I18n.t(:sure) }

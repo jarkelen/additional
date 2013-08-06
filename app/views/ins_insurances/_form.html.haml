@@ -26,6 +26,11 @@
       \&nbsp;
       \#{link_to I18n.t(:mod_ins_settings_add_market), ins_insurances_settings_path}
     .field
+      = f.label I18n.t :mod_ins_insurer
+      = f.collection_select(:insurer, @insurers, :insurer, :insurer, :include_blank => true)
+      \&nbsp;
+      \#{link_to I18n.t(:mod_ins_settings_add_insurer), ins_insurances_settings_path}
+    .field
       = f.label I18n.t :mod_ins_start_date
       = f.date_select(:start_date, :start_year => Time.now.year - 5, :end_year => Time.now.year + 25)
     .field
@@ -47,6 +52,9 @@
     .field
       = f.label I18n.t :mod_ins_payment_continuation
       = f.select(:payment_continuation, options_for_select([['jaar', 'jaar'], ['kwartaal', 'kwartaal'], ['maand', 'maand']], :selected => @insurance.payment_continuation))
+    .field
+      = f.label I18n.t :mod_ins_collection
+      = f.select(:collection, options_for_select([['Additional', 'Additional'], ['Maatschappij', 'Maatschappij']], :selected => :collection, :include_blank => true))
 
     - if @insurance.arrear_calculation == "true"
       = render('layouts/form_truefalse_select', :f => f, :label => I18n.t(:mod_ins_arrear_calculation), :field => :arrear_calculation, :selected => true)
