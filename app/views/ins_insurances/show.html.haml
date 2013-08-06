@@ -33,6 +33,10 @@
           \:
         %li= @insurance.market
         %li
+          = I18n.t :mod_ins_insurer
+          \:
+        %li= @insurance.insurer
+        %li
           = I18n.t :mod_ins_start_date
           \:
         %li= @insurance.start_date.strftime("%d-%m-%Y")

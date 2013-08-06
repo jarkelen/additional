@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130806060909) do
+ActiveRecord::Schema.define(:version => 20130806062909) do
 
   create_table "activities", :force => true do |t|
     t.string   "activity"
@@ -164,10 +164,18 @@ ActiveRecord::Schema.define(:version => 20130806060909) do
     t.string   "status",                         :default => "actief"
     t.datetime "end_date"
     t.string   "collection"
+    t.string   "insurer"
   end
 
   add_index "ins_insurances", ["company_id"], :name => "index_modules_insurance_insurances_on_company_id"
   add_index "ins_insurances", ["relation_id"], :name => "index_modules_insurance_insurances_on_relation_id"
+
+  create_table "ins_insurers", :force => true do |t|
+    t.string   "insurer"
+    t.integer  "company_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "ins_markets", :force => true do |t|
     t.string   "market"
