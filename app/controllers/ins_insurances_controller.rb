@@ -12,19 +12,14 @@ class InsInsurancesController < ApplicationController
 	#-----------------------------------------------------------------
 
 	def index
-		if params[:filter]
-			@extra_info = I18n.t(:mod_ins_filtered)
-			@insurances = current_user.company.ins_insurances.filter(params)
-			@csv_insurances = @insurances
-		else
-			@insurances = current_user.company.ins_insurances.where(status: "actief").order("insurance_nr ASC")
-			@csv_insurances = @insurances
-		end
+		@search = current_user.company.ins_insurances.search(params[:q])
+    @insurances = @search.result
 
 		# Get all data for filter selects
 		@relations = current_user.company.relations
 		@branches = current_user.company.ins_branches
 		@insurance_types = current_user.company.ins_types
+		@insurers = current_user.company.ins_insurers
 
 		respond_to do |format|
 			format.html

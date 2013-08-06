@@ -13,14 +13,24 @@
   .content.insurances_canvas
     / Show filter fields
     .filter
-      = form_tag 'ins_insurances', :method => :get do
-        = hidden_field_tag 'filter', true
-        = select_tag('insurance_nr', options_from_collection_for_select(@insurances, :insurance_nr, :insurance_nr), :include_blank => true)
-        = select_tag('relation_id', options_from_collection_for_select(@relations, :id, :name), :include_blank => true)
-        = select_tag('branch', options_from_collection_for_select(@branches, :branch, :branch), :include_blank => true)
-        = select_tag('insurance_type', options_from_collection_for_select(@insurance_types, :ins_type, :ins_type), :include_blank => true)
-        = select_tag('expiration_date', options_from_collection_for_select(@insurances, :main_premium_expiration_date, :date_for_select), :include_blank => true)
-        = select_tag('status', options_for_select([['Actief', 'actief'], ['Beeindigd', 'beeindigd']]), :include_blank => true)
-        = submit_tag I18n.t(:form_filter_button)
+      = search_form_for @search do |f|
+        .row
+          .label= f.label I18n.t(:mod_ins_branch)
+          .option= f.select('branch_cont', options_from_collection_for_select(@branches, :branch, :branch), :include_blank => true)
+        .row
+          .label= f.label I18n.t(:mod_ins_insurance_type)
+          .option= f.select('insurance_type_cont', options_from_collection_for_select(@insurance_types, :ins_type, :ins_type), :include_blank => true)
+        .row
+          .label= f.label I18n.t(:mod_ins_status)
+          .option= f.select('status_cont', options_for_select([['Actief', 'actief'], ['Beeindigd', 'beeindigd']]), :include_blank => true)
+        .row
+          .label= f.label I18n.t(:mod_ins_collection)
+          .option= f.select('collection_cont', options_for_select([['Additional', 'Additional'], ['Maatschappij', 'Maatschappij']]), :include_blank => true)
+        .row
+          .label= f.label I18n.t(:mod_ins_insurer)
+          .option= f.select('insurer_cont', options_from_collection_for_select(@insurers, :insurer, :insurer), :include_blank => true)
+        .row
+          .label
+          .option= f.submit I18n.t(:form_filter_button)
 
     = render('insurances_overview')
