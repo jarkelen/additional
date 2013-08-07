@@ -12,6 +12,7 @@ describe Company do
   it { should have_many(:ins_types) }
   it { should have_many(:ins_markets) }
   it { should have_many(:ins_insurers) }
+  it { should have_many(:ins_mediators) }
   it { should have_many(:countries) }
   it { should have_many(:sectors) }
   it { should have_many(:branches) }

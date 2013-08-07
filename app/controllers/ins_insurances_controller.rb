@@ -20,6 +20,7 @@ class InsInsurancesController < ApplicationController
 		@branches = current_user.company.ins_branches
 		@insurance_types = current_user.company.ins_types
 		@insurers = current_user.company.ins_insurers
+		@mediators = current_user.company.ins_mediators
 
 		respond_to do |format|
 			format.html
@@ -34,10 +35,11 @@ class InsInsurancesController < ApplicationController
   def new
 	  @insurance = InsInsurance.new
 	  @relations = current_user.company.relations.order(:name)
-	  @markets = InsMarket.all(:conditions => ["company_id = ?", current_user.company_id])
-	  @branches = InsBranch.all(:conditions => ["company_id = ?", current_user.company_id])
-	  @types = InsType.all(:conditions => ["company_id = ?", current_user.company_id])
-	  @insurers = InsInsurer.all(:conditions => ["company_id = ?", current_user.company_id])
+	  @markets = InsMarket.where(company_id: current_user.company_id)
+	  @branches = InsBranch.where(company_id: current_user.company_id)
+	  @types = InsType.where(company_id: current_user.company_id)
+	  @insurers = InsInsurer.where(company_id: current_user.company_id)
+	  @mediators = InsMediator.where(company_id: current_user.company_id)
   end
 
   def create
@@ -52,10 +54,12 @@ class InsInsurancesController < ApplicationController
 		  redirect_to ins_insurance_path(@insurance), notice: I18n.t(:message_insurance_created)
 	  else
 		  @relations = current_user.company.relations.order(:name)
-		  @markets = InsMarket.all(:conditions => ["company_id = ?", current_user.company_id])
-		  @branches = InsBranch.all(:conditions => ["company_id = ?", current_user.company_id])
-		  @types = InsType.all(:conditions => ["company_id = ?", current_user.company_id])
-	  @insurers = InsInsurer.all(:conditions => ["company_id = ?", current_user.company_id])
+		  @markets = InsMarket.where(company_id: current_user.company_id)
+		  @branches = InsBranch.where(company_id: current_user.company_id)
+		  @types = InsType.where(company_id: current_user.company_id)
+		  @insurers = InsInsurer.where(company_id: current_user.company_id)
+		  @mediators = InsMediator.where(company_id: current_user.company_id)
+
 		  render action: "new"
 	  end
 
@@ -64,10 +68,11 @@ class InsInsurancesController < ApplicationController
   def edit
 	  @insurance = InsInsurance.find(params[:id])
 	  @relations = current_user.company.relations.order(:name)
-	  @markets = InsMarket.all(:conditions => ["company_id = ?", current_user.company_id])
-	  @branches = InsBranch.all(:conditions => ["company_id = ?", current_user.company_id])
-	  @types = InsType.all(:conditions => ["company_id = ?", current_user.company_id])
-	  @insurers = InsInsurer.all(:conditions => ["company_id = ?", current_user.company_id])
+	  @markets = InsMarket.where(company_id: current_user.company_id)
+	  @branches = InsBranch.where(company_id: current_user.company_id)
+	  @types = InsType.where(company_id: current_user.company_id)
+	  @insurers = InsInsurer.where(company_id: current_user.company_id)
+	  @mediators = InsMediator.where(company_id: current_user.company_id)
   end
 
   def update
@@ -81,10 +86,12 @@ class InsInsurancesController < ApplicationController
 			redirect_to ins_insurance_path(@insurance), notice: I18n.t(:message_insurance_updated)
 		else
 			@relations = current_user.company.relations.order(:name)
-			@markets = InsMarket.all(:conditions => ["company_id = ?", current_user.company_id])
-			@branches = InsBranch.all(:conditions => ["company_id = ?", current_user.company_id])
-			@types = InsType.all(:conditions => ["company_id = ?", current_user.company_id])
-		  @insurers = InsInsurer.all(:conditions => ["company_id = ?", current_user.company_id])
+		  @markets = InsMarket.where(company_id: current_user.company_id)
+		  @branches = InsBranch.where(company_id: current_user.company_id)
+		  @types = InsType.where(company_id: current_user.company_id)
+		  @insurers = InsInsurer.where(company_id: current_user.company_id)
+		  @mediators = InsMediator.where(company_id: current_user.company_id)
+
 			render :action => "edit"
 		end
   end
@@ -101,24 +108,28 @@ class InsInsurancesController < ApplicationController
 
 	def settings
 		if params[:area] == "branch"
-			@branches = InsBranch.all(:conditions => ["company_id = ?", current_user.company_id])
+			@branches = InsBranch.where(company_id: current_user.company_id).order(:branch)
 			@branch = InsBranch.new
 			@active = "branch"
 		elsif params[:area] == "type"
-			@branches = InsBranch.all(:conditions => ["company_id = ?", current_user.company_id])
-			@types = InsType.all(:conditions => ["company_id = ?", current_user.company_id])
+			@branches = InsBranch.where(company_id: current_user.company_id)
+			@types = InsType.where(company_id: current_user.company_id).order(:ins_type)
 			@type = InsType.new
 			@active = "type"
 		elsif params[:area] == "market"
-			@markets = InsMarket.all(:conditions => ["company_id = ?", current_user.company_id])
+			@markets = InsMarket.where(company_id: current_user.company_id).order(:market)
 			@market = InsMarket.new
 			@active = "market"
 		elsif params[:area] == "insurer"
-			@insurers = InsInsurer.all(:conditions => ["company_id = ?", current_user.company_id])
+			@insurers = InsInsurer.where(company_id: current_user.company_id).order(:insurer)
 			@insurer = InsInsurer.new
 			@active = "insurer"
+		elsif params[:area] == "mediator"
+			@mediators = InsMediator.where(company_id: current_user.company_id).order(:mediator)
+			@mediator = InsMediator.new
+			@active = "mediator"
 		else
-			@branches = InsBranch.all(:conditions => ["company_id = ?", current_user.company_id])
+			@branches = InsBranch.where(company_id: current_user.company_id)
 			@branch = InsBranch.new
 			@active = "branch"
 		end

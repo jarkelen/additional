@@ -27,16 +27,19 @@
     mod_ins_arrear_calculation:     Naverrekening
     mod_ins_collection:             Incasso
     mod_ins_insurer:                Verzekeraar
+    mod_ins_mediator:               Onderbemiddelaar
     mod_ins_attachment:             Bijlage
     mod_ins_attachment_open:        Klik om te openen
     mod_ins_settings_branches:      Branches
     mod_ins_settings_types:         Verzekeringen
     mod_ins_settings_markets:       Markten
     mod_ins_settings_insurers:      Verzekeraars
+    mod_ins_settings_mediators:     Onderbemiddelaars
     mod_ins_settings_add_branch:    Toevoegen branch
     mod_ins_settings_add_type:      Toevoegen verzekering
     mod_ins_settings_add_market:    Toevoegen markt
     mod_ins_settings_add_insurer:   Toevoegen verzekeraar
+    mod_ins_settings_add_mediator:  Toevoegen onderbemiddelaar
     mod_ins_attachment:             Bijlage
     mod_ins_attachment_open:        Klik om te openen
     mod_ins_filtered:               gefilterd
