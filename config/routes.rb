@@ -41,6 +41,7 @@ CustomerFirst::Application.routes.draw do
   resources :ins_types
   resources :ins_markets
   resources :ins_insurers
+  resources :ins_mediators
   resources :emp_employees
 
   # Misc
