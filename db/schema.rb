@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130807055408) do
+ActiveRecord::Schema.define(:version => 20130807060325) do
 
   create_table "activities", :force => true do |t|
     t.string   "activity"
@@ -186,6 +186,13 @@ ActiveRecord::Schema.define(:version => 20130807055408) do
   end
 
   add_index "ins_markets", ["company_id"], :name => "index_modules_insurance_markets_on_company_id"
+
+  create_table "ins_mediators", :force => true do |t|
+    t.string   "mediator"
+    t.integer  "company_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "ins_types", :force => true do |t|
     t.string   "ins_type"

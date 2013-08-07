@@ -7,3 +7,5 @@ $('#support_canvas').empty();
   $('#support_canvas').html("#{escape_javascript(render("all_markets"))}");
 - elsif @active == "insurer"
   $('#support_canvas').html("#{escape_javascript(render("all_insurers"))}");
+- elsif @active == "mediator"
+  $('#support_canvas').html("#{escape_javascript(render("all_mediators"))}");

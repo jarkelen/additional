@@ -212,6 +212,14 @@ class ApplicationController < ActionController::Base
 			  # URL param = branch_id
 			  market = InsMarket.find(params[:id])
 			  req_company_id = market.company_id.to_i
+      when 'ins_insurer'
+        # URL param = insurer_id
+        insurer = InsInsurer.find(params[:id])
+        req_company_id = insurer.company_id.to_i
+      when 'ins_mediator'
+        # URL param = mediator_id
+        mediator = InsMediator.find(params[:id])
+        req_company_id = mediator.company_id.to_i
 	  end
 
 		# Bypass admin when necessary, admin is allowed to jump the berlin wall sometimes

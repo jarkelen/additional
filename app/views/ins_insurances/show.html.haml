@@ -37,6 +37,10 @@
           \:
         %li= @insurance.insurer
         %li
+          = I18n.t :mod_ins_mediator
+          \:
+        %li= @insurance.mediator
+        %li
           = I18n.t :mod_ins_start_date
           \:
         %li= @insurance.start_date.strftime("%d-%m-%Y")

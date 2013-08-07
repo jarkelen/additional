@@ -37,7 +37,7 @@ class InsInsurancesController < ApplicationController
 	  @relations = current_user.company.relations.order(:name)
 	  @markets = InsMarket.where(company_id: current_user.company_id)
 	  @branches = InsBranch.where(company_id: current_user.company_id)
-	  @types = InsType.all(:conditions => ["company_id = ?", current_user.company_id)
+	  @types = InsType.where(company_id: current_user.company_id)
 	  @insurers = InsInsurer.where(company_id: current_user.company_id)
 	  @mediators = InsMediator.where(company_id: current_user.company_id)
   end
@@ -56,7 +56,7 @@ class InsInsurancesController < ApplicationController
 		  @relations = current_user.company.relations.order(:name)
 		  @markets = InsMarket.where(company_id: current_user.company_id)
 		  @branches = InsBranch.where(company_id: current_user.company_id)
-		  @types = InsType.all(:conditions => ["company_id = ?", current_user.company_id)
+		  @types = InsType.where(company_id: current_user.company_id)
 		  @insurers = InsInsurer.where(company_id: current_user.company_id)
 		  @mediators = InsMediator.where(company_id: current_user.company_id)
 
@@ -70,7 +70,7 @@ class InsInsurancesController < ApplicationController
 	  @relations = current_user.company.relations.order(:name)
 	  @markets = InsMarket.where(company_id: current_user.company_id)
 	  @branches = InsBranch.where(company_id: current_user.company_id)
-	  @types = InsType.all(:conditions => ["company_id = ?", current_user.company_id)
+	  @types = InsType.where(company_id: current_user.company_id)
 	  @insurers = InsInsurer.where(company_id: current_user.company_id)
 	  @mediators = InsMediator.where(company_id: current_user.company_id)
   end
@@ -88,7 +88,7 @@ class InsInsurancesController < ApplicationController
 			@relations = current_user.company.relations.order(:name)
 		  @markets = InsMarket.where(company_id: current_user.company_id)
 		  @branches = InsBranch.where(company_id: current_user.company_id)
-		  @types = InsType.all(:conditions => ["company_id = ?", current_user.company_id)
+		  @types = InsType.where(company_id: current_user.company_id)
 		  @insurers = InsInsurer.where(company_id: current_user.company_id)
 		  @mediators = InsMediator.where(company_id: current_user.company_id)
 

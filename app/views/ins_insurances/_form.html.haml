@@ -31,6 +31,11 @@
       \&nbsp;
       \#{link_to I18n.t(:mod_ins_settings_add_insurer), ins_insurances_settings_path}
     .field
+      = f.label I18n.t :mod_ins_mediator
+      = f.collection_select(:mediator, @mediators, :mediator, :mediator, :include_blank => true)
+      \&nbsp;
+      \#{link_to I18n.t(:mod_ins_settings_add_mediator), ins_insurances_settings_path}
+    .field
       = f.label I18n.t :mod_ins_start_date
       = f.date_select(:start_date, :start_year => Time.now.year - 5, :end_year => Time.now.year + 25)
     .field

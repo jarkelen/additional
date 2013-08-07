@@ -20,6 +20,7 @@ class Company < ActiveRecord::Base
   has_many :ins_types, :dependent => :destroy
   has_many :ins_markets, :dependent => :destroy
   has_many :ins_insurers, :dependent => :destroy
+  has_many :ins_mediators, :dependent => :destroy
 
 	# Add logo uploader
 	mount_uploader :logo, LogoUploader
