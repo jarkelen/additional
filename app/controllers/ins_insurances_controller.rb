@@ -108,26 +108,26 @@ class InsInsurancesController < ApplicationController
 
 	def settings
 		if params[:area] == "branch"
-			@branches = InsBranch.where(company_id: current_user.company_id)
+			@branches = InsBranch.where(company_id: current_user.company_id).order(:branch)
 			@branch = InsBranch.new
 			@active = "branch"
 		elsif params[:area] == "type"
 			@branches = InsBranch.where(company_id: current_user.company_id)
-			@types = InsType.where(company_id: current_user.company_id)
+			@types = InsType.where(company_id: current_user.company_id).order(:ins_type)
 			@type = InsType.new
 			@active = "type"
 		elsif params[:area] == "market"
-			@markets = InsMarket.where(company_id: current_user.company_id)
+			@markets = InsMarket.where(company_id: current_user.company_id).order(:market)
 			@market = InsMarket.new
 			@active = "market"
 		elsif params[:area] == "insurer"
-			@insurers = InsInsurer.where(company_id: current_user.company_id)
+			@insurers = InsInsurer.where(company_id: current_user.company_id).order(:insurer)
 			@insurer = InsInsurer.new
 			@active = "insurer"
 		elsif params[:area] == "mediator"
-			@mediators = InsMediator.where(company_id: current_user.company_id)
+			@mediators = InsMediator.where(company_id: current_user.company_id).order(:mediator)
 			@mediator = InsMediator.new
-			@active = "insurer"
+			@active = "mediator"
 		else
 			@branches = InsBranch.where(company_id: current_user.company_id)
 			@branch = InsBranch.new

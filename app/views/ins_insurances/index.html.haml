@@ -31,7 +31,7 @@
           .option= f.select('insurer_cont', options_from_collection_for_select(@insurers, :insurer, :insurer), :include_blank => true)
         .row
           .label= f.label I18n.t(:mod_ins_mediator)
-          .option= f.select('mediator_cont', options_from_collection_for_select(@mediators, :ediator, :mediator), :include_blank => true)
+          .option= f.select('mediator_cont', options_from_collection_for_select(@mediators, :mediator, :mediator), :include_blank => true)
         .row
           .label
           .option= f.submit I18n.t(:form_filter_button)
