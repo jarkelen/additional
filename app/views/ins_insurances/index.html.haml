@@ -15,6 +15,9 @@
     .filter
       = search_form_for @search do |f|
         .row
+          .label= f.label I18n.t(:mod_ins_relation)
+          .option= f.select('id_eq', options_from_collection_for_select(@relations, :id, :name), :include_blank => true)
+        .row
           .label= f.label I18n.t(:mod_ins_branch)
           .option= f.select('branch_eq', options_from_collection_for_select(@branches, :branch, :branch), :include_blank => true)
         .row
