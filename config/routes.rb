@@ -13,13 +13,13 @@ CustomerFirst::Application.routes.draw do
       get :relationdata
     end
   end
-  
+
   resources :contacts do
     member do
       get :contactdata
     end
   end
-  
+
   resources :notes
   resources :tasks
   resources :agreements
@@ -40,11 +40,13 @@ CustomerFirst::Application.routes.draw do
   resources :ins_branches
   resources :ins_types
   resources :ins_markets
+  resources :ins_insurers
+  resources :ins_mediators
   resources :emp_employees
 
   # Misc
   match "/contacts/vcard_export/:id" => "contacts#vcard_export"
-    
+
   get "site/index", :as => "public_home"
   post "site/index"
   get "site/support"
@@ -52,7 +54,7 @@ CustomerFirst::Application.routes.draw do
 
   get "users_dashboard/show", :as => "users_dashboard"
 
-  get "login" => "sessions#new", :as => "login" 
+  get "login" => "sessions#new", :as => "login"
   get "logout" => "sessions#destroy", :as => "logout"
 
   # Site root for general visitors

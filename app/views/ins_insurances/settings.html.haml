@@ -10,5 +10,7 @@
       %li= link_to I18n.t(:mod_ins_settings_branches), ins_insurances_settings_path(:area => "branch"), :remote => true, :class => "active"
       %li= link_to I18n.t(:mod_ins_settings_types), ins_insurances_settings_path(:area => "type"), :remote => true
       %li= link_to I18n.t(:mod_ins_settings_markets), ins_insurances_settings_path(:area => "market"), :remote => true
+      %li= link_to I18n.t(:mod_ins_settings_insurers), ins_insurances_settings_path(:area => "insurer"), :remote => true
+      %li= link_to I18n.t(:mod_ins_settings_mediators), ins_insurances_settings_path(:area => "mediator"), :remote => true
   #support_canvas.nine.columns
     = render("all_branches")

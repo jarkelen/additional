@@ -33,6 +33,14 @@
           \:
         %li= @insurance.market
         %li
+          = I18n.t :mod_ins_insurer
+          \:
+        %li= @insurance.insurer
+        %li
+          = I18n.t :mod_ins_mediator
+          \:
+        %li= @insurance.mediator
+        %li
           = I18n.t :mod_ins_start_date
           \:
         %li= @insurance.start_date.strftime("%d-%m-%Y")
@@ -63,6 +71,10 @@
           = I18n.t :mod_ins_payment_continuation
           \:
         %li= @insurance.payment_continuation
+        %li
+          = I18n.t :mod_ins_collection
+          \:
+        %li= @insurance.collection
         %li
           = I18n.t :mod_ins_arrear_calculation
           \:

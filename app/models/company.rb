@@ -19,20 +19,22 @@ class Company < ActiveRecord::Base
   has_many :ins_branches, :dependent => :destroy
   has_many :ins_types, :dependent => :destroy
   has_many :ins_markets, :dependent => :destroy
-  
+  has_many :ins_insurers, :dependent => :destroy
+  has_many :ins_mediators, :dependent => :destroy
+
 	# Add logo uploader
 	mount_uploader :logo, LogoUploader
 
   accepts_nested_attributes_for :subscription
-  
+
   attr_accessible :name, :address1, :address2, :zipcode, :city, :country, :email, :website,
-                  :telephone, :facebook, :twitter, :linkedin, :code, 
-                  :subscription_attributes, :kvk_nr, :bankaccount, :billing_address, 
+                  :telephone, :facebook, :twitter, :linkedin, :code,
+                  :subscription_attributes, :kvk_nr, :bankaccount, :billing_address,
                   :billing_zipcode, :billing_city, :billing_country,
                   :post_address, :post_zipcode, :post_city, :post_country, :tax_nr, :logo
 
   attr_accessor :same
-                  
+
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates       		:name, :address1, :zipcode, :city, :country, :code, presence: true
@@ -40,6 +42,6 @@ class Company < ActiveRecord::Base
   validates 					:email, 	:presence 	=> true,
   										:format   	=> { :with => email_regex },
   										:uniqueness => { :case_sensitive => false }
-  
+
 end
 
