@@ -1,0 +1,21 @@
+.content
+  .support.form
+    %p= I18n.t :mod_ins_settings_add_market
+    = form_for(@market, :remote => true) do |f|
+      / Show errors
+      = render('layouts/form_errors', :object => @market)
+      = f.hidden_field :company_id, :value => current_user.company.id
+      = render('layouts/form_field', :f => f, :label => I18n.t(:mod_ins_market), :field => :market, :size => "25")
+      .field
+        = f.submit I18n.t(:form_save_button), :class => 'button white'
+      .clear
+  %table
+    %thead
+      %tr
+        %th= I18n.t :mod_ins_market
+        %th
+    %tbody
+      - @markets.each do |market|
+        %tr
+          %td= market.market
+          %td= link_to I18n.t(:delete), market, :method => :delete, :remote => true, :data => { :confirm => I18n.t(:sure) }

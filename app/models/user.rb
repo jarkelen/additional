@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   attr_accessible :first_name, :middle_name, :last_name, :email, :password, :position, :department,
-                  :locale, :role, :sign_in_count, :last_sign_in_at, :mod_platform, :mod_insurance,
+                  :locale, :role, :sign_in_count, :last_sign_in_at, :mod_platform, :mod_insurance, :mod_claim,
                   :company, :company_id
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

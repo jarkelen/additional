@@ -1,0 +1,79 @@
+.form
+  = form_for @insurance do |f|
+    / Show errors
+    = render('layouts/form_errors', :object => @insurance)
+
+    .datablock_insurance
+
+    = f.hidden_field :company_id, :value => current_user.company_id
+    = render('layouts/form_field', :f => f, :label => I18n.t(:mod_ins_insurance_nr), :field => :insurance_nr, :size => "10")
+    .field
+      = f.label I18n.t :mod_ins_relation
+      = f.collection_select(:relation_id, @relations, :id, :name, :include_blank => true)
+    .field
+      = f.label I18n.t :mod_ins_branch
+      = f.collection_select(:branch, @branches, :branch, :branch, :include_blank => true)
+      \&nbsp;
+      \#{link_to I18n.t(:mod_ins_settings_add_branch), ins_insurances_settings_path}
+    .field
+      = f.label I18n.t :mod_ins_insurance_type
+      = f.grouped_collection_select(:insurance_type, @branches, :ins_types, :branch, :ins_type, :ins_type, :include_blank => true)
+      \&nbsp;
+      \#{link_to I18n.t(:mod_ins_settings_add_type), ins_insurances_settings_path}
+    .field
+      = f.label I18n.t :mod_ins_market
+      = f.collection_select(:market, @markets, :market, :market, :include_blank => true)
+      \&nbsp;
+      \#{link_to I18n.t(:mod_ins_settings_add_market), ins_insurances_settings_path}
+    .field
+      = f.label I18n.t :mod_ins_insurer
+      = f.collection_select(:insurer, @insurers, :insurer, :insurer, :include_blank => true)
+      \&nbsp;
+      \#{link_to I18n.t(:mod_ins_settings_add_insurer), ins_insurances_settings_path}
+    .field
+      = f.label I18n.t :mod_ins_mediator
+      = f.collection_select(:mediator, @mediators, :mediator, :mediator, :include_blank => true)
+      \&nbsp;
+      \#{link_to I18n.t(:mod_ins_settings_add_mediator), ins_insurances_settings_path}
+    .field
+      = f.label I18n.t :mod_ins_start_date
+      = f.date_select(:start_date, :start_year => Time.now.year - 5, :end_year => Time.now.year + 25)
+    .field
+      = f.label I18n.t :mod_ins_status
+      = f.select(:status, options_for_select([['Actief', 'actief'], ['Beeindigd', 'beeindigd']], :selected => :status, :include_blank => true))
+    .field
+      = f.label I18n.t :mod_ins_end_date
+      = f.date_select(:end_date, {:include_blank => true, :default => nil})
+    = render('layouts/form_field', :f => f, :label => I18n.t(:mod_ins_duration), :field => :duration, :size => "3")
+    .field
+      = f.label I18n.t :mod_ins_first_contract_expiration_date
+      = f.date_select(:first_contract_expiration_date, :start_year => Time.now.year - 5, :end_year => Time.now.year + 25)
+    .field
+      = f.label I18n.t :mod_ins_main_premium_expiration_date
+      = f.date_select(:main_premium_expiration_date, :discard_year => true)
+    .field
+      = f.label I18n.t :mod_ins_extension
+      = f.select(:extension, options_for_select([['doorlopend', 'doorlopend'], ['aflopend', 'aflopend']], :selected => @insurance.extension))
+    .field
+      = f.label I18n.t :mod_ins_payment_continuation
+      = f.select(:payment_continuation, options_for_select([['jaar', 'jaar'], ['kwartaal', 'kwartaal'], ['maand', 'maand']], :selected => @insurance.payment_continuation))
+    .field
+      = f.label I18n.t :mod_ins_collection
+      = f.select(:collection, options_for_select([['Additional', 'Additional'], ['Maatschappij', 'Maatschappij']], :selected => :collection, :include_blank => true))
+
+    - if @insurance.arrear_calculation == "true"
+      = render('layouts/form_truefalse_select', :f => f, :label => I18n.t(:mod_ins_arrear_calculation), :field => :arrear_calculation, :selected => true)
+    - else
+      = render('layouts/form_truefalse_select', :f => f, :label => I18n.t(:mod_ins_arrear_calculation), :field => :arrear_calculation, :selected => false)
+    .field
+      = f.label I18n.t :mod_ins_attachment
+      = f.file_field :attachment_1
+    .field
+      = f.label I18n.t :mod_ins_attachment
+      = f.file_field :attachment_2
+    .field
+      = f.label I18n.t :mod_ins_attachment
+      = f.file_field :attachment_3
+    .field
+      = f.submit I18n.t(:form_save_button), :class => 'button white'
+  .clear

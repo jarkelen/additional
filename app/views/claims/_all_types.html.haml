@@ -1,0 +1,24 @@
+.content
+  .support.form
+    %p= I18n.t :mod_ins_settings_add_type
+    = form_for(@type, :remote => true) do |f|
+      / Show errors
+      = render('layouts/form_errors', :object => @type)
+      = f.hidden_field :company_id, :value => current_user.company.id
+      .field
+        = f.label I18n.t :mod_ins_branch
+        = f.collection_select(:ins_branch_id, @branches, :id, :branch, :include_blank => true)
+      = render('layouts/form_field', :f => f, :label => I18n.t(:mod_ins_insurance_type), :field => :ins_type, :size => "25")
+      .field
+        = f.submit I18n.t(:form_save_button), :class => 'button white'
+      .clear
+  %table
+    %thead
+      %tr
+        %th= I18n.t :mod_ins_insurance_type
+        %th
+    %tbody
+      - @types.each do |type|
+        %tr
+          %td= type.ins_type
+          %td= link_to I18n.t(:delete), type, :method => :delete, :remote => true, :data => { :confirm => I18n.t(:sure) }
