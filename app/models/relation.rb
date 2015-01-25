@@ -5,6 +5,7 @@ class Relation < ActiveRecord::Base
   has_many :notes, :through => :contacts
   has_many :agreements, :through => :contacts
   has_many :ins_insurances
+  has_many :claims
   
   # Geocode the address to create the Google map
   acts_as_gmappable :lat => "latitude", :lng => "longitude"

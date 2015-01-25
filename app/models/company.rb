@@ -2,6 +2,7 @@ class Company < ActiveRecord::Base
   has_many :users, :dependent => :destroy
   has_many :relations, :dependent => :destroy
   has_many :contacts, :through => :relations
+  has_many :claims, :through => :relations
   has_many :notes, :through => :contacts
   has_many :tasks, :through => :contacts
   has_many :agreements, :through => :contacts

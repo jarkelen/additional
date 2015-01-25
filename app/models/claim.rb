@@ -1,0 +1,56 @@
+class Claim < ActiveRecord::Base
+	belongs_to :relation
+	belongs_to :company
+
+	attr_accessible :claim_nr, :relation_id, :company_id
+
+	validates       :claim_nr, :relation_id, :company_id, presence: true
+
+  #------------------------------- CLASS METHODS -------------------------------
+=begin
+  # Get filtered insurances
+  def self.filter(params)
+    conditions = { }
+
+    # Filter on insurance number
+    unless params[:insurance_nr].blank?
+      conditions[:insurance_nr] = params[:insurance_nr]
+    end
+
+    # Filter on relation
+    unless params[:relation_id].blank?
+      conditions[:relation_id] = params[:relation_id]
+    end
+
+    # Filter on branch
+    unless params[:branch].blank?
+      conditions[:branch] = params[:branch]
+    end
+
+    # Filter on type
+    unless params[:insurance_type].blank?
+      conditions[:insurance_type] = params[:insurance_type]
+    end
+
+    # Filter on status
+    unless params[:status].blank?
+      conditions[:status] = params[:status]
+    end
+
+    # Filter on market
+    unless params[:market].blank?
+      conditions[:market] = params[:market]
+    end
+
+    # Filter on expiration date
+    unless params[:expiration_date].blank?
+      conditions[:main_premium_expiration_date] = params[:expiration_date]
+    end
+
+    # Find filtered relations
+    order("insurance_nr ASC").where(conditions)
+  end
+=end
+  #------------------------------- INSTANCE METHODS -------------------------------
+
+end

@@ -437,6 +437,7 @@
   nav_employee:                             Medewerkers
   nav_invoice:                              Fakturen
   nav_insurance:                          Verzekeringen
+  nav_claim:                          Schades
   nav_timesheet:                          Timesheets
   nav_declaration:                          Declaraties
   nav_mobility:                             Mobiliteit

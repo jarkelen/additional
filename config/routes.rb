@@ -21,6 +21,7 @@ CustomerFirst::Application.routes.draw do
   end
 
   resources :notes
+  resources :claims
   resources :tasks
   resources :agreements
   resources :dossiers

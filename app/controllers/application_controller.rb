@@ -196,6 +196,10 @@ class ApplicationController < ActionController::Base
   			# URL param = sector_id
   			sector = Sector.find(params[:id])
   			req_company_id = sector.company_id.to_i
+		  when 'claim'
+			  # URL param = claim_id
+			  claim = Claim.find(params[:id])
+			  req_company_id = claim.relation.company_id.to_i
 		  when 'ins_insurance'
 			  # URL param = insurance_id
 			  insurance = InsInsurance.find(params[:id])

@@ -1,0 +1,42 @@
+/ Show the actionbar
+= render 'actionbar', :view => 'index'
+
+#contentblock.twelve.columns
+  .content_title.mod
+  - if @extra_info
+    - page_title = I18n.t(:mod_ins_index_title) + ' (' + @extra_info + ')'
+  - else
+    - page_title = I18n.t(:mod_ins_index_title)
+
+  = render('layouts/pagetitle', :title => page_title, :path => 'nosearch')
+
+  .content.insurances_canvas
+    / Show filter fields
+    .filter
+      = search_form_for @search do |f|
+        .row
+          .label= f.label I18n.t(:mod_ins_relation)
+          .option= f.select('id_eq', options_from_collection_for_select(@relations, :id, :name), :include_blank => true)
+        .row
+          .label= f.label I18n.t(:mod_ins_branch)
+          .option= f.select('branch_eq', options_from_collection_for_select(@branches, :branch, :branch), :include_blank => true)
+        .row
+          .label= f.label I18n.t(:mod_ins_insurance_type)
+          .option= f.select('insurance_type_eq', options_from_collection_for_select(@insurance_types, :ins_type, :ins_type), :include_blank => true)
+        .row
+          .label= f.label I18n.t(:mod_ins_status)
+          .option= f.select('status_eq', options_for_select([['Actief', 'actief'], ['Beeindigd', 'beeindigd']]), :include_blank => true)
+        .row
+          .label= f.label I18n.t(:mod_ins_collection)
+          .option= f.select('collection_eq', options_for_select([['Additional', 'Additional'], ['Maatschappij', 'Maatschappij']]), :include_blank => true)
+        .row
+          .label= f.label I18n.t(:mod_ins_insurer)
+          .option= f.select('insurer_eq', options_from_collection_for_select(@insurers, :insurer, :insurer), :include_blank => true)
+        .row
+          .label= f.label I18n.t(:mod_ins_mediator)
+          .option= f.select('mediator_eq', options_from_collection_for_select(@mediators, :mediator, :mediator), :include_blank => true)
+        .row
+          .label
+          .option= f.submit I18n.t(:form_filter_button)
+
+    = render('insurances_overview')
