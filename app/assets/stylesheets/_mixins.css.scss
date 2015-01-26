@@ -3,18 +3,18 @@
 /* ============================== */
 
 @mixin rounded-corners {
-	border-radius: 6px; 
-	-moz-border-radius: 6px; 
+	border-radius: 6px;
+	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 }
 @mixin rounded-corners-top {
-	border-radius: 6px 6px 0px 0px; 
-	-moz-border-radius: 6px 6px 0px 0px; 
+	border-radius: 6px 6px 0px 0px;
+	-moz-border-radius: 6px 6px 0px 0px;
 	-webkit-border-radius: 6px 6px 0px 0px;
 }
 @mixin rounded-corners-bottom {
-	border-radius: 0px 0px 6px 6px; 
-	-moz-border-radius: 0px 0px 6px 6px; 
+	border-radius: 0px 0px 6px 6px;
+	-moz-border-radius: 0px 0px 6px 6px;
 	-webkit-border-radius: 0px 0px 6px 6px;
 }
 @mixin box-shadow {

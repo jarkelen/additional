@@ -6,9 +6,6 @@
   - if view == 'index'
     .action_button.mod
       = link_to I18n.t(:mod_claims_new_title),  new_claim_url
-    - if current_user.allowed?("company_admin")
-      .action_button.mod
-        = link_to I18n.t(:nav_settings), ins_insurances_settings_url
 
   / Show buttons for show
   - if view == 'show'

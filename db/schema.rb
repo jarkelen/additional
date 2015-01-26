@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130807060325) do
+ActiveRecord::Schema.define(:version => 20150126075956) do
 
   create_table "activities", :force => true do |t|
     t.string   "activity"
@@ -37,6 +37,17 @@ ActiveRecord::Schema.define(:version => 20130807060325) do
     t.integer  "sector_id"
     t.integer  "company_id"
   end
+
+  create_table "claims", :force => true do |t|
+    t.string   "claim_nr"
+    t.integer  "relation_id"
+    t.integer  "company_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "claims", ["company_id"], :name => "index_claims_on_company_id"
+  add_index "claims", ["relation_id"], :name => "index_claims_on_relation_id"
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -280,13 +291,6 @@ ActiveRecord::Schema.define(:version => 20130807060325) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "sites", :force => true do |t|
-    t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.string   "pincode"
-  end
-
   create_table "subscriptions", :force => true do |t|
     t.string   "name"
     t.integer  "discount"
@@ -300,6 +304,7 @@ ActiveRecord::Schema.define(:version => 20130807060325) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.integer  "company_id"
+    t.boolean  "mod_claim"
   end
 
   create_table "tasks", :force => true do |t|
@@ -344,6 +349,7 @@ ActiveRecord::Schema.define(:version => 20130807060325) do
     t.string   "locale"
     t.boolean  "mod_platform",    :default => true
     t.boolean  "mod_insurance"
+    t.boolean  "mod_claim"
   end
 
 end
