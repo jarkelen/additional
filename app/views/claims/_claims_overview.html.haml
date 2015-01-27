@@ -1,0 +1,16 @@
+/ Show claims overview
+.indextable
+  %table#mod_index.tablesorter
+    %thead
+      %tr
+        %th= link_to I18n.t :mod_claims_claim_nr
+        %th= link_to I18n.t :mod_ins_relation
+        %th
+        - if current_user.allowed?("company_admin")
+          %th
+    %tbody
+      - unless @claims.blank?
+        - @claims.each do |claim|
+          %tr
+            %td= link_to claim.claim_nr, claim_path(claim)
+            %td= link_to insurance.relation.name, relation_path(insurance.relation_id)

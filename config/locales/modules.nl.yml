@@ -2,6 +2,7 @@
     # Mods short
     mod_short_platform:             PLF
     mod_short_insurance:            INS
+    mod_short_claim:                SCH
 
     # Mod Insurance
     mod_ins_title:                  Verzekering
@@ -47,3 +48,15 @@
     message_insurance_updated:      Verzekering is succesvol gewijzigd
     message_insurance_created:      Verzekering is succesvol aangemaakt
     message_insurance_deleted:      Verzekering is succesvol verwijderd
+
+    # Mod Claims
+    mod_claims_title:                  Schademelding
+    mod_claims_new_title:              Toevoegen schademelding
+    mod_claims_edit_title:             Wijzigen schademeldingen
+    mod_claims_index_title:            Schademeldingen
+    mod_claims_show_title:             Schademelding details
+    mod_claims_all:                    Alle schademeldingen
+    mod_claims_claim_nr:               Meldingnummer
+    message_claim_updated:      Schademelding is succesvol gewijzigd
+    message_claim_created:      Schademelding is succesvol aangemaakt
+    message_claim_deleted:      Schademelding is succesvol verwijderd

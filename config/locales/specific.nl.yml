@@ -78,6 +78,7 @@
   subscription_start_date:                Startdatum
   subscription_mod_platform:        Platform
   subscription_mod_insurance:     Verzekeringen
+  subscription_mod_claim:     Schademeldingen
   subscription_mods:                          Modules
   subscription_email:             Email versturen
   subscription_email:             Email versturen
@@ -437,7 +438,7 @@
   nav_employee:                             Medewerkers
   nav_invoice:                              Fakturen
   nav_insurance:                          Verzekeringen
-  nav_claim:                          Schades
+  nav_claim:                          Schademeldingen
   nav_timesheet:                          Timesheets
   nav_declaration:                          Declaraties
   nav_mobility:                             Mobiliteit
