@@ -9,7 +9,7 @@ class CountriesController < ApplicationController
 
   # POST /countries
   def create
-    @country = Country.new(params[:country])
+    @country = Country.new(country_params])
     
     respond_to do |format|
       if @country.save
@@ -33,4 +33,11 @@ class CountriesController < ApplicationController
     end
   end
 
+  private
+  
+  def country_params
+    params.require(:country).permit(:country, :company_id)
+  end
+
 end
+

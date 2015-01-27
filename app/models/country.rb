@@ -4,8 +4,6 @@ class Country < ActiveRecord::Base
 
   default_scope :order => 'country ASC'
 
-	attr_accessible :country, :company_id
-                  
   validates       :country, :company_id, presence: true
     
   def self.dropdown_list

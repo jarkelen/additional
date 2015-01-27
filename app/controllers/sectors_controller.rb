@@ -9,7 +9,7 @@ class SectorsController < ApplicationController
 
   # POST /sectors
   def create
-    @sector = Sector.new(params[:sector])
+    @sector = Sector.new(sectors_params)
     
     respond_to do |format|
       if @sector.save
@@ -31,6 +31,12 @@ class SectorsController < ApplicationController
       format.html
       format.js
     end
+  end
+
+  private
+  
+  def sectors_params
+    params.require(:sector).permit(:sector, :company_id)
   end
 
 end

@@ -4,8 +4,6 @@ class Sector < ActiveRecord::Base
   
   default_scope :order => 'sector ASC'
 
-	attr_accessible :sector, :company_id
-                  
   validates       :sector, :company_id, presence: true
 end
 

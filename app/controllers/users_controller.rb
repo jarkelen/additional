@@ -70,7 +70,7 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new(params[:user])
+    @user = User.new(users_params)
 
     # Get all companies for admin to assign user to
     if current_user.allowed?('admin')
@@ -114,7 +114,7 @@ class UsersController < ApplicationController
 		  @companies = Company.all
 	  end
 
-    if @user.update_attributes(params[:user])
+    if @user.update_attributes(users_params)
 	    # Send email to user when field is enabled
 	    if current_user.allowed?('admin') && params[:send_email_to_user] == "1"
 		    UserMailer.registration_confirmation(@user).deliver
@@ -146,16 +146,22 @@ class UsersController < ApplicationController
 
 
   private
-		# If current user is a regular user or subco, it isn't allowed to see other user data
-		def correct_user
-			if current_user.allowed?('user') || current_user.allowed?('customer')
-	      @user = User.find(params[:id])
-	      if current_user != @user
-					flash[:alert] = I18n.t(:not_allowed)
-	      	redirect_to root_path
-	      end
-			end
-		end
 
+	# If current user is a regular user or subco, it isn't allowed to see other user data
+	def correct_user
+		if current_user.allowed?('user') || current_user.allowed?('customer')
+      @user = User.find(params[:id])
+      if current_user != @user
+				flash[:alert] = I18n.t(:not_allowed)
+      	redirect_to root_path
+      end
+		end
+	end
+
+  def users_params
+    params.require(:user).permit(:first_name, :middle_name, :last_name, :email, :password, :position, :department,
+                  :locale, :role, :sign_in_count, :last_sign_in_at, :mod_platform, :mod_insurance, :mod_claim,
+                  :company, :company_id)
+  end
 
 end

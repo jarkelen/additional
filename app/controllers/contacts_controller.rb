@@ -110,7 +110,7 @@ class ContactsController < ApplicationController
   end
   
   def create
-    @contact = Contact.new(params[:contact])
+    @contact = Contact.new(contract_params)
 		@contact.dossiers = Dossier.find(params[:dossier_ids]) if params[:dossier_ids]
     
     if @contact.save
@@ -134,7 +134,7 @@ class ContactsController < ApplicationController
     @contact = current_user.company.contacts.find(params[:id])
 		@contact.dossiers = Dossier.find(params[:dossier_ids]) if params[:dossier_ids]
 
-    if @contact.update_attributes(params[:contact])
+    if @contact.update_attributes(contract_params)
       # Also create an update
       Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_contact} '#{@contact.full_name}' #{I18n.t :update_edit}")
 
@@ -197,4 +197,16 @@ class ContactsController < ApplicationController
 		send_data card.to_s, :filename => filename
   end
 
+  private
+  
+  def contract_params
+    params.require(:contract).permit(:first_name, :middle_name, :last_name, :function, 
+                  :telephone_business, :telephone_private, :telephone_mobile,
+                  :email, :facebook, :twitter, :linkedin, :salutation, :gender, 
+                  :background, :title, :birth_date, :fax, :relation_id, 
+                  :custom_label_1, :custom_field_1, :custom_label_2, :custom_field_2, 
+                  :custom_label_3, :custom_field_3, :has_boss)
+  end
+
 end
+

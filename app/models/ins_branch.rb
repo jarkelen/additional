@@ -4,7 +4,5 @@ class InsBranch < ActiveRecord::Base
 
 	default_scope :order => 'branch ASC'
 
-	attr_accessible :branch, :company_id
-
 	validates       :branch, :company_id, presence: true
 end

@@ -3,7 +3,5 @@ class InsMarket < ActiveRecord::Base
 
 	default_scope :order => 'market ASC'
 
-	attr_accessible :market, :company_id
-
 	validates       :market, :company_id, presence: true
 end

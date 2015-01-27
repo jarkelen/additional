@@ -8,7 +8,7 @@ class TasktypesController < ApplicationController
 	#-----------------------------------------------------------------------------------------
 
   def create
-    @tasktype = Tasktype.new(params[:tasktype])
+    @tasktype = Tasktype.new(tasktypes_params)
 
     respond_to do |format|
       if @tasktype.save
@@ -32,6 +32,12 @@ class TasktypesController < ApplicationController
       format.html
       format.js
     end
+  end
+
+  private
+  
+  def tasktypes_params
+    params.require(:tasktype).permit(:tasktype, :company_id)
   end
 
 end

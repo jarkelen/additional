@@ -8,7 +8,7 @@ class InsTypesController < ApplicationController
 	#-----------------------------------------------------------------------------------------
 
 	def create
-		@type = InsType.new(params[:ins_type])
+		@type = InsType.new(ins_types_params)
 	
 		respond_to do |format|
 			if @type.save
@@ -32,4 +32,11 @@ class InsTypesController < ApplicationController
 			format.js
 		end
 	end
+	
+  private
+  
+  def ins_types_params
+    params.require(:ins_type).permit(:ins_type, :ins_branch_id, :company_id)
+  end
+
 end

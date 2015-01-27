@@ -8,7 +8,7 @@ class InsMediatorsController < ApplicationController
 	#-----------------------------------------------------------------------------------------
 
 	def create
-		@mediator = InsMediator.new(params[:ins_mediator])
+		@mediator = InsMediator.new(ins_mediators_params)
 		respond_to do |format|
 			if @mediator.save
 				@mediators = InsMediator.where("company_id = ?", current_user.company_id)
@@ -29,4 +29,11 @@ class InsMediatorsController < ApplicationController
 			format.js
 		end
 	end
+	
+  private
+  
+  def ins_mediators_params
+    params.require(:ins_mediator).permit(:company_id, :mediator)
+  end
+
 end

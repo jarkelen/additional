@@ -8,7 +8,7 @@ class RelTypesController < ApplicationController
 	#-------------------------------------------------------------------------------------------------------------------
 
   def create
-    @rel_type = RelType.new(params[:rel_type])
+    @rel_type = RelType.new(rel_types_params)
 
     respond_to do |format|
       if @rel_type.save
@@ -29,6 +29,12 @@ class RelTypesController < ApplicationController
       format.html
       format.js
     end
+  end
+
+  private
+  
+  def rel_types_params
+    params.require(:rel_type).permit(:rel_type, :company_id)
   end
 
 end

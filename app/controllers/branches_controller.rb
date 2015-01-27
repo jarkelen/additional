@@ -9,7 +9,7 @@ class BranchesController < ApplicationController
 
   # POST /branches
   def create
-    @branch = Branch.new(params[:branch])
+    @branch = Branch.new(branch_params)
     
     respond_to do |format|
       if @branch.save
@@ -31,6 +31,12 @@ class BranchesController < ApplicationController
       format.html
       format.js
     end
+  end
+
+  private
+  
+  def branch_params
+    params.require(:branch).permit(:branch, :sector_id, :company_id)
   end
 
 end

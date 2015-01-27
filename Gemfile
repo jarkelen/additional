@@ -1,9 +1,9 @@
 source 'http://rubygems.org'
 
-ruby '1.9.3'
+ruby '2.1.4'
 
-gem 'rails', '3.2.18'
-gem 'jquery-rails', '2.0.2'
+gem 'rails', '4.1.9'
+gem 'jquery-rails'
 gem 'kaminari', "~> 0.13.0"
 gem 'rails-i18n'
 gem 'will_paginate'
@@ -22,8 +22,8 @@ gem 'newrelic_rpm'
 gem 'ransack'
 
 group :assets do
-  gem 'sass-rails', "  ~> 3.2.5"
-  gem 'coffee-rails', "~> 3.2.2"
+  gem 'sass-rails'
+  gem 'coffee-rails'
   gem 'uglifier'
 end
 
@@ -31,8 +31,8 @@ group :development, :test do
 	gem 'hpricot'
 	gem 'ruby_parser'
 	gem 'yaml_db'
-	gem 'factory_girl_rails', '~> 3.5.0'
-	gem 'launchy'
+	gem 'factory_girl_rails'
+  gem 'launchy'
 	gem 'rspec-rails'
   gem 'capybara'
   gem 'shoulda'

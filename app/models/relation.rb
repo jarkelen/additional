@@ -14,16 +14,6 @@ class Relation < ActiveRecord::Base
 	mount_uploader :logo, LogoUploader
 
   attr_accessor :same, :relationgroup_new
-    
-  attr_accessible :name, :relation_nr, :relation_type, :status, :company_contact, 
-                  :website, :kvk_nr, :industry, :branch, :legal, :nr_employees, 
-                  :telephone, :fax, :email, :facebook, :twitter, :linkedin, 
-                  :billing_address, :billing_zipcode, :billing_city, :billing_country, 
-                  :visit_address, :visit_zipcode, :visit_city, :visit_country, :remarks,
-                  :latitude, :longitude, :gmaps, :logo, :bankaccount, :post_address, 
-                  :post_zipcode, :post_city, :post_country, :custom_label_1, 
-                  :custom_field_1, :custom_label_2, :custom_field_2, :custom_label_3,
-                  :custom_field_3, :relationgroup, :company_id,:same, :relationgroup_new
 
   before_validation :set_new_relationgroup
 

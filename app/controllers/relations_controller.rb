@@ -66,7 +66,7 @@ class RelationsController < ApplicationController
   end
 
   def create
-    @relation = Relation.new(params[:relation])
+    @relation = Relation.new(relations_params)
 
     # Set new relation number
     @relation.relation_nr = Relation.get_company_code(current_user) + Relation.get_new_relation_nr(current_user)
@@ -97,7 +97,7 @@ class RelationsController < ApplicationController
   def update
     @relation = current_user.company.relations.find(params[:id])
  
-    if @relation.update_attributes(params[:relation])
+    if @relation.update_attributes(relations_params)
       # Create an update
       Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_relation} '#{@relation.name}' #{I18n.t :update_edit}")
 
@@ -128,6 +128,20 @@ class RelationsController < ApplicationController
     @sectors = current_user.company.sectors.order(:sector)
     @rel_types = current_user.company.rel_types.dropdown_list
     @relationgroups = current_user.company.relations.dropdown_list
+  end
+
+  private
+  
+  def relations_params
+    params.require(:relation).permit(:name, :relation_nr, :relation_type, :status, :company_contact, 
+                  :website, :kvk_nr, :industry, :branch, :legal, :nr_employees, 
+                  :telephone, :fax, :email, :facebook, :twitter, :linkedin, 
+                  :billing_address, :billing_zipcode, :billing_city, :billing_country, 
+                  :visit_address, :visit_zipcode, :visit_city, :visit_country, :remarks,
+                  :latitude, :longitude, :gmaps, :logo, :bankaccount, :post_address, 
+                  :post_zipcode, :post_city, :post_country, :custom_label_1, 
+                  :custom_field_1, :custom_label_2, :custom_field_2, :custom_label_3,
+                  :custom_field_3, :relationgroup, :company_id,:same, :relationgroup_new)
   end
 
 end
