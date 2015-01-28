@@ -9,7 +9,7 @@ class CountriesController < ApplicationController
 
   # POST /countries
   def create
-    @country = Country.new(country_params])
+    @country = Country.new(country_params)
 
     respond_to do |format|
       if @country.save
