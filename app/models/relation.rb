@@ -6,10 +6,10 @@ class Relation < ActiveRecord::Base
   has_many :agreements, :through => :contacts
   has_many :ins_insurances
   has_many :claims
-  
+
   # Geocode the address to create the Google map
-  acts_as_gmappable :lat => "latitude", :lng => "longitude"
-	
+  #acts_as_gmappable :lat => "latitude", :lng => "longitude"
+
 	# Add logo uploader
 	mount_uploader :logo, LogoUploader
 
@@ -19,7 +19,7 @@ class Relation < ActiveRecord::Base
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  validates :name, :relation_nr, :relation_type, :status, :company_contact, 
+  validates :name, :relation_nr, :relation_type, :status, :company_contact,
             :visit_address, :visit_zipcode, :visit_city, :visit_country, :company_id,
             presence: true
   validates :relation_nr, :uniqueness => true, :on => :create
@@ -117,7 +117,7 @@ class Relation < ActiveRecord::Base
   #------------------------------- OTHER -------------------------------
 
   def gmaps4rails_address
-    "#{self.visit_address}, #{self.visit_zipcode}, #{self.visit_city}" 
+    "#{self.visit_address}, #{self.visit_zipcode}, #{self.visit_city}"
   end
 
   def gmaps4rails_infowindow

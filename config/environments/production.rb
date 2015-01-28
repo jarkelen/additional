@@ -22,7 +22,7 @@ CustomerFirst::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   #config.assets.precompile += %w( gmaps4rails.css )
-  
+
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 
@@ -60,4 +60,7 @@ CustomerFirst::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  config.eager_load = true
+
 end

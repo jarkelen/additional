@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
   def recent_activities
   	# Only get recent activities when a user is logged in
   	if current_user
-      @activities = Activity.all(:conditions => [ "company_id = ?", current_user.company.id], :limit => 10, :order => "created_at DESC")
+      @activities = Activity.where("company_id = ?", current_user.company.id).limit(10).order("created_at DESC")
 		end
   end
 

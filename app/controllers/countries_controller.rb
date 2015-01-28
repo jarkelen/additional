@@ -10,10 +10,10 @@ class CountriesController < ApplicationController
   # POST /countries
   def create
     @country = Country.new(country_params])
-    
+
     respond_to do |format|
       if @country.save
-        @countries = Country.find_all_by_company_id(current_user.company.id)
+        @countries = Country.where(company_id: current_user.company.id)
         @country = Country.new
         format.html
 	      format.js
@@ -27,17 +27,16 @@ class CountriesController < ApplicationController
     @country.destroy
 
     respond_to do |format|
-      @countries = Country.find_all_by_company_id(current_user.company.id)
+      @countries = Country.where(company_id: current_user.company.id)
       format.html
       format.js
     end
   end
 
   private
-  
+
   def country_params
     params.require(:country).permit(:country, :company_id)
   end
 
 end
-

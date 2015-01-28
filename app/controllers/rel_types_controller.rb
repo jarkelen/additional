@@ -12,7 +12,7 @@ class RelTypesController < ApplicationController
 
     respond_to do |format|
       if @rel_type.save
-        @rel_types = RelType.find_all_by_company_id(current_user.company.id)
+        @rel_types = RelType.where(company_id: current_user.company.id)
         @rel_type = RelType.new
         format.html
 	      format.js
@@ -25,14 +25,14 @@ class RelTypesController < ApplicationController
     @rel_type.destroy
 
     respond_to do |format|
-      @rel_types = RelType.find_all_by_company_id(current_user.company.id)
+      @rel_types = RelType.where(company_id: current_user.company.id)
       format.html
       format.js
     end
   end
 
   private
-  
+
   def rel_types_params
     params.require(:rel_type).permit(:rel_type, :company_id)
   end

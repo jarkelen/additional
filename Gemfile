@@ -4,17 +4,17 @@ ruby '2.1.4'
 
 gem 'rails', '4.1.9'
 gem 'jquery-rails'
-gem 'kaminari', "~> 0.13.0"
+gem 'kaminari'
 gem 'rails-i18n'
 gem 'will_paginate'
-gem "carmen", "~> 0.2.8"
+gem 'carmen'
 gem 'geocoder'
-gem 'carrierwave', "~> 0.6.2"
-gem 'fog', "~> 1.4.0"
+gem 'carrierwave'
+gem 'fog'
 gem 'vcard'
 gem 'pdfkit'
 gem 'comma'
-gem 'bcrypt-ruby', "~> 3.0.1"
+gem 'bcrypt-ruby'
 gem 'activerecord-postgresql-adapter'
 gem 'gmaps4rails'
 gem 'haml-rails'
@@ -36,6 +36,6 @@ group :development, :test do
 	gem 'rspec-rails'
   gem 'capybara'
   gem 'shoulda'
-  gem 'pg', '~> 0.14.1'
+  gem 'pg'
   gem 'better_errors'
 end

@@ -14,36 +14,36 @@ class UsersController < ApplicationController
 
   def index
    	if params[:id] == "country"
-    	@countries = Country.find_all_by_company_id(current_user.company.id)
+    	@countries = Country.where(company_id: current_user.company.id)
     	@country = Country.new
     	@active = "country"
    	elsif params[:id] == "dossier_status"
-    	@dossier_statuses = DossierStatus.find_all_by_company_id(current_user.company.id)
+    	@dossier_statuses = DossierStatus.where(company_id: current_user.company.id)
     	@dossier_status = DossierStatus.new
     	@active = "dossier_status"
    	elsif params[:id] == "sector"
-    	@sectors = Sector.find_all_by_company_id(current_user.company.id)
+    	@sectors = Sector.where(company_id: current_user.company.id)
     	@sector = Sector.new
     	@active = "sector"
    	elsif params[:id] == "branch"
-    	@branches = Branch.find_all_by_company_id(current_user.company.id)
+    	@branches = Branch.where(company_id: current_user.company.id)
     	@branch = Branch.new
     	@active = "branch"
    	elsif params[:id] == "sector"
-    	@sectors = Sector.find_all_by_company_id(current_user.company.id)
+    	@sectors = Sector.where(company_id: current_user.company.id)
     	@sector = Sector.new
     	@active = "sector"
    	elsif params[:id] == "tasktype"
-    	@tasktypes = Tasktype.find_all_by_company_id(current_user.company.id)
+    	@tasktypes = Tasktype.where(company_id: current_user.company.id)
     	@tasktype = Tasktype.new
     	@active = "tasktype"
    	elsif params[:id] == "rel_type"
-    	@rel_types = RelType.find_all_by_company_id(current_user.company.id)
+    	@rel_types = RelType.where(company_id: current_user.company.id)
     	@rel_type = RelType.new
     	@active = "rel_type"
 		else
 	    @users = current_user.company.users.order("last_name")
-	    @countries = Country.find_all_by_company_id(current_user.company.id)
+	    @countries = Country.where(company_id: current_user.company.id)
 	    @country = Country.new
     	@active = "country"
 		end

@@ -12,7 +12,7 @@ class TasktypesController < ApplicationController
 
     respond_to do |format|
       if @tasktype.save
-        @tasktypes = Tasktype.find_all_by_company_id(current_user.company.id)
+        @tasktypes = Tasktype.where(company_id: current_user.company.id)
         @tasktype = Tasktype.new
 
         format.html
@@ -27,7 +27,7 @@ class TasktypesController < ApplicationController
     @tasktype.destroy
 
     respond_to do |format|
-      @tasktypes = Tasktype.find_all_by_company_id(current_user.company.id)
+      @tasktypes = Tasktype.where(company_id: current_user.company.id)
 
       format.html
       format.js
@@ -35,7 +35,7 @@ class TasktypesController < ApplicationController
   end
 
   private
-  
+
   def tasktypes_params
     params.require(:tasktype).permit(:tasktype, :company_id)
   end

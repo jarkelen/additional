@@ -4,7 +4,7 @@ CustomerFirst::Application.configure do
 
 
   config.log_level = :debug
-  
+
   # The test environment is used exclusively to run your application's
   # test suite.  You never need to work with it otherwise.  Remember that
   # your test database is "scratch space" for the test suite and is wiped
@@ -43,4 +43,7 @@ CustomerFirst::Application.configure do
 
   # Allow pass debug_assets=true as a query parameter to load pages with unpackaged assets
   config.assets.allow_debugging = true
+
+  config.eager_load = false
+  
 end
