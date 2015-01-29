@@ -17,7 +17,6 @@
           .form_field
             = f.file_field :attachment
             .form_field= f.text_field :url, :size => "35", :placeholder => I18n.t(:notes_url)
-        /= render('dossiers/listbox', :f => f)
       .formcolumn.right
         %div
           = f.text_area(:note, :size => "50x10", :placeholder => I18n.t(:notes_text))

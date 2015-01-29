@@ -1,6 +1,5 @@
 class Contact < ActiveRecord::Base
   belongs_to :relation
-  has_and_belongs_to_many :dossiers
   has_many :notes,:dependent => :destroy
   has_many :tasks,:dependent => :destroy
   has_many :agreements,:dependent => :destroy

@@ -17,10 +17,6 @@ class UsersController < ApplicationController
     	@countries = Country.where(company_id: current_user.company.id)
     	@country = Country.new
     	@active = "country"
-   	elsif params[:id] == "dossier_status"
-    	@dossier_statuses = DossierStatus.where(company_id: current_user.company.id)
-    	@dossier_status = DossierStatus.new
-    	@active = "dossier_status"
    	elsif params[:id] == "sector"
     	@sectors = Sector.where(company_id: current_user.company.id)
     	@sector = Sector.new

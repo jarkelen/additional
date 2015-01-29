@@ -111,7 +111,6 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contract_params)
-		@contact.dossiers = Dossier.find(params[:dossier_ids]) if params[:dossier_ids]
 
     if @contact.save
       redirect_to contacts_path, notice: I18n.t(:message_contact_created)
@@ -132,7 +131,6 @@ class ContactsController < ApplicationController
 
   def update
     @contact = current_user.company.contacts.find(params[:id])
-		@contact.dossiers = Dossier.find(params[:dossier_ids]) if params[:dossier_ids]
 
     if @contact.update_attributes(contract_params)
       # Also create an update
@@ -200,7 +198,7 @@ class ContactsController < ApplicationController
   private
 
   def contract_params
-    params.require(:contact).permit(:first_name, :middle_name, :last_name, :function, 
+    params.require(:contact).permit(:first_name, :middle_name, :last_name, :function,
                   :telephone_business, :telephone_private, :telephone_mobile,
                   :email, :facebook, :twitter, :linkedin, :salutation, :gender,
                   :background, :title, :birth_date, :fax, :relation_id,

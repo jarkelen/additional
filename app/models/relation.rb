@@ -1,14 +1,14 @@
 class Relation < ActiveRecord::Base
   belongs_to :company
-  has_many :contacts, :dependent => :destroy
-  has_many :tasks, :through => :contacts
-  has_many :notes, :through => :contacts
-  has_many :agreements, :through => :contacts
-  has_many :ins_insurances
-  has_many :claims
+  has_many :contacts, dependent:  :destroy
+  has_many :tasks, through:  :contacts
+  has_many :notes, through:  :contacts
+  has_many :agreements, through:  :contacts
+  has_many :ins_insurances, dependent:  :destroy
+  has_many :claims, dependent: :destroy
 
   # Geocode the address to create the Google map
-  #acts_as_gmappable :lat => "latitude", :lng => "longitude"
+  #acts_as_gmappable :lat:  "latitude", :lng:  "longitude"
 
 	# Add logo uploader
 	mount_uploader :logo, LogoUploader
@@ -22,8 +22,8 @@ class Relation < ActiveRecord::Base
   validates :name, :relation_nr, :relation_type, :status, :company_contact,
             :visit_address, :visit_zipcode, :visit_city, :visit_country, :company_id,
             presence: true
-  validates :relation_nr, :uniqueness => true, :on => :create
-  validates :kvk_nr, :uniqueness => true, :on => :create
+  validates :relation_nr, uniqueness: true, on:  :create
+  validates :kvk_nr, uniqueness: true, on:  :create
 
   #------------------------------- CLASS METHODS -------------------------------
 

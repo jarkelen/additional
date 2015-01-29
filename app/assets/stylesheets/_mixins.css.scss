@@ -53,10 +53,6 @@
   	background: $agreement_light;
 		border-bottom: 4px solid $agreement_dark;
 	}
-	.dossier {
-  	background: $dossier_light;
-		border-bottom: 4px solid $dossier_dark;
-	}
 	.mod {
   	background: $mod_light;
 		border-bottom: 4px solid $mod_dark;
@@ -87,10 +83,6 @@
   	background: $agreement_light;
   	border: 2px solid $agreement_dark;
 	}
-  .dossier {
-  	background: $dossier_light;
-  	border: 2px solid $dossier_dark;
-	}
   .mod {
   	background: $mod_light;
   	border: 2px solid $mod_dark;
@@ -114,9 +106,6 @@
 	}
 	li#agreement {
   	border-bottom: 3px solid $agreement_light;
-	}
-	li#dossier {
-  	border-bottom: 3px solid $dossier_light;
 	}
 	li#mod {
   	border-bottom: 3px solid $mod_light;
