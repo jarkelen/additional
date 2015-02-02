@@ -29,7 +29,9 @@ CustomerFirst::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  config.serve_static_assets = false
+  config.serve_static_files = false
 
   config.eager_load = false
+
+  config.active_record.raise_in_transactional_callbacks = true
 end

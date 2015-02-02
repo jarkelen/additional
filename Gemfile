@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
-ruby '2.1.4'
+ruby '2.2.0'
 
-gem 'rails', '4.1.9'
+gem 'rails', '4.2.0'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'rails-i18n'
