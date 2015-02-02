@@ -21,6 +21,7 @@ gem 'haml-rails'
 gem 'newrelic_rpm'
 gem 'ransack'
 gem 'puma'
+gem 'rails_12factor'
 
 group :assets do
   gem 'sass-rails'
