@@ -1,10 +1,10 @@
 class ContactsController < ApplicationController
 	# Set authorization
-  before_filter :except => [ :destroy ] do |c| c.is_allowed 'user' end
-  before_filter :only => [ :destroy ] do |c| c.is_allowed 'company_admin' end
+  before_filter except: [ :destroy ] do |c| c.is_allowed 'user' end
+  before_filter only: [ :destroy ] do |c| c.is_allowed 'company_admin' end
 
 	# Set berlin wall
-	before_filter :except => [ :index, :new, :create, :import, :import_data ] do |c| c.correct_company 'contact' end
+	before_filter except: [ :index, :new, :create, :import, :import_data ] do |c| c.correct_company 'contact' end
 
 	#----------------------------------------------------------------------------------------
 
@@ -45,7 +45,7 @@ class ContactsController < ApplicationController
    	  end
 
    	  # Get all contacts who have current contact as boss
-   	  @employees = current_user.company.contacts.where(:has_boss => @contact)
+   	  @employees = current_user.company.contacts.where(has_boss: @contact)
    	else
    	  # Get additional data based on tab
      	if params[:tab] == "tasks"
@@ -136,9 +136,9 @@ class ContactsController < ApplicationController
       # Also create an update
       Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_contact} '#{@contact.full_name}' #{I18n.t :update_edit}")
 
-      redirect_to contacts_path, :notice => I18n.t(:message_contact_updated)
+      redirect_to contacts_path, notice: I18n.t(:message_contact_updated)
     else
-      render :action => "edit"
+      render action: "edit"
 
       @relations = current_user.company.relations
     end
@@ -151,7 +151,7 @@ class ContactsController < ApplicationController
     # Create an update
     Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_contact} '#{@contact.full_name}' #{I18n.t :update_delete}")
 
-    redirect_to contacts_path, :notice => I18n.t(:message_contact_deleted)
+    redirect_to contacts_path, notice: I18n.t(:message_contact_deleted)
   end
 
 
@@ -192,7 +192,7 @@ class ContactsController < ApplicationController
 			end
 		end
 
-		send_data card.to_s, :filename => filename
+		send_data card.to_s, filename: filename
   end
 
   private

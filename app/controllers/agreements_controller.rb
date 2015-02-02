@@ -3,7 +3,7 @@ class AgreementsController < ApplicationController
   before_filter do |c| c.is_allowed 'user' end
 
 	# Set berlin wall
-	before_filter :except => [ :index, :create ] do |c| c.correct_company 'agreement' end
+	before_filter except:  [ :index, :create ] do |c| c.correct_company 'agreement' end
 
 	#-----------------------------------------------------------------------------------------
 
@@ -14,11 +14,11 @@ class AgreementsController < ApplicationController
 		else
 			@agreements = current_user.company.agreements.order("updated_at DESC")
 		end
-		
+
 		# Show link to contact
 		@show_contact = true
   end
-  
+
   def create
     @agreement = Agreement.new(agreement_params)
     @contact = Contact.find(params[:agreement][:contact_id])
@@ -49,8 +49,8 @@ class AgreementsController < ApplicationController
         format.html { redirect_to "/contacts/" + @agreement.contact.id.to_s, notice: I18n.t(:message_agreement_updated) }
         format.json { head :ok }
       else
-        format.html { render :action => "edit" }
-        format.json { render :json => @agreement.errors, :status => :unprocessable_entity }
+        format.html { render action:  "edit" }
+        format.json { render json:  @agreement.errors, status:  :unprocessable_entity }
       end
     end
   end
@@ -77,9 +77,9 @@ class AgreementsController < ApplicationController
   end
 
   private
-  
+
   def agreement_params
     params.require(:agreement).permit(:agreement, :contact_id, :user_id)
   end
-  
+
 end

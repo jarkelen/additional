@@ -1,10 +1,10 @@
 class RelationsController < ApplicationController
 	# Set user authorization
-  before_filter :except => [:destroy] do |c| c.is_allowed 'user' end
-  before_filter :only => [:destroy] do |c| c.is_allowed 'company_admin' end
+  before_filter except: [:destroy] do |c| c.is_allowed 'user' end
+  before_filter only: [:destroy] do |c| c.is_allowed 'company_admin' end
 
 	# Set berlin wall
-	before_filter :except => [ :index, :new, :create ] do |c| c.correct_company 'relation' end
+	before_filter except: [ :index, :new, :create ] do |c| c.correct_company 'relation' end
 
 	#----------------------------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ class RelationsController < ApplicationController
 		  @csv_relations = @relations
     elsif params[:conditions]
 			# Find filtered relations for csv
-		  @csv_relations = current_user.company.relations.all(:order => "relation_nr ASC", :conditions => params[:conditions])
+		  @csv_relations = current_user.company.relations.all(order: "relation_nr ASC", conditions: params[:conditions])
 	  else
       # Only show active relations by default
 		  @relations = current_user.company.relations.where("status = 'actief'").order("relation_nr ASC")
@@ -101,12 +101,12 @@ class RelationsController < ApplicationController
       # Create an update
       Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_relation} '#{@relation.name}' #{I18n.t :update_edit}")
 
-      redirect_to relations_path, :notice => I18n.t(:message_relation_updated)
+      redirect_to relations_path, notice: I18n.t(:message_relation_updated)
     else
       # Set listbox data
       get_listbox_data
 
-      render :action => "edit"
+      render action: "edit"
     end
   end
 
@@ -117,7 +117,7 @@ class RelationsController < ApplicationController
     # Also create an update
     Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_relation} '#{@relation.name}' #{I18n.t :update_delete}")
 
-    redirect_to relations_path, :notice => I18n.t(:message_relation_deleted)
+    redirect_to relations_path, notice: I18n.t(:message_relation_deleted)
   end
 
   #------------------------------------------------------------------------

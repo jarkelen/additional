@@ -1,10 +1,10 @@
 class InsInsurancesController < ApplicationController
 	# Set authorization
 	before_filter do |c| c.is_allowed 'user' end
-	before_filter :only => [ :settings ] do |c| c.is_allowed 'company_admin' end
+	before_filter only: [ :settings ] do |c| c.is_allowed 'company_admin' end
 
 	# Set berlin wall
-	before_filter :except => [ :index, :new, :create, :settings ] do |c| c.correct_company 'ins_insurance' end
+	before_filter except: [ :index, :new, :create, :settings ] do |c| c.correct_company 'ins_insurance' end
 
 	# Set module authorization
 	before_filter do |c| c.correct_module 'ins_insurance' end
@@ -92,7 +92,7 @@ class InsInsurancesController < ApplicationController
 		  @insurers = InsInsurer.where(company_id: current_user.company_id)
 		  @mediators = InsMediator.where(company_id: current_user.company_id)
 
-			render :action => "edit"
+			render action: "edit"
 		end
   end
 
@@ -103,7 +103,7 @@ class InsInsurancesController < ApplicationController
     # Also create an update
 		Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_insurance} '#{@insurance.insurance_type}' #{I18n.t :update_delete}")
 
-		redirect_to ins_insurances_path, :notice => I18n.t(:message_insurance_deleted)
+		redirect_to ins_insurances_path, notice: I18n.t(:message_insurance_deleted)
   end
 
 	def settings
@@ -141,7 +141,7 @@ class InsInsurancesController < ApplicationController
 	end
 
   private
-  
+
   def ins_insurances_params
     params.require(:ins_insurance).permit(:insurance_nr, :branch, :insurance_type, :market, :start_date, :duration,
 									:first_contract_expiration_date, :main_premium_expiration_date,

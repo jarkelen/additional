@@ -2,10 +2,10 @@ class UsersController < ApplicationController
   skip_filter :authenticate_user
 
 	# Set authorization
-  before_filter :except => [ :show, :edit, :update ] do |c| c.is_allowed 'company_admin' end
+  before_filter except: [ :show, :edit, :update ] do |c| c.is_allowed 'company_admin' end
 
 	# Set berlin wall
-	before_filter :except => [ :index, :new, :create, :settings ] do |c| c.correct_company 'user' end
+	before_filter except: [ :index, :new, :create, :settings ] do |c| c.correct_company 'user' end
 
 	# Check for correct user
 	before_filter do |c| c.correct_module 'user' end
@@ -124,9 +124,9 @@ class UsersController < ApplicationController
       # Also create an update
   		Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_user} '#{@user.full_name}' #{I18n.t :update_edit}")
 
-	    redirect_to user_path(@user), :notice => I18n.t(:message_user_updated)
+	    redirect_to user_path(@user), notice: I18n.t(:message_user_updated)
     else
-      render :action => "edit"
+      render action: "edit"
     end
   end
 
@@ -137,7 +137,7 @@ class UsersController < ApplicationController
     # Also create an update
 		Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_user} '#{@user.full_name}' #{I18n.t :update_delete}")
 
-    redirect_to dashboard_path, :notice => I18n.t(:message_user_deleted)
+    redirect_to dashboard_path, notice: I18n.t(:message_user_deleted)
   end
 
 

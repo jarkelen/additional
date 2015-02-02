@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_filter do |c| c.is_allowed 'user' end
 
 	# Set berlin wall
-	before_filter :except => [ :index, :create ] do |c| c.correct_company 'task' end
+	before_filter except: [ :index, :create ] do |c| c.correct_company 'task' end
 
 	#-----------------------------------------------------------------------------------------
 
@@ -15,10 +15,10 @@ class TasksController < ApplicationController
 			@tasks = current_user.company.tasks.order("due_at ASC")
 		end
   end
-  
+
   def create
     @task = Task.new(tasks_params)
-    
+
     respond_to do |format|
       if @task.save
         # Also create an update
@@ -54,7 +54,7 @@ class TasksController < ApplicationController
       # Current user's tasks on dashboard
       @tasks = current_user.tasks.order("due_at ASC")
     end
-    
+
     # Also create an update
     Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_task} '#{@task.task}' #{I18n.t :update_delete}")
 
@@ -62,9 +62,9 @@ class TasksController < ApplicationController
       format.js
     end
   end
-  
+
   private
-  
+
   def tasks_params
     params.require(:task).permit(:task_type, :task, :due_at, :user_id, :contact_id)
   end

@@ -3,7 +3,7 @@ class InsBranchesController < ApplicationController
 	before_filter do |c| c.is_allowed 'company_admin' end
 
 	# Set berlin wall
-	before_filter :except => [ :create ] do |c| c.correct_company 'ins_branch' end
+	before_filter except: [ :create ] do |c| c.correct_company 'ins_branch' end
 
 	#-----------------------------------------------------------------------------------------
 
@@ -28,9 +28,9 @@ class InsBranchesController < ApplicationController
 			format.js
 		end
 	end
-	
+
   private
-  
+
   def ins_branches_params
     params.require(:ins_branch).permit(:branch, :company_id)
   end

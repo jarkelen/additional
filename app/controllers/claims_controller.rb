@@ -1,10 +1,10 @@
 class ClaimsController < ApplicationController
 	# Set authorization
-  before_filter :except => [ :destroy ] do |c| c.is_allowed 'user' end
-  before_filter :only => [ :destroy ] do |c| c.is_allowed 'company_admin' end
+  before_filter except: [ :destroy ] do |c| c.is_allowed 'user' end
+  before_filter only: [ :destroy ] do |c| c.is_allowed 'company_admin' end
 
 	# Set berlin wall
-	before_filter :except => [ :index, :new, :create] do |c| c.correct_company 'claim' end
+	before_filter except: [ :index, :new, :create] do |c| c.correct_company 'claim' end
 
 	#----------------------------------------------------------------------------------------
 
@@ -89,7 +89,7 @@ class ClaimsController < ApplicationController
 		  @insurers = InsInsurer.where(company_id: current_user.company_id)
 		  @mediators = InsMediator.where(company_id: current_user.company_id)
 
-			render :action => "edit"
+			render action: "edit"
 		end
   end
 
@@ -100,11 +100,11 @@ class ClaimsController < ApplicationController
     # Also create an update
 		Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_claim} '#{@claim.id}' #{I18n.t :update_delete}")
 
-		redirect_to claims_path, :notice => I18n.t(:message_claim_deleted)
+		redirect_to claims_path, notice: I18n.t(:message_claim_deleted)
   end
-  
+
   private
-  
+
   def claim_params
     params.require(:claim).permit(:claim_nr, :relation_id, :company_id)
   end

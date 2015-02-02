@@ -1,10 +1,10 @@
 class CompaniesController < ApplicationController
 	# Set authorization
-  before_filter :only => [ :show ] do |c| c.is_allowed 'user' end
-  before_filter :except => [:show] do |c| c.is_allowed 'company_admin' end
+  before_filter only: [ :show ] do |c| c.is_allowed 'user' end
+  before_filter except: [:show] do |c| c.is_allowed 'company_admin' end
 
 	# Set berlin wall
-	before_filter :except => [:new, :create] do |c| c.correct_company 'company' end
+	before_filter except: [:new, :create] do |c| c.correct_company 'company' end
 
 	#-----------------------------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ class CompaniesController < ApplicationController
   	@company.build_subscription
     @countries = current_user.company.countries.dropdown_list
   end
-  
+
   def create
 		@company = Company.new(company_params)
 
@@ -30,7 +30,7 @@ class CompaniesController < ApplicationController
       redirect_to dashboard_url, notice: I18n.t(:message_company_created)
     else
       @countries = current_user.company.countries.dropdown_list
-      render :action => "new"
+      render action: "new"
     end
   end
 
@@ -43,23 +43,23 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
 
     if @company.update_attributes(company_params)
-      redirect_to dashboard_url, :notice => I18n.t(:message_company_updated)
+      redirect_to dashboard_url, :notice: I18n.t(:message_company_updated)
     else
       @countries = current_user.company.countries.dropdown_list
-      render :action => "edit"
+      render action: "edit"
     end
-    
+
   end
 
   def destroy
     @company = Company.find(params[:id])
     @company.destroy
 
-    redirect_to dashboard_url, :notice => I18n.t(:message_company_deleted)
+    redirect_to dashboard_url, notice: I18n.t(:message_company_deleted)
   end
 
   private
-  
+
   def company_params
     params.require(:company).permit(:name, :address1, :address2, :zipcode, :city, :country, :email, :website,
                   :telephone, :facebook, :twitter, :linkedin, :code,

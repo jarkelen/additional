@@ -3,7 +3,7 @@ class InsInsurersController < ApplicationController
 	before_filter do |c| c.is_allowed 'company_admin' end
 
 	# Set berlin wall
-	before_filter :except => [ :create ] do |c| c.correct_company 'ins_insurer' end
+	before_filter except: [ :create ] do |c| c.correct_company 'ins_insurer' end
 
 	#-----------------------------------------------------------------------------------------
 
@@ -29,9 +29,9 @@ class InsInsurersController < ApplicationController
 			format.js
 		end
 	end
-	
+
   private
-  
+
   def ins_insurers_params
     params.require(:ins_insurer).permit(:company_id, :insurer)
   end

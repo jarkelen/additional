@@ -3,7 +3,7 @@ class InsMediatorsController < ApplicationController
 	before_filter do |c| c.is_allowed 'company_admin' end
 
 	# Set berlin wall
-	before_filter :except => [ :create ] do |c| c.correct_company 'ins_mediator' end
+	before_filter except: [ :create ] do |c| c.correct_company 'ins_mediator' end
 
 	#-----------------------------------------------------------------------------------------
 
@@ -29,9 +29,9 @@ class InsMediatorsController < ApplicationController
 			format.js
 		end
 	end
-	
+
   private
-  
+
   def ins_mediators_params
     params.require(:ins_mediator).permit(:company_id, :mediator)
   end

@@ -3,7 +3,7 @@ class NotesController < ApplicationController
   before_filter do |c| c.is_allowed 'user' end
 
 	# Set berlin wall
-	before_filter :except => [ :index, :create ] do |c| c.correct_company 'note' end
+	before_filter except: [ :index, :create ] do |c| c.correct_company 'note' end
 
 	#-----------------------------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(notes_params)
     @contact = Contact.find(params[:note][:contact_id])
-    
+
     respond_to do |format|
       if @note.save
         # Also create an update
@@ -55,9 +55,9 @@ class NotesController < ApplicationController
       format.js
     end
   end
-  
+
   private
-  
+
   def notes_params
     params.require(:note).permit(:note_type, :subject, :note, :user_id, :contact_id, :attachment, :url)
   end

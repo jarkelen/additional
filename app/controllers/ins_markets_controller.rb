@@ -3,7 +3,7 @@ class InsMarketsController < ApplicationController
 	before_filter do |c| c.is_allowed 'company_admin' end
 
 	# Set berlin wall
-	before_filter :except => [ :create ] do |c| c.correct_company 'ins_market' end
+	before_filter except: [ :create ] do |c| c.correct_company 'ins_market' end
 
 	#-----------------------------------------------------------------------------------------
 
@@ -25,13 +25,13 @@ class InsMarketsController < ApplicationController
 
 		respond_to do |format|
 			@markets = InsMarket.where("company_id = ?", current_user.company_id)
-			
+
 			format.js
 		end
 	end
-	
+
   private
-  
+
   def ins_markets_params
     params.require(:ins_market).permit(:market, :company_id)
   end
