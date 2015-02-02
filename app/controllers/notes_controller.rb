@@ -16,7 +16,7 @@ class NotesController < ApplicationController
   end
 
   def create
-    @note = Note.new(params[:note])
+    @note = Note.new(notes_params)
     @contact = Contact.find(params[:note][:contact_id])
     
     respond_to do |format|
@@ -56,5 +56,10 @@ class NotesController < ApplicationController
     end
   end
   
- 
+  private
+  
+  def notes_params
+    params.require(:note).permit(:note_type, :subject, :note, :user_id, :contact_id, :attachment, :url)
+  end
+
 end

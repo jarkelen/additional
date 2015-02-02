@@ -8,7 +8,7 @@ class InsMarketsController < ApplicationController
 	#-----------------------------------------------------------------------------------------
 
 	def create
-		@market = InsMarket.new(params[:ins_market])
+		@market = InsMarket.new(ins_markets_params)
 		respond_to do |format|
 			if @market.save
 				@markets = InsMarket.where("company_id = ?", current_user.company_id)
@@ -29,4 +29,11 @@ class InsMarketsController < ApplicationController
 			format.js
 		end
 	end
+	
+  private
+  
+  def ins_markets_params
+    params.require(:ins_market).permit(:market, :company_id)
+  end
+
 end

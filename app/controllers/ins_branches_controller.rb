@@ -8,7 +8,7 @@ class InsBranchesController < ApplicationController
 	#-----------------------------------------------------------------------------------------
 
 	def create
-		@branch = InsBranch.new(params[:ins_branch])
+		@branch = InsBranch.new(ins_branches_params)
 		respond_to do |format|
 			if @branch.save
 				@branches = InsBranch.where("company_id = ?", current_user.company_id)
@@ -28,4 +28,11 @@ class InsBranchesController < ApplicationController
 			format.js
 		end
 	end
+	
+  private
+  
+  def ins_branches_params
+    params.require(:ins_branch).permit(:branch, :company_id)
+  end
+
 end

@@ -11,8 +11,6 @@
 class RelType < ActiveRecord::Base
 	belongs_to :company
 
-	attr_accessible :rel_type, :company_id
-                  
   validates       :rel_type, :company_id, presence: true
 
   def self.dropdown_list

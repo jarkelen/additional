@@ -27,6 +27,7 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to root_path, :notice => I18n.t(:session_logged_out)
   end
+
 end
 
 

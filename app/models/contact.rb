@@ -1,19 +1,11 @@
 class Contact < ActiveRecord::Base
   belongs_to :relation
-  has_and_belongs_to_many :dossiers
-  has_many :notes, :order => 'created_at DESC',:dependent => :destroy
-  has_many :tasks, :order => 'due_at ASC',:dependent => :destroy
-  has_many :agreements, :order => 'updated_at ASC',:dependent => :destroy
-         
-  attr_accessible :first_name, :middle_name, :last_name, :function, 
-                  :telephone_business, :telephone_private, :telephone_mobile,
-                  :email, :facebook, :twitter, :linkedin, :salutation, :gender, 
-                  :background, :title, :birth_date, :fax, :relation_id, 
-                  :custom_label_1, :custom_field_1, :custom_label_2, :custom_field_2, 
-                  :custom_label_3, :custom_field_3, :has_boss
+  has_many :notes,:dependent => :destroy
+  has_many :tasks,:dependent => :destroy
+  has_many :agreements,:dependent => :destroy
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-                  
+
   validates :first_name, :last_name, :relation_id, presence: true
 
   #------------------------------- CLASS METHODS -------------------------------

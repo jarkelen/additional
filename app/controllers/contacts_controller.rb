@@ -16,7 +16,7 @@ class ContactsController < ApplicationController
       @contacts = current_user.company.contacts.per_letter(params[:letter])
     else
       @contacts = current_user.company.contacts.order("last_name ASC")
-    end   
+    end
 
     # Set extra page title for filter requests
     if params[:letter]
@@ -70,7 +70,7 @@ class ContactsController < ApplicationController
         @active = "tasks"
       end
     end
-    
+
     respond_to do |format|
       format.html
       format.js
@@ -88,9 +88,9 @@ class ContactsController < ApplicationController
       line_arr = File.readlines(vcard)
       line_arr.delete_if { |line| line.match(/^.+\:.+$/).nil? }
       vcard_data = line_arr.join
-      
-      # Decode the vcard data and set the data       
-      card = Vpim::Vcard.decode(vcard_data).first 
+
+      # Decode the vcard data and set the data
+      card = Vpim::Vcard.decode(vcard_data).first
 
       # Create the new contact
       @contact = Contact.new
@@ -108,11 +108,10 @@ class ContactsController < ApplicationController
 
     @relations = current_user.company.relations
   end
-  
+
   def create
-    @contact = Contact.new(params[:contact])
-		@contact.dossiers = Dossier.find(params[:dossier_ids]) if params[:dossier_ids]
-    
+    @contact = Contact.new(contract_params)
+
     if @contact.save
       redirect_to contacts_path, notice: I18n.t(:message_contact_created)
 
@@ -132,9 +131,8 @@ class ContactsController < ApplicationController
 
   def update
     @contact = current_user.company.contacts.find(params[:id])
-		@contact.dossiers = Dossier.find(params[:dossier_ids]) if params[:dossier_ids]
 
-    if @contact.update_attributes(params[:contact])
+    if @contact.update_attributes(contract_params)
       # Also create an update
       Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_contact} '#{@contact.full_name}' #{I18n.t :update_edit}")
 
@@ -162,22 +160,22 @@ class ContactsController < ApplicationController
 	def import
 	  @vcard = ""
 	end
-	
+
 	def vcard_export
 		@contact = Contact.find_by_id(params[:id])
-		
+
 		# Create filename
 		if @contact.middle_name != ""
 			filename = @contact.first_name + '_' + @contact.middle_name + '_' + @contact.last_name + '.vcf'
 		else
 			filename = @contact.first_name + '_' + @contact.last_name + '.vcf'
 		end
-		
+
 		card = Vpim::Vcard::Maker.make2 do |maker|
 			# Set name
 			maker.add_name do |name|
 	    	name.given = @contact.first_name
-	    	
+
 	    	if @contact.middle_name != ""
 					name.family = @contact.middle_name + ' ' + @contact.last_name
 				else
@@ -188,13 +186,24 @@ class ContactsController < ApplicationController
 			if @contact.telephone_business != ""
 				maker.add_tel(@contact.telephone_business)
 			end
-			
+
 			if @contact.email != ""
 				maker.add_email(@contact.email)
 			end
 		end
-	
+
 		send_data card.to_s, :filename => filename
+  end
+
+  private
+
+  def contract_params
+    params.require(:contact).permit(:first_name, :middle_name, :last_name, :function,
+                  :telephone_business, :telephone_private, :telephone_mobile,
+                  :email, :facebook, :twitter, :linkedin, :salutation, :gender,
+                  :background, :title, :birth_date, :fax, :relation_id,
+                  :custom_label_1, :custom_field_1, :custom_label_2, :custom_field_2,
+                  :custom_label_3, :custom_field_3, :has_boss)
   end
 
 end

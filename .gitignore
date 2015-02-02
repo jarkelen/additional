@@ -47,4 +47,4 @@ tmp
 .yardoc
 _yardoc
 doc/
-.c9/
+.c9/*

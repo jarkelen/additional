@@ -1,7 +1,6 @@
 CustomerFirst::Application.routes.draw do
 
-  match "/companies/:id/users" => "site#company_users", :as => :company_users
-  match "/users_dashboard/show", :as => :users_dashboard
+  get "/companies/:id/users" => "site#company_users", :as => :company_users
   get "/contacts/import"
   post "/contacts/import" => "contacts#new"
 
@@ -46,7 +45,7 @@ CustomerFirst::Application.routes.draw do
   resources :emp_employees
 
   # Misc
-  match "/contacts/vcard_export/:id" => "contacts#vcard_export"
+  get "/contacts/vcard_export/:id" => "contacts#vcard_export"
 
   get "site/index", :as => "public_home"
   post "site/index"

@@ -23,5 +23,5 @@
       - @branches.each do |branch|
         %tr
           %td= branch.branch
-          %td= branch.sector.sector
+          %td= branch.sector
           %td= link_to I18n.t(:delete), branch, :method => :delete, :remote => true, :confirm => I18n.t(:sure)

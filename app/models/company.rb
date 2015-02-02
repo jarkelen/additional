@@ -28,12 +28,6 @@ class Company < ActiveRecord::Base
 
   accepts_nested_attributes_for :subscription
 
-  attr_accessible :name, :address1, :address2, :zipcode, :city, :country, :email, :website,
-                  :telephone, :facebook, :twitter, :linkedin, :code,
-                  :subscription_attributes, :kvk_nr, :bankaccount, :billing_address,
-                  :billing_zipcode, :billing_city, :billing_country,
-                  :post_address, :post_zipcode, :post_city, :post_country, :tax_nr, :logo
-
   attr_accessor :same
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
