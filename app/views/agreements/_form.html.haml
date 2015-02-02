@@ -1,10 +1,10 @@
 .form
-  = form_for(@agreement, :remote => :true) do |f|
+  = form_for(@agreement, remote: :true) do |f|
     / Show errors
-    = render('layouts/form_errors', :object => @agreement)
-    = f.hidden_field :user_id, :value => current_user.id
-    = f.hidden_field :contact_id, :value => @contact.id
-    = render('layouts/form_field', :f => f, :label => I18n.t(:agreement_single), :field => :agreement, :size => "60")
+    = render('layouts/form_errors', object: @agreement)
+    = f.hidden_field :user_id, value: current_user.id
+    = f.hidden_field :contact_id, value: @contact.id
+    = render('layouts/form_field', f: f, label: I18n.t(:agreement_single), field: :agreement, size: "60")
     .field
-      = f.submit I18n.t(:form_save_button), :class => 'button white'
+      = f.submit I18n.t(:form_save_button), class: 'button white'
     .clear

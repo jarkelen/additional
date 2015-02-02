@@ -1,13 +1,13 @@
 .content
   .support.form
     %p= I18n.t :mod_ins_settings_add_branch
-    = form_for(@branch, :remote => true) do |f|
+    = form_for(@branch, remote: true) do |f|
       / Show errors
-      = render('layouts/form_errors', :object => @branch)
-      = f.hidden_field :company_id, :value => current_user.company.id
-      = render('layouts/form_field', :f => f, :label => I18n.t(:mod_ins_branch), :field => :branch, :size => "25")
+      = render('layouts/form_errors', object: @branch)
+      = f.hidden_field :company_id, value: current_user.company.id
+      = render('layouts/form_field', f: f, label: I18n.t(:mod_ins_branch), field: :branch, size: "25")
       .field
-        = f.submit I18n.t(:form_save_button), :class => 'button white'
+        = f.submit I18n.t(:form_save_button), class: 'button white'
       .clear
   %table
     %thead
@@ -19,4 +19,4 @@
         %tr
           %td= branch.branch
           /%td= branch.sector.sector
-          %td= link_to I18n.t(:delete), branch, :method => :delete, :remote => true, :data => { :confirm => I18n.t(:sure) }
+          %td= link_to I18n.t(:delete), branch, method: :delete, remote: true, data: { confirm: I18n.t(:sure) }

@@ -1,7 +1,5 @@
 :erb
   $('#content_output').empty();
   $('ul.tabs a').removeClass('active');
-  $('#content_output').html("<div class='content_title agreement'></div><h3><%= I18n.t :agreement_all %></h3><%= escape_javascript(render('agreements/all_agreements', :agreements => @agreements, :layout => 'normal')) %></div>");
+  $('#content_output').html("<div class='content_title agreement'></div><h3><%= I18n.t :agreement_all %></h3><%= escape_javascript(render('agreements/all_agreements', agreements: @agreements, layout: 'normal')) %></div>");
   $('a#agreements_tab').addClass('active');
-
-

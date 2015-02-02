@@ -15,5 +15,5 @@ class Branch < ActiveRecord::Base
 
   default_scope { order('sector_id, branch ASC') }
 
-  validates       :branch, :sector_id, :company_id, presence: true
+  validates :branch, :sector_id, :company_id, presence: true
 end

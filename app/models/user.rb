@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  before_validation :create_random_password, :on => :create
+  before_validation :create_random_password, on: :create
 
   belongs_to :company
   has_many :activities
@@ -16,16 +16,16 @@ class User < ActiveRecord::Base
   LAST_NAME_MAX_LENGTH  = 50
   EMAIL_MAX_LENGTH      = 50
 
-  validates :first_name, 	:presence 	=> true,
-  												:length   	=> { :maximum => FIRST_NAME_MAX_LENGTH }
-  validates :last_name, 	:presence 	=> true,
-  												:length   	=> { :maximum => LAST_NAME_MAX_LENGTH }
-  validates :email, 			:presence 	=> true,
-  												:length   	=> { :maximum => EMAIL_MAX_LENGTH },
-  												:format   	=> { :with => email_regex },
-  												:uniqueness => { :case_sensitive => false }
+  validates :first_name, 	presence: true,
+  												length:   { maximum: FIRST_NAME_MAX_LENGTH }
+  validates :last_name, 	presence: true,
+  												length:   { maximum: LAST_NAME_MAX_LENGTH }
+  validates :email, 			presence: true,
+  												length:   { maximum: EMAIL_MAX_LENGTH },
+  												format:   { with: email_regex },
+  												uniqueness: { case_sensitive: false }
 
-  validates :role, :presence 	=> true
+  validates :role, presence: true
 
   def self.dropdown_list(user)
     where("company_id = ?", user.company).map { |user| [user.full_name, user.id] }

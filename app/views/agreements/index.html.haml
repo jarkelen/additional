@@ -5,6 +5,6 @@
   - else
     - page_title = I18n.t(:agreement_index_title)
   / Show title and searchbox
-  = render('layouts/pagetitle', :title => page_title, :path => agreements_path)
+  = render('layouts/pagetitle', title: page_title, path: agreements_path)
   / Show all agreements
-  = render("agreements/all_agreements", :agreements => @agreements)
+  = render("agreements/all_agreements", agreements: @agreements)

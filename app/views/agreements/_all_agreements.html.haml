@@ -25,7 +25,7 @@
               - @context = 'contacts'
             - elsif request.path.index('agreements') != nil
               - @context = 'agreements'
-            %td= link_to I18n.t(:delete), agreement_path(agreement, :context => @context), :remote => :true, :method => :delete, :confirm => I18n.t(:sure)
+            %td= link_to I18n.t(:delete), agreement_path(agreement, context: @context), remote: true, method: :delete, confirm: I18n.t(:sure)
   - else
     / No data found
     = render("layouts/nodata")

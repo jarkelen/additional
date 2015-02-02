@@ -1,8 +1,8 @@
 class Contact < ActiveRecord::Base
   belongs_to :relation
-  has_many :notes,:dependent => :destroy
-  has_many :tasks,:dependent => :destroy
-  has_many :agreements,:dependent => :destroy
+  has_many :notes, dependent: :destroy
+  has_many :tasks, dependent: :destroy
+  has_many :agreements, dependent: :destroy
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

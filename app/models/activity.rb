@@ -5,7 +5,7 @@ class Activity < ActiveRecord::Base
 
   # Create a new sidebar update
   def self.create_update(user, activity)
-    self.create(:activity => activity, :user_id => user.id, :company_id => user.company.id)
+    self.create(activity: activity, user_id: user.id, company_id: user.company.id)
 	end
-    
+
 end

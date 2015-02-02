@@ -12,4 +12,4 @@
     .action_button.mod
       = link_to I18n.t(:form_edit_button), edit_claim_url(@claim)
     .action_button.mod
-      = link_to I18n.t(:form_delete_button), @claim, :method => :delete, :data => { :confirm => I18n.t(:sure) }
+      = link_to I18n.t(:form_delete_button), @claim, method: :delete, data: { confirm: I18n.t(:sure) }
