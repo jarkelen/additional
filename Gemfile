@@ -20,6 +20,7 @@ gem 'gmaps4rails'
 gem 'haml-rails'
 gem 'newrelic_rpm'
 gem 'ransack'
+gem 'puma'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.2.5"
