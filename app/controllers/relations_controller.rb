@@ -37,6 +37,7 @@ class RelationsController < ApplicationController
       format.csv
       format.html
       format.js
+      format.json { render json: @relations }
     end
 
   end
@@ -56,6 +57,12 @@ class RelationsController < ApplicationController
 
     # Show relation's insurances
     @insurances = @relation.ins_insurances
+
+	  respond_to do |format|
+      format.html
+      format.json { render json: @relation }
+    end
+
   end
 
   def new

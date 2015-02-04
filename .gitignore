@@ -47,4 +47,5 @@ tmp
 .yardoc
 _yardoc
 doc/
-.c9/*
+.c9
+.c9/metadata/tab2

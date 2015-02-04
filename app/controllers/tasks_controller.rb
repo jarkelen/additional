@@ -18,6 +18,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(tasks_params)
+    @contact = Contact.find(params[:task][:contact_id])
 
     respond_to do |format|
       if @task.save
@@ -29,7 +30,6 @@ class TasksController < ApplicationController
 
         format.js
       else
-        @contact = Contact.find(params[:task][:contact_id])
         @tasktypes = Tasktype.dropdown_list
         @users = User.dropdown_list(current_user)
 
