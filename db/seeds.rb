@@ -11,3 +11,4 @@ company = Company.create(name: "Demo Company", code: "DMO", email: "info@demo.nl
     address2: "", zipcode: "5611 XD", city: "Eindhoven", country: "Nederland")
 User.create(first_name: "Arie", last_name: "Admin", role: "admin", email: "arie.admin@demo.nl", locale: "nl", 
     mod_platform: true, mod_insurance: true, mod_claim: false, company_id: company.id)
+Tasktype.create(company_id: company.id, tasktype: "todo")

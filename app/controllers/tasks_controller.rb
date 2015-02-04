@@ -24,6 +24,7 @@ class TasksController < ApplicationController
         # Also create an update
         Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_task} '#{@task.task}' #{I18n.t :update_new}")
 
+        @contact = Contact.find(params[:contact_id])
         @tasks = @contact.tasks.order("due_at ASC")
         @task = Note.new
 
