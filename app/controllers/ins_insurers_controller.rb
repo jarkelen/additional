@@ -8,7 +8,7 @@ class InsInsurersController < ApplicationController
 	#-----------------------------------------------------------------------------------------
 
 	def create
-		@insurer = InsInsurer.new(params[:ins_insurer])
+		@insurer = InsInsurer.new(ins_insurers_params)
 		respond_to do |format|
 			if @insurer.save
 				@insurers = InsInsurer.where("company_id = ?", current_user.company_id)
@@ -29,4 +29,11 @@ class InsInsurersController < ApplicationController
 			format.js
 		end
 	end
+	
+  private
+  
+  def ins_insurers_params
+    params.require(:ins_insurer).permit(:company_id, :insurer)
+  end
+
 end

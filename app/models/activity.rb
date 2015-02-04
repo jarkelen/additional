@@ -1,9 +1,7 @@
 class Activity < ActiveRecord::Base
 	belongs_to :user
-	
-	attr_accessible :activity, :user_id, :company_id
 
-	validates       :activity, :user_id, :company_id, presence: true
+	validates :activity, :user_id, :company_id, presence: true
 
   # Create a new sidebar update
   def self.create_update(user, activity)

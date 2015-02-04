@@ -9,11 +9,11 @@ class BranchesController < ApplicationController
 
   # POST /branches
   def create
-    @branch = Branch.new(params[:branch])
-    
+    @branch = Branch.new(branch_params)
+
     respond_to do |format|
       if @branch.save
-        @branches = Branch.find_all_by_company_id(current_user.company.id)
+        @branches = Branch.where(company_id: current_user.company.id)
         @branch = Branch.new
         format.html
 	      format.js
@@ -27,10 +27,16 @@ class BranchesController < ApplicationController
     @branch.destroy
 
     respond_to do |format|
-      @branches = Branch.find_all_by_company_id(current_user.company.id)
+      @branches = Branch.where(company_id: current_user.company.id)
       format.html
       format.js
     end
+  end
+
+  private
+
+  def branch_params
+    params.require(:branch).permit(:branch, :sector_id, :company_id)
   end
 
 end

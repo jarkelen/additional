@@ -5,7 +5,6 @@
     = f.hidden_field :user_id, :value => current_user.id
     = f.hidden_field :contact_id, :value => @contact.id
     = render('layouts/form_field', :f => f, :label => I18n.t(:agreement_single), :field => :agreement, :size => "60")
-    = render('dossiers/listbox', :f => f)
     .field
       = f.submit I18n.t(:form_save_button), :class => 'button white'
     .clear

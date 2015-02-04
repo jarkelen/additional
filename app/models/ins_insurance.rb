@@ -2,11 +2,6 @@ class InsInsurance < ActiveRecord::Base
 	belongs_to :relation
 	belongs_to :company
 
-	attr_accessible :insurance_nr, :branch, :insurance_type, :market, :start_date, :duration,
-									:first_contract_expiration_date, :main_premium_expiration_date,
-									:extension, :payment_continuation, :arrear_calculation, :attachment_1,
-									:attachment_2, :attachment_3, :relation_id, :company_id, :status, :end_date, :collection, :insurer, :mediator
-
 	# Add attachment uploader
 	mount_uploader :attachment_1, InsuranceUploader
 	mount_uploader :attachment_2, InsuranceUploader

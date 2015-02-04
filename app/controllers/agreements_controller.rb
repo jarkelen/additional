@@ -20,7 +20,7 @@ class AgreementsController < ApplicationController
   end
   
   def create
-    @agreement = Agreement.new(params[:agreement])
+    @agreement = Agreement.new(agreement_params)
     @contact = Contact.find(params[:agreement][:contact_id])
 
     respond_to do |format|
@@ -45,7 +45,7 @@ class AgreementsController < ApplicationController
     Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_agreement} '#{@agreement.agreement}' #{I18n.t :update_edit}")
 
     respond_to do |format|
-      if @agreement.update_attributes(params[:agreement])
+      if @agreement.update_attributes(agreement_params)
         format.html { redirect_to "/contacts/" + @agreement.contact.id.to_s, notice: I18n.t(:message_agreement_updated) }
         format.json { head :ok }
       else
@@ -74,6 +74,12 @@ class AgreementsController < ApplicationController
     respond_to do |format|
       format.js
     end
+  end
+
+  private
+  
+  def agreement_params
+    params.require(:agreement).permit(:agreement, :contact_id, :user_id)
   end
   
 end

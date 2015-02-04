@@ -33,7 +33,7 @@
  	}
  	aside {
  		height: auto;
- 		
+
  		#version p {
  			font-size: 85%;
  			font-weight: normal;
@@ -43,7 +43,7 @@
  	}
 	.sidebar {
 		position:relative;
-		
+
 		#version {
 			position: absolute;
 			bottom: 0;
@@ -83,13 +83,13 @@
 				min-width: 150px;
 				text-align: center;
 				margin: 0 10px 20px 0;
-				
+
 				p {
 	 				font-size: 100%;
 	 				color: $title;
 	 				font-weight: bold;
 	    		margin: 5px 0;
-	    		text-align: center;	
+	    		text-align: center;
 				}
 				a, a:visited, a:hover {
 					color: $title;
@@ -100,8 +100,8 @@
 			form {
 				margin: 0;
 			}
-			a:hover, a:focus { 
-				color: $title; 
+			a:hover, a:focus {
+				color: $title;
 			}
 		}
 	}
@@ -110,7 +110,7 @@
 		position: relative;
 		margin: 0 auto;
 		width: 100%;
-		
+
 		p {
 			font-size: 12px;
 			text-align: center;
@@ -136,8 +136,8 @@
 	h3 { font-size: 22px; line-height: 24px; }
 	h4 { font-size: 14px; line-height: 20px; }
 
-	p { 
-		margin: 0 0 20px 0; 
+	p {
+		margin: 0 0 20px 0;
 		font-size: 95%;
 		line-height: 20px;
 	}
@@ -153,7 +153,7 @@
 		padding-bottom: 10px;
 		margin-bottom: 20px;
 		@include rounded-corners;
-		@include box-shadow;	
+		@include box-shadow;
 		@include theme-layout;
 		@include content-title;
 
@@ -169,16 +169,16 @@
 		.introtext {
 			padding: 20px 30px;
 			line-height:200%;
-		}	
+		}
 		.formcontent {
 			padding: 0 20px 20px 40px;
 		}
 		.formcontent_small {
 			padding: 0;
-			
+
 			form {
 				margin: 0 0 0 5px;
-				
+
 				div {
 					margin-bottom: 2px;
 				}
@@ -197,7 +197,7 @@
 			margin: 10px 0 5px 5px;
 			float: left;
 			text-align: center;
-			
+
 			h2 {
 				margin-bottom: 0;
 			}
@@ -219,11 +219,11 @@
 		margin: 0 0 10px 5px;
 		display: block;
 		height: 50px;
-		
+
 		.downloads {
 			float: right;
 			margin: 15px 20px 0 0;
-			
+
 			a {
 				margin-right: 10px;
 			}
@@ -231,14 +231,14 @@
 	}
 	.action_button {
 		@include rounded-corners;
-		@include box-shadow;	
+		@include box-shadow;
 		padding: 10px 5px;
 		float: left;
 		width: auto;
 		min-width: 150px;
 		text-align: center;
 		margin: 0 10px 20px 0;
-		
+
 		a, a:visited, a:hover {
 			color: $title;
 			text-decoration: none;
@@ -251,7 +251,7 @@
     margin-top: 50px;
     width: 60%;
 		@include rounded-corners;
-		@include box-shadow;	
+		@include box-shadow;
 		@include theme-layout;
 		@include content-title;
 
@@ -271,7 +271,7 @@
   	width: 100%;
   	height: 40px;
   	margin-top: 10px;
-  	
+
   	.pagetitle {
   		float: left;
   		display: block;
@@ -302,16 +302,16 @@
 }
 /* #Links
 ================================================== */
-	a, a:visited { 
-		color: $general_dark; 
-		text-decoration: none; 
-		outline: 0; 
+	a, a:visited {
+		color: $general_dark;
+		text-decoration: none;
+		outline: 0;
 	}
-	a:hover, a:focus { 
-		color: $general_light; 
+	a:hover, a:focus {
+		color: $general_light;
 	}
-	p a, p a:visited { 
-		line-height: inherit; 
+	p a, p a:visited {
+		line-height: inherit;
 	}
 	.more_link {
 		padding-top: 10px;
@@ -323,11 +323,11 @@
 	ul#sidebar {
 		width: 100%;
 		@include theme-sidebar;
-		
+
 		li {
 			padding: 5px;
 			margin: 0 20px 0 20px;
-		}	
+		}
 		a {
 			text-decoration: none;
 			color: $text;
@@ -337,20 +337,20 @@
 		width: 90%;
 		padding: 20px;
 		margin-bottom: 20px;
-				
+
 		li {
-			float: left;		
+			float: left;
 			width: auto;
 			min-width: 40%;
 			max-width: 40%;
 			height: auto;
 			min-height: 20px;
-			padding: 5px;	
-			
-		}	
+			padding: 5px;
+
+		}
 		.title {
 			font-weight: bold;
-		}		
+		}
 		a {
 			text-decoration: none;
 		}
@@ -359,14 +359,14 @@
 		width: 90%;
 		padding: 5px;
 		margin-bottom: 10px;
-				
+
 		li {
-			float: left;		
+			float: left;
 			width: auto;
 			min-width: 40%;
 			height: auto;
-			padding: 2px 10px;			
-		}	
+			padding: 2px 10px;
+		}
 		.text {
 			margin-bottom: 10px;
 		}
@@ -375,13 +375,13 @@
 		}
 	}
 	ul#updates {
-	
+
 		li {
 			font-size: 80%;
 			font-weight: normal;
 			padding: 2px 10px;
 			border-bottom: 1px dashed $text;
-			
+
 			.date {
 				color: $general_dark;
 			}
@@ -411,7 +411,7 @@
 		  background-color: $alert_light;
 		  padding: 10px 0 10px 0;
 		  @include rounded-corners;
-		
+
 			.delete_link {
 				float: right;
 				margin-right: 10px;
@@ -438,7 +438,7 @@
 			margin-bottom: 5px;
 			display: block;
 		  @include rounded-corners;
-		
+
 			.alert_text {
 				float: left;
 				padding-top: 7px;
@@ -472,7 +472,7 @@
 		margin-left: 10px;
 		margin-right: 10px;
 		@include rounded-corners;
-	
+
 		h2 {
 			font-size: 110%;
 			font-weight: bold;
@@ -493,13 +493,13 @@
 		width: 15px;
 		background: #de1e1e;
 		border: 2px solid #FFFFFF;
-		border-radius: 20px; 
-		-moz-border-radius: 20px; 
+		border-radius: 20px;
+		-moz-border-radius: 20px;
 		-webkit-border-radius: 20px;
 		-moz-box-shadow: 3px 3px 2px #888;
 		-webkit-box-shadow: 3px 3px 2px #888;
 		box-shadow: 3px 3px 2px #888;
-		
+
 		h6 {
 			color: #FFFFFF;
 			font-size: 100%;
@@ -507,7 +507,7 @@
 			text-decoration: none;
 		}
 	}
-	
+
 /* Tables
 ================================================== */
 	.indextable {
@@ -550,10 +550,10 @@
 /* Settings
 ================================================== */
 .settings_menu {
-	
+
 	li {
 		border-bottom: 2px dashed $general_dark;
-		
+
 		a, a:visited, a:hover {
 			display: block;
 			padding: 10px;
@@ -570,7 +570,7 @@
 #support_canvas {
 	background: #EEEEEE;
 	margin: 0;
-	
+
 	.content {
 		padding: 5px 10px 5px 10px;
 	}
@@ -598,7 +598,7 @@
 	}
 	.support {
 		margin: 0;
-		
+
 		input {
 			background: #FFFFFF
 		}
@@ -624,7 +624,7 @@
 		margin-right: 10px;
 		@include box-shadow;
 		@include rounded-corners;
-		@include box-shadow;	
+		@include box-shadow;
 		@include theme-layout;
 		@include content-title;
 
@@ -665,15 +665,15 @@
 			font-size: 90%;
 			margin: 0 10px 10px 0;
 			text-align: center;
-		}		
+		}
 		.note_attachment {
 			font-size: 90%;
 			margin: 0 0 5px 0;
-		}		
+		}
 	}
 	.notedetails_small {
 	  width: 180px !important;
-		@extend .notedetails; 
+		@extend .notedetails;
 	}
 }
 
@@ -730,14 +730,14 @@
 	}
 	.contactdetails_small {
 	  width: 180px !important;
-		@extend .contactdetails; 
+		@extend .contactdetails;
 	}
 	.organigram_row {
 		width: 100%;
 		clear: both;
 		margin: 0 auto;
 		text-align:center;
-				
+
 		.contactdetails_organigram {
 		  margin: 0 5px 25px 0;
 			float: none !important;
@@ -745,7 +745,7 @@
 			padding: 5px;
 			height: auto !important;
 		  width: 200px !important;
-			@extend .contactdetails; 
+			@extend .contactdetails;
 		}
 		.current {
 		  background-color: $notice_light;
@@ -754,7 +754,7 @@
 			background: #FFFFFF;
 		}
 		.no_data {
-			text-align: center;	
+			text-align: center;
 			background: #D1CBCB;
 			font-size: 100%;
 		}
@@ -784,7 +784,7 @@
 	  @include box-shadow;
 
 		ul {
-			
+
 			li {
 				font-size: 100%;
 				font-weight: normal;
@@ -828,20 +828,20 @@
 				height: 70px;
 				width: 95%;
 				margin: 5px 0 0 5px;
-			}	
+			}
 		}
 	}
 	.taskdetails_small {
 	  width: 175px !important;
-		@extend .taskdetails; 
+		@extend .taskdetails;
 	}
 	.deadline_warning {
 	  border: 1px solid #FF6600;
-	  background: #FEBF80; 
+	  background: #FEBF80;
 	}
 	.deadline_alert {
 	  border: 1px solid #de1e1e;
-	  background: #FEBFBF; 
+	  background: #FEBFBF;
 	}
 }
 
@@ -862,211 +862,12 @@
 	  position: relative;
 	  padding: 5px;
 	  margin: 0;
-	  
+
 	  tr {
 	  }
 	}
 }
 
-/* dossiers
-================================================== */
-
-$dossier_case: #F4D5A6;
-$dossier_stamp: #DE1E1E;
-$dossier_paper: #FFFEFF;
-
-.dossiers_canvas {
-	width: 95%;
-	height: auto;
-	display: block;
-	clear: both;
-	margin: 5px;
-	
-	h3 {
-		margin: 10px 0 10px 20px;
-	  font-family: 'Courier new', arial;
-		color: #000000;
-		font-weight: bold;
-	}
-	.agreementdetails thead th{
-		background-color: $agreement_light;
-		color: #FFFFFF;
-	}
-	.dossierdetails {
-	  float: left;
-	  position: relative;
-		background: $dossier_case;
-	  padding: 20px 5px 5px 5px;
-	  border:1px solid #ccc;
-	  margin: 10px 7px;
-	  width: 140px;
-		height: 160px;
-		border: 1px solid $dossier_dark;
-	  @include box-shadow;
-	  @include rounded-corners;
-	  
-	  .title {
-		  float: left;
-	  	border: 1px solid $dossier_dark;
-		  font-family: 'Courier new', arial;
-			font-size: 100%;
-			text-align: center;
-			margin: 0 auto;
-			margin-left: 10px;
-			margin-right: 10px;
-			padding: 10px;
-			min-width: 100px;
-			height: 50px;
-			overflow: hidden;
-			background: $dossier_paper;
-		}
-	  .status {
-		  float: left;
-		  font-family: 'Courier new', arial;
-		  font-weight: bold;
-			font-size: 100%;
-			text-align: center;
-	  	margin: 20px 10px 10px 10px;
-	  	color: $dossier_stamp;
-	  	padding: 5px 5px 5px 5px;
-			min-width: 105px;
-	  	border: 3px solid #de1e1e;
-		  @include rotation(-5deg);
-		  @include rounded-corners;
-	  }
-	  a, a:hover, a:visited {
-			color: $dossier_dark;
-	  	text-decoration: none;
-	  }
-	}
-	.show_dossier {
-		width: 95%;
-		height: 460px;
-		background: $dossier_case;
-	  padding: 25px;
-	  margin: 10px;
-	  border:2px solid $dossier_dark;
-	  @include box-shadow;
-	  @include rounded-corners;
-
-		.dossierpage_large, .dossierpage_small {
-			.note {
-				color: $note_light;
-			} 	
-			.contact {
-				color: $contact_light;
-			} 	
-			.task {
-				color: $task_light;
-			} 	
-			.agreement {
-				color: $agreement_light;
-			} 	
-	  }
-	  .dossierpage_small {
-	  	float: left;
-	  	height: 440px;
-	  	min-height: 440px;
-	  	width: 45%;
-	  	padding: 10px;
-	  	background: $dossier_paper;
-		  border:1px solid $dossier_dark;
-		  
-			.title {
-				margin: 0 auto;
-				width: 70%;
-				margin-top: 100px;
-			  font-family: 'Courier new', arial;
-				font-size: 180%;
-				text-align: center;
-				padding: 10px;
-			}
-			.status {
-				margin: auto;
-				width: 70%;
-				min-width: 105px;
-				margin-top: 80px;
-			  font-family: 'Courier new', arial;
-			  font-weight: bold;
-				font-size: 140%;
-				text-align: center;
-		  	color: $dossier_stamp;
-		  	padding: 5px;
-		  	border: 3px solid #de1e1e;
-			  @include rotation(-5deg);
-			  @include rounded-corners;
-			}
-		  ul {
-		  	margin-top: 20px;
-		  }
-		  li {
-		  	padding: 15px 0 0 20px;
-			  font-family: 'Courier new', arial;
-		  	font-size: 110%;
-		  	float: left;		
-				width: auto;
-				min-width: 40%;
-		  }
-	  }
-	  .dossierpage_large {
-	  	float: left;
-	  	height: 440px;
-	  	min-height: 440px;
-	  	width: 621px;
-	  	padding: 10px;
-	  	background: $dossier_paper;
-		  border:1px solid $dossier_dark;
-		}
-	  .vertical_tabs_ajax {
-	  	float: left;
-	  	width: 20px;
-	  	height: 93%;
-			margin-top: 30px;
-
-			.dossiergeneral {
-				background: $dossier_light;
-				border: 1px solid $dossier_dark;
-			} 	
-			.contact {
-				background: $contact_light;
-	  		border: 1px solid $contact_dark;
-			} 	
-			.note {
-				background: $note_light;
-			  border: 1px solid $note_dark;
-			} 	
-			.task {
-				background: $task_light;
-				border: 1px solid $task_dark;
-			} 	
-			.agreement {
-				background: $agreement_light;
-				border: 1px solid $agreement_dark;
-			} 	
-			li {
-				float: left;
-				text-align: left;
-				margin-bottom: 5px;
-
-
-			  a, a:hover, a:visited {
-					border-radius: 0px 6px 6px 0px; 
-					-moz-border-radius: 0px 6px 6px 0px; 
-					-webkit-border-radius: 0px 6px 6px 0px;
-					width: 65px;
-					height: 20px;
-					font-weight: normal;
-					font-size: 100%;
-				  font-family: $basefont, arial;
-					color: #FFFFFF;
-			  	text-decoration: none;
-					padding: 10px 5px 5px 15px;
-				  display: block;
-				}
-			}
-		}
-	}
-}
 
 /* #Misc
 ================================================== */
@@ -1076,7 +877,7 @@ $dossier_paper: #FFFEFF;
 		margin: 5px 0 5px 10px;
 		float: left;
 		font-size: 90%;
-		
+
 		a, span, em {
 			border: 1px solid $general_dark;
 			background-color: #FFFFFF;
@@ -1117,7 +918,7 @@ $dossier_paper: #FFFEFF;
 		width: 100%;
 		height: 30px;
 		margin: 10px;
-		
+
 		a, a:visited, a:hover {
 			font-size: 120%;
 			text-decoration: none;
@@ -1156,7 +957,7 @@ $dossier_paper: #FFFEFF;
 /* Public page
 ================================================== */
 .public-content {
-	
+
 	.public-header h2 {
 		margin: 40px 0 40px 0;
 		text-align: center;
@@ -1197,7 +998,7 @@ $dossier_paper: #FFFEFF;
 	}
 	.public-email {
 		margin: 20px;
-		
+
 		.email-form {
 			margin: 0 auto;
 			margin-top: 30px;
@@ -1237,9 +1038,9 @@ $dossier_paper: #FFFEFF;
 		height: 150px;
 		line-height: 150%;
 	}
-	input:hover, 
+	input:hover,
 	textarea:hover,
-	input:focus, 
+	input:focus,
 	textarea:focus {
 		border-color: #AAA;
 		-webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;
@@ -1267,10 +1068,10 @@ $dossier_paper: #FFFEFF;
 	#email-form {
 		margin-top: 4px;
 	}
-	
-	
+
+
 }
-	
+
 /* vCard
 ================================================== */
 
@@ -1286,7 +1087,7 @@ $dossier_paper: #FFFEFF;
 
 		.vcard_header {
 			padding: 10px 10px 5px 20px;
-			
+
 			.title {
 				font: 24px $basefont;
 				font-weight: bold;
@@ -1333,7 +1134,7 @@ $dossier_paper: #FFFEFF;
 			@include vcard_text;
 			padding-left: 30px;
 			line-height: 150%;
-		}	
+		}
 		.header {
 			font-weight: bold;
 		}
@@ -1374,7 +1175,7 @@ $dossier_paper: #FFFEFF;
   width: 100%;
   height: 100%;
 }
-	
+
 /* #Tabs (activate in tabs.js)
 ================================================== */
 	ul.tabs {
@@ -1387,8 +1188,8 @@ $dossier_paper: #FFFEFF;
 		display: block;
 		width: auto;
 		float: left;
-		margin-bottom: 0; 
-	}	
+		margin-bottom: 0;
+	}
 	ul.tabs li a {
 		display: block;
 		text-decoration: none;
@@ -1400,8 +1201,8 @@ $dossier_paper: #FFFEFF;
 		border: solid 3px $general_dark;
 		border-width: 1px 1px 0 0;
 		margin: 0;
-		font-size: 13px; 
-	}	
+		font-size: 13px;
+	}
 	ul.tabs li a#general_tab {
 		background: $general_light;
 		color: #FFFFFF;
@@ -1441,14 +1242,6 @@ $dossier_paper: #FFFEFF;
 		border-top: 2px solid $agreement_dark;
 		border-right: 2px solid $agreement_dark;
 		border-bottom: 2px solid $agreement_dark;
-	}
-	ul.tabs li a#dossiers_tab {
-		background: $dossier_light;
-		color: #FFFFFF;
-		font-weight: bold;
-		border-top: 2px solid $dossier_dark;
-		border-right: 2px solid $dossier_dark;
-		border-bottom: 2px solid $dossier_dark;
 	}
 	ul.tabs li a.active {
 		height: 50px;
@@ -1497,4 +1290,3 @@ $dossier_paper: #FFFEFF;
   width: 100%;
   height: 100%;
 }
-

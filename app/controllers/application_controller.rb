@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
   def recent_activities
   	# Only get recent activities when a user is logged in
   	if current_user
-      @activities = Activity.all(:conditions => [ "company_id = ?", current_user.company.id], :limit => 10, :order => "created_at DESC")
+      @activities = Activity.where("company_id = ?", current_user.company.id).limit(10).order("created_at DESC")
 		end
   end
 
@@ -168,18 +168,10 @@ class ApplicationController < ActionController::Base
   			# URL param = agreement_id
   			agreement = Agreement.find(params[:id])
   			req_company_id = agreement.contact.relation.company_id.to_i
-  		when 'dossier'
-  			# URL param = dossier_id
-  			dossier = Dossier.find(params[:id])
-  			req_company_id = dossier.company_id.to_i
   		when 'country'
   			# URL param = country_id
   			country = Country.find(params[:id])
   			req_company_id = country.company_id.to_i
-  		when 'dossier_status'
-  			# URL param = dossier_status_id
-  			dossier_status = DossierStatus.find(params[:id])
-  			req_company_id = dossier_status.company_id.to_i
   		when 'tasktype'
   			# URL param = tasktype_id
   			tasktype = Tasktype.find(params[:id])

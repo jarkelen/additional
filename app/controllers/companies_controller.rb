@@ -24,7 +24,7 @@ class CompaniesController < ApplicationController
   end
   
   def create
-		@company = Company.new(params[:company])
+		@company = Company.new(company_params)
 
     if @company.save
       redirect_to dashboard_url, notice: I18n.t(:message_company_created)
@@ -42,7 +42,7 @@ class CompaniesController < ApplicationController
   def update
     @company = Company.find(params[:id])
 
-    if @company.update_attributes(params[:company])
+    if @company.update_attributes(company_params)
       redirect_to dashboard_url, :notice => I18n.t(:message_company_updated)
     else
       @countries = current_user.company.countries.dropdown_list
@@ -56,6 +56,17 @@ class CompaniesController < ApplicationController
     @company.destroy
 
     redirect_to dashboard_url, :notice => I18n.t(:message_company_deleted)
+  end
+
+  private
+  
+  def company_params
+    params.require(:company).permit(:name, :address1, :address2, :zipcode, :city, :country, :email, :website,
+                  :telephone, :facebook, :twitter, :linkedin, :code,
+                  :subscription_attributes, :kvk_nr, :bankaccount, :billing_address,
+                  :billing_zipcode, :billing_city, :billing_country,
+                  :post_address, :post_zipcode, :post_city, :post_country, :tax_nr, :logo,
+                  subscription_attributes: [:name, :discount, :start_date, :billing_period, :user_price, :active, :company_id])
   end
 
 end

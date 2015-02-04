@@ -41,7 +41,7 @@ class ClaimsController < ApplicationController
 
   def create
 	  # Get all params
-	  @claim = Claim.new(params[:claim])
+	  @claim = Claim.new(claim_params)
 
     # Also create an update
 		Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_claim} '#{@claim.id}' #{I18n.t :update_new}")
@@ -79,7 +79,7 @@ class ClaimsController < ApplicationController
     # Also create an update
 		Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_claim} '#{@claim.id}' #{I18n.t :update_edit}")
 
-		if @claim.update_attributes(params[:claim])
+		if @claim.update_attributes(claim_params)
 			redirect_to claim_path(@claim), notice: I18n.t(:message_claim_updated)
 		else
 			@relations = current_user.company.relations.order(:name)
@@ -102,4 +102,11 @@ class ClaimsController < ApplicationController
 
 		redirect_to claims_path, :notice => I18n.t(:message_claim_deleted)
   end
+  
+  private
+  
+  def claim_params
+    params.require(:claim).permit(:claim_nr, :relation_id, :company_id)
+  end
+
 end
