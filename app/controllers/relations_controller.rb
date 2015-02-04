@@ -37,6 +37,7 @@ class RelationsController < ApplicationController
       format.csv
       format.html
       format.js
+      format.json
     end
 
   end
