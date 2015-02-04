@@ -18,19 +18,18 @@ class TasksController < ApplicationController
   
   def create
     @task = Task.new(tasks_params)
+    @contact = Contact.find(params[:task][:contact_id])
     
     respond_to do |format|
       if @task.save
         # Also create an update
         Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_task} '#{@task.task}' #{I18n.t :update_new}")
 
-        @contact = Contact.find(params[:contact_id])
         @tasks = @contact.tasks.order("due_at ASC")
         @task = Note.new
 
         format.js
       else
-        @contact = Contact.find(params[:task][:contact_id])
         @tasktypes = Tasktype.dropdown_list
         @users = User.dropdown_list(current_user)
 
