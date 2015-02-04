@@ -32,7 +32,7 @@ class Company < ActiveRecord::Base
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  validates       		:name, address1, zipcode, city, country, code, presence: true
+  validates       		:name, :address1, :zipcode, :city, :country, :code, presence: true
   validates_length_of :code, maximum: 3
   validates 					:email, presence: true,
   										format: { with: email_regex },
