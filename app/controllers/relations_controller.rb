@@ -37,7 +37,7 @@ class RelationsController < ApplicationController
       format.csv
       format.html
       format.js
-      format.json
+      format.json { render json: @relations }
     end
 
   end
