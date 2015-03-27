@@ -17,7 +17,7 @@
         - @insurances.each do |insurance|
           %tr
             %td= link_to insurance.insurance_nr, ins_insurance_path(insurance)
-            %td= link_to insurance.relation.name, relation_path(insurance.relation_id) unless insurance.relation.blank?
+            %td= link_to insurance.relation.name, relation_path(insurance.relation_id) unless insurance.relation.blank? or insurance.relation.name.blank?
             %td.centered= insurance.branch
             %td= insurance.insurance_type
             %td.centered= insurance.main_premium_expiration_date.strftime("%d-%m")
