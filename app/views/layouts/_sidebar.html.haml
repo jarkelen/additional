@@ -21,8 +21,8 @@
       / Only show active modules for current user
       - if current_user.mod_insurance
         %li#mod= link_to I18n.t(:nav_insurance), ins_insurances_url
-      - if current_user.mod_claim
-        %li#mod= link_to I18n.t(:nav_claim), claims_url
+      //- if current_user.mod_claim
+      //%li#mod= link_to I18n.t(:nav_claim), claims_url
 
 / Show the last 10 user activities
 - if current_user.allowed?('company_admin')

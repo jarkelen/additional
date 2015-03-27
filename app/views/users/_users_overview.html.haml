@@ -12,7 +12,7 @@
           - if current_user.role == 'admin'
             %th= I18n.t :mod_short_platform
             %th= I18n.t :mod_short_insurance
-            %th= I18n.t :mod_short_claim
+            //%th= I18n.t :mod_short_claim
           - else
             %th= I18n.t :users_index_logincount
             %th= I18n.t :users_index_lastsignin
@@ -29,7 +29,7 @@
             - if current_user.role == 'admin'
               %td= user.get_module_subscription(user.mod_platform)
               %td= user.get_module_subscription(user.mod_insurance)
-              %td= user.get_module_subscription(user.mod_claim)
+              //%td= user.get_module_subscription(user.mod_claim)
             - else
               %td= user.sign_in_count
               %td

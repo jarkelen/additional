@@ -43,7 +43,7 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
 
     if @company.update_attributes(company_params)
-      redirect_to dashboard_url, :notice: I18n.t(:message_company_updated)
+      redirect_to dashboard_url, notice: I18n.t(:message_company_updated)
     else
       @countries = current_user.company.countries.dropdown_list
       render action: "edit"
