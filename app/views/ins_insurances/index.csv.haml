@@ -2,5 +2,6 @@
 
 = CSV.generate_line headers
 - @insurances.each do |insurance|
-  - row = [ insurance.insurance_nr,insurance.branch,insurance.insurance_type,insurance.market,insurance.start_date,insurance.duration,insurance.first_contract_expiration_date,insurance.main_premium_expiration_date,insurance.extension,insurance.payment_continuation,insurance.arrear_calculation,insurance.relation.name]
+  - rel_name = insurance.relation.blank? ? "-" : insurance.relation.name
+  - row = [ insurance.insurance_nr,insurance.branch,insurance.insurance_type,insurance.market,insurance.start_date,insurance.duration,insurance.first_contract_expiration_date,insurance.main_premium_expiration_date,insurance.extension,insurance.payment_continuation,insurance.arrear_calculation,rel_name]
   = CSV.generate_line(row).html_safe
