@@ -76,12 +76,12 @@ class UsersController < ApplicationController
     # Create user
     if @user.save
       # Inform admin that user has been added
-	    UserMailer.registration_inform_admin(@user).deliver
+	    #UserMailer.registration_inform_admin(@user).deliver
 
 	    # Send email to user when field is enabled
-  	  if current_user.allowed?('admin') && params[:send_email] == "1"
-		    UserMailer.registration_confirmation(@user).deliver
-	    end
+  	  #if current_user.allowed?('admin') && params[:send_email] == "1"
+		  #  UserMailer.registration_confirmation(@user).deliver
+	    #end
 
       # Also create an update
   		Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_user} '#{@user.full_name}' #{I18n.t :update_new}")
@@ -112,14 +112,14 @@ class UsersController < ApplicationController
 
     if @user.update_attributes(users_params)
 	    # Send email to user when field is enabled
-	    if current_user.allowed?('admin') && params[:send_email_to_user] == "1"
-		    UserMailer.registration_confirmation(@user).deliver
-	    end
+	    #if current_user.allowed?('admin') && params[:send_email_to_user] == "1"
+		  #  UserMailer.registration_confirmation(@user).deliver
+	    #end
 
 	    # Send email to admin when field is enabled
-	    if current_user.allowed?('admin') && params[:send_email_to_admin] == "1"
-  	    UserMailer.registration_inform_admin(@user).deliver
-	    end
+	    #if current_user.allowed?('admin') && params[:send_email_to_admin] == "1"
+  	  #  UserMailer.registration_inform_admin(@user).deliver
+	    #end
 
       # Also create an update
   		Activity.create_update(current_user, "#{current_user.full_name} #{I18n.t :update_user} '#{@user.full_name}' #{I18n.t :update_edit}")
