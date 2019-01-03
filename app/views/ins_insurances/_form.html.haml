@@ -56,7 +56,7 @@
       = f.select(:extension, options_for_select([['doorlopend', 'doorlopend'], ['aflopend', 'aflopend']], :selected => @insurance.extension))
     .field
       = f.label I18n.t :mod_ins_payment_continuation
-      = f.select(:payment_continuation, options_for_select([['jaar', 'jaar'], ['kwartaal', 'kwartaal'], ['maand', 'maand']], :selected => @insurance.payment_continuation))
+      = f.select(:payment_continuation, options_for_select([['jaar', 'jaar'], ['half jaar', 'half jaar'], ['kwartaal', 'kwartaal'], ['maand', 'maand']], :selected => @insurance.payment_continuation))
     .field
       = f.label I18n.t :mod_ins_collection
       = f.select(:collection, options_for_select([['Additional', 'Additional'], ['Maatschappij', 'Maatschappij']], :selected => :collection, :include_blank => true))
