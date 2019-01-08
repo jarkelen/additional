@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-	skip_filter :authenticate_user
+	skip_before_action :authenticate_user
 
 	# Create new session when user logs in
   def create

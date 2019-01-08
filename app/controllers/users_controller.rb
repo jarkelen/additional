@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
-  skip_filter :authenticate_user
+  skip_before_action :authenticate_user
 
 	# Set authorization
-  before_filter except: [ :show, :edit, :update ] do |c| c.is_allowed 'company_admin' end
+  before_action except: [ :show, :edit, :update ] do |c| c.is_allowed 'company_admin' end
 
 	# Set berlin wall
-	before_filter except: [ :index, :new, :create, :settings ] do |c| c.correct_company 'user' end
+	before_action except: [ :index, :new, :create, :settings ] do |c| c.correct_company 'user' end
 
 	# Check for correct user
-	before_filter do |c| c.correct_module 'user' end
+	before_action do |c| c.correct_module 'user' end
 
 	#----------------------------------------------------------------------------------------
 

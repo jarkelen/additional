@@ -53,14 +53,6 @@
             .field
               // f.label I18n.t :subscription_mod_claim
               //= f.check_box :mod_claim, :default => false
-          .datablock_general
-            %h4= I18n.t :subscription_email
-            .field
-              = f.label I18n.t :subscription_send_email_to_user
-              = check_box_tag :send_email_to_user
-            .field
-              = f.label I18n.t :subscription_send_email_to_admin
-              = check_box_tag :send_email_to_admin
 
         / Only show password field when a user is updating it's own profile or for admin
         - if @user == current_user || current_user.allowed?('admin')

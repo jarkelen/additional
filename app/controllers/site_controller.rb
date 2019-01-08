@@ -1,9 +1,9 @@
 class SiteController < ApplicationController
   # Skip authorization for public index page
-  skip_filter :authenticate_user, only: [:index]
+  skip_before_action :authenticate_user, only: [:index]
 
   # Set authorization
-  before_filter only: [:dashboard, :company_users] do |c| c.is_allowed 'admin' end
+  before_action only: [:dashboard, :company_users] do |c| c.is_allowed 'admin' end
 
   #-----------------------------------------------------------------------------------------
   def index

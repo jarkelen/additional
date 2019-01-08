@@ -115,11 +115,6 @@
             = @relation.custom_label_3
             \: #{@relation.custom_field_3}
   .vcard_onethird
-    .logo
-      - if @relation.logo?
-        = image_tag @relation.logo
-    .map
-      = image_tag "http://maps.google.com/maps/api/staticmap?size=200x220&sensor=false&zoom=11&markers=#{@relation.latitude}%2C#{@relation.longitude}"
   .vcard_whole
     %ul
       %li.header= I18n.t :relations_data_remarks

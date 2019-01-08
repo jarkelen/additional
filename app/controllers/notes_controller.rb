@@ -1,9 +1,9 @@
 class NotesController < ApplicationController
 	# Set user authorization
-  before_filter do |c| c.is_allowed 'user' end
+  before_action do |c| c.is_allowed 'user' end
 
 	# Set berlin wall
-	before_filter except: [ :index, :create ] do |c| c.correct_company 'note' end
+	before_action except: [ :index, :create ] do |c| c.correct_company 'note' end
 
 	#-----------------------------------------------------------------------------------------
 

@@ -1,9 +1,9 @@
 class BranchesController < ApplicationController
 	# Set authorization
-  before_filter do |c| c.is_allowed 'company_admin' end
+  before_action do |c| c.is_allowed 'company_admin' end
 
 	# Set berlin wall
-	before_filter except: [ :create ] do |c| c.correct_company 'branch' end
+	before_action except: [ :create ] do |c| c.correct_company 'branch' end
 
 	#-------------------------------------------------------------------------------------------------------------------
 

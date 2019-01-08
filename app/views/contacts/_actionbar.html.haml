@@ -6,8 +6,6 @@
   - if view == 'index'
     .action_button.contact
       = link_to I18n.t(:contacts_new_title), new_contact_path
-    .action_button.contact
-      = link_to I18n.t(:contacts_new_vcard), '/contacts/import'
 
   / Show buttons for show
   - if view == 'show'

@@ -5,13 +5,13 @@ class ApplicationController < ActionController::Base
   helper_method :is_allowed_to_view
 
   # Users must always login first
-  before_filter :authenticate_user
+  before_action :authenticate_user
 
   # Determine locale based on user profile
-  before_filter :set_locale
+  before_action :set_locale
 
   # Show recent activities in side bar
-  before_filter :recent_activities
+  before_action :recent_activities
 
   # Set current user
   def current_user

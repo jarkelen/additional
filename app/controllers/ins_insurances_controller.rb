@@ -1,13 +1,13 @@
 class InsInsurancesController < ApplicationController
 	# Set authorization
-	before_filter do |c| c.is_allowed 'user' end
-	before_filter only: [ :settings ] do |c| c.is_allowed 'company_admin' end
+	before_action do |c| c.is_allowed 'user' end
+	before_action only: [ :settings ] do |c| c.is_allowed 'company_admin' end
 
 	# Set berlin wall
-	before_filter except: [ :index, :new, :create, :settings ] do |c| c.correct_company 'ins_insurance' end
+	before_action except: [ :index, :new, :create, :settings ] do |c| c.correct_company 'ins_insurance' end
 
 	# Set module authorization
-	before_filter do |c| c.correct_module 'ins_insurance' end
+	before_action do |c| c.correct_module 'ins_insurance' end
 
 	#-----------------------------------------------------------------
 

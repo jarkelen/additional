@@ -32,6 +32,4 @@ CustomerFirst::Application.configure do
   config.serve_static_files = false
 
   config.eager_load = false
-
-  config.active_record.raise_in_transactional_callbacks = true
 end

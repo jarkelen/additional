@@ -10,9 +10,6 @@ class Relation < ActiveRecord::Base
   # Geocode the address to create the Google map
   #acts_as_gmappable :lat:  "latitude", :lng:  "longitude"
 
-	# Add logo uploader
-	mount_uploader :logo, LogoUploader
-
   attr_accessor :same, :relationgroup_new
 
   before_validation :set_new_relationgroup

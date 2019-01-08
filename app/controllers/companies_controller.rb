@@ -1,10 +1,10 @@
 class CompaniesController < ApplicationController
 	# Set authorization
-  before_filter only: [ :show ] do |c| c.is_allowed 'user' end
-  before_filter except: [:show] do |c| c.is_allowed 'company_admin' end
+  before_action only: [ :show ] do |c| c.is_allowed 'user' end
+  before_action except: [:show] do |c| c.is_allowed 'company_admin' end
 
 	# Set berlin wall
-	before_filter except: [:new, :create] do |c| c.correct_company 'company' end
+	before_action except: [:new, :create] do |c| c.correct_company 'company' end
 
 	#-----------------------------------------------------------------------------------------
 

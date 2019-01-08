@@ -1,10 +1,10 @@
 class ContactsController < ApplicationController
 	# Set authorization
-  before_filter except: [ :destroy ] do |c| c.is_allowed 'user' end
-  before_filter only: [ :destroy ] do |c| c.is_allowed 'company_admin' end
+  before_action except: [ :destroy ] do |c| c.is_allowed 'user' end
+  before_action only: [ :destroy ] do |c| c.is_allowed 'company_admin' end
 
 	# Set berlin wall
-	before_filter except: [ :index, :new, :create, :import, :import_data ] do |c| c.correct_company 'contact' end
+	before_action except: [ :index, :new, :create, :import, :import_data ] do |c| c.correct_company 'contact' end
 
 	#----------------------------------------------------------------------------------------
 

@@ -23,9 +23,6 @@ class Company < ActiveRecord::Base
   has_many :ins_insurers, dependent: :destroy
   has_many :ins_mediators, dependent: :destroy
 
-	# Add logo uploader
-	mount_uploader :logo, LogoUploader
-
   accepts_nested_attributes_for :subscription
 
   attr_accessor :same
