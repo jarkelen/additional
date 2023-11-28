@@ -37,7 +37,7 @@
       \#{link_to I18n.t(:mod_ins_settings_add_mediator), ins_insurances_settings_path}
     .field
       = f.label I18n.t :mod_ins_start_date
-      = f.date_select(:start_date, :start_year => Time.now.year - 5, :end_year => Time.now.year + 25)
+      = f.date_select(:start_date, :start_year => 2011, :end_year => Time.now.year + 5)
     .field
       = f.label I18n.t :mod_ins_status
       = f.select(:status, options_for_select([['Actief', 'actief'], ['Beeindigd', 'beeindigd']], :selected => :status, :include_blank => true))
@@ -47,7 +47,7 @@
     = render('layouts/form_field', :f => f, :label => I18n.t(:mod_ins_duration), :field => :duration, :size => "3")
     .field
       = f.label I18n.t :mod_ins_first_contract_expiration_date
-      = f.date_select(:first_contract_expiration_date, :start_year => Time.now.year - 5, :end_year => Time.now.year + 25)
+      = f.date_select(:first_contract_expiration_date, :start_year => 2011, :end_year => Time.now.year + 5)
     .field
       = f.label I18n.t :mod_ins_main_premium_expiration_date
       = f.date_select(:main_premium_expiration_date, :discard_year => true)
